@@ -2,52 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Daniel H. Buckley on John Christian Gaby, PhD</title>
-<<<<<<< HEAD
     <link>chrisgaby.github.io/authors/daniel-h.-buckley/</link>
-=======
-    <link>/authors/daniel-h.-buckley/</link>
->>>>>>> 5ecc9723e1cf1e54b12fa2f408c1134622195030
     <description>Recent content in Daniel H. Buckley on John Christian Gaby, PhD</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0000</lastBuildDate>
     
-<<<<<<< HEAD
 	    <atom:link href="chrisgaby.github.io/authors/daniel-h.-buckley/index.xml" rel="self" type="application/rss+xml" />
-=======
-	    <atom:link href="/authors/daniel-h.-buckley/index.xml" rel="self" type="application/rss+xml" />
->>>>>>> 5ecc9723e1cf1e54b12fa2f408c1134622195030
     
     
     <item>
       <title>The Use of Degenerate Primers in qPCR Analysis of Functional Genes Can Cause Dramatic Quantification Bias as Revealed by Investigation of nifH Primer Performance</title>
-<<<<<<< HEAD
       <link>chrisgaby.github.io/publication/gaby-2017-a/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
       
       <guid>chrisgaby.github.io/publication/gaby-2017-a/</guid>
-=======
-      <link>/publication/gaby-2017-a/</link>
-      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/publication/gaby-2017-a/</guid>
->>>>>>> 5ecc9723e1cf1e54b12fa2f408c1134622195030
       <description></description>
     </item>
     
     <item>
       <title>Assessment of Nitrogenase Diversity in the Environment</title>
-<<<<<<< HEAD
       <link>chrisgaby.github.io/publication/gaby-2015/</link>
       <pubDate>Thu, 01 Jan 2015 00:00:00 +0000</pubDate>
       
       <guid>chrisgaby.github.io/publication/gaby-2015/</guid>
-=======
-      <link>/publication/gaby-2015/</link>
-      <pubDate>Thu, 01 Jan 2015 00:00:00 +0000</pubDate>
-      
-      <guid>/publication/gaby-2015/</guid>
->>>>>>> 5ecc9723e1cf1e54b12fa2f408c1134622195030
       <description></description>
     </item>
     
