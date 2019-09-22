@@ -2,21 +2,36 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Sequence analysis on John Christian Gaby, PhD</title>
+<<<<<<< HEAD
     <link>chrisgaby.github.io/tags/sequence-analysis/</link>
+=======
+    <link>/tags/sequence-analysis/</link>
+>>>>>>> 5ecc9723e1cf1e54b12fa2f408c1134622195030
     <description>Recent content in Sequence analysis on John Christian Gaby, PhD</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 01 Jan 2018 00:00:00 +0000</lastBuildDate>
     
+<<<<<<< HEAD
 	    <atom:link href="chrisgaby.github.io/tags/sequence-analysis/index.xml" rel="self" type="application/rss+xml" />
+=======
+	    <atom:link href="/tags/sequence-analysis/index.xml" rel="self" type="application/rss+xml" />
+>>>>>>> 5ecc9723e1cf1e54b12fa2f408c1134622195030
     
     
     <item>
       <title>Diazotroph community characterization via a highthroughput nifH amplicon sequencing and analysis pipeline</title>
+<<<<<<< HEAD
       <link>chrisgaby.github.io/publication/gaby-2018/</link>
       <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>chrisgaby.github.io/publication/gaby-2018/</guid>
+=======
+      <link>/publication/gaby-2018/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/publication/gaby-2018/</guid>
+>>>>>>> 5ecc9723e1cf1e54b12fa2f408c1134622195030
       <description></description>
     </item>
     

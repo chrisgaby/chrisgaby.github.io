@@ -2,21 +2,36 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Databases on John Christian Gaby, PhD</title>
+<<<<<<< HEAD
     <link>chrisgaby.github.io/tags/databases/</link>
+=======
+    <link>/tags/databases/</link>
+>>>>>>> 5ecc9723e1cf1e54b12fa2f408c1134622195030
     <description>Recent content in Databases on John Christian Gaby, PhD</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 01 Jul 2011 00:00:00 +0000</lastBuildDate>
     
+<<<<<<< HEAD
 	    <atom:link href="chrisgaby.github.io/tags/databases/index.xml" rel="self" type="application/rss+xml" />
+=======
+	    <atom:link href="/tags/databases/index.xml" rel="self" type="application/rss+xml" />
+>>>>>>> 5ecc9723e1cf1e54b12fa2f408c1134622195030
     
     
     <item>
       <title>A global census of nitrogenase diversity.</title>
+<<<<<<< HEAD
       <link>chrisgaby.github.io/publication/gaby-2011/</link>
       <pubDate>Fri, 01 Jul 2011 00:00:00 +0000</pubDate>
       
       <guid>chrisgaby.github.io/publication/gaby-2011/</guid>
+=======
+      <link>/publication/gaby-2011/</link>
+      <pubDate>Fri, 01 Jul 2011 00:00:00 +0000</pubDate>
+      
+      <guid>/publication/gaby-2011/</guid>
+>>>>>>> 5ecc9723e1cf1e54b12fa2f408c1134622195030
       <description></description>
     </item>
     

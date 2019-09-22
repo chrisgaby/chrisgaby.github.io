@@ -2,21 +2,36 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Diazotrophy on John Christian Gaby, PhD</title>
+<<<<<<< HEAD
     <link>chrisgaby.github.io/tags/diazotrophy/</link>
+=======
+    <link>/tags/diazotrophy/</link>
+>>>>>>> 5ecc9723e1cf1e54b12fa2f408c1134622195030
     <description>Recent content in Diazotrophy on John Christian Gaby, PhD</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0000</lastBuildDate>
     
+<<<<<<< HEAD
 	    <atom:link href="chrisgaby.github.io/tags/diazotrophy/index.xml" rel="self" type="application/rss+xml" />
+=======
+	    <atom:link href="/tags/diazotrophy/index.xml" rel="self" type="application/rss+xml" />
+>>>>>>> 5ecc9723e1cf1e54b12fa2f408c1134622195030
     
     
     <item>
       <title>Molybdenum-based diazotrophy in a Sphagnum peatland in northern Minnesota</title>
+<<<<<<< HEAD
       <link>chrisgaby.github.io/publication/warren-2017/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
       
       <guid>chrisgaby.github.io/publication/warren-2017/</guid>
+=======
+      <link>/publication/warren-2017/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/publication/warren-2017/</guid>
+>>>>>>> 5ecc9723e1cf1e54b12fa2f408c1134622195030
       <description></description>
     </item>
     
