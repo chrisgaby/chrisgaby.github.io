@@ -2,102 +2,129 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>2 on John Christian Gaby, PhD</title>
-    <link>/publication_types/2/</link>
+    <link>chrisgaby.github.io/publication_types/2/</link>
     <description>Recent content in 2 on John Christian Gaby, PhD</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 01 Jan 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 01 Jan 2019 00:00:00 +0000</lastBuildDate>
     
-	    <atom:link href="/publication_types/2/index.xml" rel="self" type="application/rss+xml" />
+	    <atom:link href="chrisgaby.github.io/publication_types/2/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Effects of H2 : CO2 ratio and H2 supply fluctuation on methane content and microbial community composition during in-situ biological biogas upgrading</title>
+      <link>chrisgaby.github.io/publication/wahid-2019/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>chrisgaby.github.io/publication/wahid-2019/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>“Candidatus Macondimonas diazotrophica”, a novel gammaproteobacterial genus dominating crude-oil-contaminated coastal sediments</title>
+      <link>chrisgaby.github.io/publication/karthikeyan-2019/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>chrisgaby.github.io/publication/karthikeyan-2019/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Characterization of the fecal and mucosa-associated microbiota in dogs with colorectal epithelial tumors</title>
-      <link>/publication/herstad-2018/</link>
+      <link>chrisgaby.github.io/publication/herstad-2018/</link>
       <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>/publication/herstad-2018/</guid>
+      <guid>chrisgaby.github.io/publication/herstad-2018/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Diazotroph community characterization via a highthroughput nifH amplicon sequencing and analysis pipeline</title>
-      <link>/publication/gaby-2018/</link>
+      <link>chrisgaby.github.io/publication/gaby-2018/</link>
       <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>/publication/gaby-2018/</guid>
+      <guid>chrisgaby.github.io/publication/gaby-2018/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Feeding frequency influences process performance and microbial community composition in anaerobic digesters treating steam exploded food waste</title>
+      <link>chrisgaby.github.io/publication/svensson-2018/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>chrisgaby.github.io/publication/svensson-2018/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Microbial community characterization during anaerobic digestion of Scenedesmus spp. under mesophilic and thermophilic conditions</title>
-      <link>/publication/greses-2017/</link>
+      <link>chrisgaby.github.io/publication/greses-2017/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>/publication/greses-2017/</guid>
+      <guid>chrisgaby.github.io/publication/greses-2017/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Molybdenum-based diazotrophy in a Sphagnum peatland in northern Minnesota</title>
-      <link>/publication/warren-2017/</link>
+      <link>chrisgaby.github.io/publication/warren-2017/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>/publication/warren-2017/</guid>
+      <guid>chrisgaby.github.io/publication/warren-2017/</guid>
       <description></description>
     </item>
     
     <item>
       <title>The Use of Degenerate Primers in qPCR Analysis of Functional Genes Can Cause Dramatic Quantification Bias as Revealed by Investigation of nifH Primer Performance</title>
-      <link>/publication/gaby-2017-a/</link>
+      <link>chrisgaby.github.io/publication/gaby-2017-a/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>/publication/gaby-2017-a/</guid>
+      <guid>chrisgaby.github.io/publication/gaby-2017-a/</guid>
       <description></description>
     </item>
     
     <item>
       <title>The effect of temperature and retention time on methane production and microbial community composition in staged anaerobic digesters fed with food waste</title>
-      <link>/publication/gaby-2017/</link>
+      <link>chrisgaby.github.io/publication/gaby-2017/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>/publication/gaby-2017/</guid>
+      <guid>chrisgaby.github.io/publication/gaby-2017/</guid>
       <description></description>
     </item>
     
     <item>
       <title>A comprehensive aligned nifH gene database: A multipurpose tool for studies of nitrogen-fixing bacteria.</title>
-      <link>/publication/gaby-2014/</link>
+      <link>chrisgaby.github.io/publication/gaby-2014/</link>
       <pubDate>Wed, 01 Jan 2014 00:00:00 +0000</pubDate>
       
-      <guid>/publication/gaby-2014/</guid>
+      <guid>chrisgaby.github.io/publication/gaby-2014/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Correction : A comprehensive evaluation of PCR primers to amplify the nifH gene of nitrogenase</title>
-      <link>/publication/the-plosone-staff-2014/</link>
+      <link>chrisgaby.github.io/publication/the-plosone-staff-2014/</link>
       <pubDate>Wed, 01 Jan 2014 00:00:00 +0000</pubDate>
       
-      <guid>/publication/the-plosone-staff-2014/</guid>
+      <guid>chrisgaby.github.io/publication/the-plosone-staff-2014/</guid>
       <description></description>
     </item>
     
     <item>
       <title>A comprehensive evaluation of PCR primers to amplify the textlessitextgreaternifHtextless/itextgreater gene of nitrogenase.</title>
-      <link>/publication/gaby-2012/</link>
+      <link>chrisgaby.github.io/publication/gaby-2012/</link>
       <pubDate>Sun, 01 Jan 2012 00:00:00 +0000</pubDate>
       
-      <guid>/publication/gaby-2012/</guid>
+      <guid>chrisgaby.github.io/publication/gaby-2012/</guid>
       <description></description>
     </item>
     
     <item>
       <title>A global census of nitrogenase diversity.</title>
-      <link>/publication/gaby-2011/</link>
+      <link>chrisgaby.github.io/publication/gaby-2011/</link>
       <pubDate>Fri, 01 Jul 2011 00:00:00 +0000</pubDate>
       
-      <guid>/publication/gaby-2011/</guid>
+      <guid>chrisgaby.github.io/publication/gaby-2011/</guid>
       <description></description>
     </item>
     

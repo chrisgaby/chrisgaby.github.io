@@ -2,444 +2,534 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on John Christian Gaby, PhD</title>
-    <link>/tags/</link>
+    <link>chrisgaby.github.io/tags/</link>
     <description>Recent content in Tags on John Christian Gaby, PhD</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 01 Jan 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 01 Jan 2019 00:00:00 +0000</lastBuildDate>
     
-	    <atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+	    <atom:link href="chrisgaby.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Bioinformatics</title>
-      <link>/tags/bioinformatics/</link>
+      <title>Biomethane</title>
+      <link>chrisgaby.github.io/tags/biomethane/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>chrisgaby.github.io/tags/biomethane/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Glucose</title>
+      <link>chrisgaby.github.io/tags/glucose/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>chrisgaby.github.io/tags/glucose/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hydrogenotrophic methanogenesis</title>
+      <link>chrisgaby.github.io/tags/hydrogenotrophic-methanogenesis/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>chrisgaby.github.io/tags/hydrogenotrophic-methanogenesis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>In-situ</title>
+      <link>chrisgaby.github.io/tags/in-situ/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>chrisgaby.github.io/tags/in-situ/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mesophilic</title>
+      <link>chrisgaby.github.io/tags/mesophilic/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>chrisgaby.github.io/tags/mesophilic/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>16S rRNA</title>
+      <link>chrisgaby.github.io/tags/16s-rrna/</link>
       <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>/tags/bioinformatics/</guid>
+      <guid>chrisgaby.github.io/tags/16s-rrna/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Beta-oxidation</title>
+      <link>chrisgaby.github.io/tags/beta-oxidation/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>chrisgaby.github.io/tags/beta-oxidation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Biogas</title>
+      <link>chrisgaby.github.io/tags/biogas/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>chrisgaby.github.io/tags/biogas/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Bioinformatics</title>
+      <link>chrisgaby.github.io/tags/bioinformatics/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>chrisgaby.github.io/tags/bioinformatics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CSTR</title>
+      <link>chrisgaby.github.io/tags/cstr/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>chrisgaby.github.io/tags/cstr/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Metagenomics</title>
-      <link>/tags/metagenomics/</link>
+      <link>chrisgaby.github.io/tags/metagenomics/</link>
       <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>/tags/metagenomics/</guid>
+      <guid>chrisgaby.github.io/tags/metagenomics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Methane</title>
+      <link>chrisgaby.github.io/tags/methane/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>chrisgaby.github.io/tags/methane/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Next-generation sequencing</title>
-      <link>/tags/next-generation-sequencing/</link>
+      <link>chrisgaby.github.io/tags/next-generation-sequencing/</link>
       <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>/tags/next-generation-sequencing/</guid>
+      <guid>chrisgaby.github.io/tags/next-generation-sequencing/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Nitrogen Fixation</title>
-      <link>/tags/nitrogen-fixation/</link>
+      <link>chrisgaby.github.io/tags/nitrogen-fixation/</link>
       <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>/tags/nitrogen-fixation/</guid>
+      <guid>chrisgaby.github.io/tags/nitrogen-fixation/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Sequence analysis</title>
-      <link>/tags/sequence-analysis/</link>
+      <link>chrisgaby.github.io/tags/sequence-analysis/</link>
       <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>/tags/sequence-analysis/</guid>
+      <guid>chrisgaby.github.io/tags/sequence-analysis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Stability</title>
+      <link>chrisgaby.github.io/tags/stability/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>chrisgaby.github.io/tags/stability/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Taxonomy</title>
-      <link>/tags/taxonomy/</link>
+      <link>chrisgaby.github.io/tags/taxonomy/</link>
       <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>/tags/taxonomy/</guid>
+      <guid>chrisgaby.github.io/tags/taxonomy/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Acetylene</title>
-      <link>/tags/acetylene/</link>
+      <link>chrisgaby.github.io/tags/acetylene/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>/tags/acetylene/</guid>
+      <guid>chrisgaby.github.io/tags/acetylene/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Alphaproteobacteria</title>
-      <link>/tags/alphaproteobacteria/</link>
+      <link>chrisgaby.github.io/tags/alphaproteobacteria/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>/tags/alphaproteobacteria/</guid>
+      <guid>chrisgaby.github.io/tags/alphaproteobacteria/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Amplification bias</title>
-      <link>/tags/amplification-bias/</link>
+      <link>chrisgaby.github.io/tags/amplification-bias/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>/tags/amplification-bias/</guid>
+      <guid>chrisgaby.github.io/tags/amplification-bias/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Anaerobic digestion</title>
-      <link>/tags/anaerobic-digestion/</link>
+      <link>chrisgaby.github.io/tags/anaerobic-digestion/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>/tags/anaerobic-digestion/</guid>
+      <guid>chrisgaby.github.io/tags/anaerobic-digestion/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Degenerate primers</title>
-      <link>/tags/degenerate-primers/</link>
+      <link>chrisgaby.github.io/tags/degenerate-primers/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>/tags/degenerate-primers/</guid>
+      <guid>chrisgaby.github.io/tags/degenerate-primers/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Diazotrophy</title>
-      <link>/tags/diazotrophy/</link>
+      <link>chrisgaby.github.io/tags/diazotrophy/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>/tags/diazotrophy/</guid>
+      <guid>chrisgaby.github.io/tags/diazotrophy/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Membrane technology</title>
-      <link>/tags/membrane-technology/</link>
+      <link>chrisgaby.github.io/tags/membrane-technology/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>/tags/membrane-technology/</guid>
+      <guid>chrisgaby.github.io/tags/membrane-technology/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Methanotrophs</title>
-      <link>/tags/methanotrophs/</link>
+      <link>chrisgaby.github.io/tags/methanotrophs/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>/tags/methanotrophs/</guid>
+      <guid>chrisgaby.github.io/tags/methanotrophs/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Molybdenum</title>
-      <link>/tags/molybdenum/</link>
+      <link>chrisgaby.github.io/tags/molybdenum/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>/tags/molybdenum/</guid>
+      <guid>chrisgaby.github.io/tags/molybdenum/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Nitrogen cycle enzymes</title>
-      <link>/tags/nitrogen-cycle-enzymes/</link>
+      <link>chrisgaby.github.io/tags/nitrogen-cycle-enzymes/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>/tags/nitrogen-cycle-enzymes/</guid>
+      <guid>chrisgaby.github.io/tags/nitrogen-cycle-enzymes/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Peatland</title>
-      <link>/tags/peatland/</link>
+      <link>chrisgaby.github.io/tags/peatland/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>/tags/peatland/</guid>
+      <guid>chrisgaby.github.io/tags/peatland/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Retention t</title>
-      <link>/tags/retention-t/</link>
+      <link>chrisgaby.github.io/tags/retention-t/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>/tags/retention-t/</guid>
+      <guid>chrisgaby.github.io/tags/retention-t/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Scenedesmus spp.</title>
-      <link>/tags/scenedesmus-spp./</link>
+      <link>chrisgaby.github.io/tags/scenedesmus-spp./</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>/tags/scenedesmus-spp./</guid>
+      <guid>chrisgaby.github.io/tags/scenedesmus-spp./</guid>
       <description></description>
     </item>
     
     <item>
       <title>Sphagnum</title>
-      <link>/tags/sphagnum/</link>
+      <link>chrisgaby.github.io/tags/sphagnum/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>/tags/sphagnum/</guid>
+      <guid>chrisgaby.github.io/tags/sphagnum/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Temperature-phased anaerobic digestion</title>
-      <link>/tags/temperature-phased-anaerobic-digestion/</link>
+      <link>chrisgaby.github.io/tags/temperature-phased-anaerobic-digestion/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>/tags/temperature-phased-anaerobic-digestion/</guid>
+      <guid>chrisgaby.github.io/tags/temperature-phased-anaerobic-digestion/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Vanadium</title>
-      <link>/tags/vanadium/</link>
+      <link>chrisgaby.github.io/tags/vanadium/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>/tags/vanadium/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>biogas</title>
-      <link>/tags/biogas/</link>
-      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/biogas/</guid>
+      <guid>chrisgaby.github.io/tags/vanadium/</guid>
       <description></description>
     </item>
     
     <item>
       <title>microbial community analysis</title>
-      <link>/tags/microbial-community-analysis/</link>
+      <link>chrisgaby.github.io/tags/microbial-community-analysis/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>/tags/microbial-community-analysis/</guid>
+      <guid>chrisgaby.github.io/tags/microbial-community-analysis/</guid>
       <description></description>
     </item>
     
     <item>
       <title>nifH</title>
-      <link>/tags/nifh/</link>
+      <link>chrisgaby.github.io/tags/nifh/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>/tags/nifh/</guid>
+      <guid>chrisgaby.github.io/tags/nifh/</guid>
       <description></description>
     </item>
     
     <item>
       <title>qPCR</title>
-      <link>/tags/qpcr/</link>
+      <link>chrisgaby.github.io/tags/qpcr/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>/tags/qpcr/</guid>
+      <guid>chrisgaby.github.io/tags/qpcr/</guid>
       <description></description>
     </item>
     
     <item>
       <title>retention time</title>
-      <link>/tags/retention-time/</link>
+      <link>chrisgaby.github.io/tags/retention-time/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>/tags/retention-time/</guid>
+      <guid>chrisgaby.github.io/tags/retention-time/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Diversity</title>
-      <link>/tags/diversity/</link>
+      <link>chrisgaby.github.io/tags/diversity/</link>
       <pubDate>Thu, 01 Jan 2015 00:00:00 +0000</pubDate>
       
-      <guid>/tags/diversity/</guid>
+      <guid>chrisgaby.github.io/tags/diversity/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Ecology</title>
-      <link>/tags/ecology/</link>
+      <link>chrisgaby.github.io/tags/ecology/</link>
       <pubDate>Thu, 01 Jan 2015 00:00:00 +0000</pubDate>
       
-      <guid>/tags/ecology/</guid>
+      <guid>chrisgaby.github.io/tags/ecology/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Nitrogenase</title>
-      <link>/tags/nitrogenase/</link>
+      <link>chrisgaby.github.io/tags/nitrogenase/</link>
       <pubDate>Thu, 01 Jan 2015 00:00:00 +0000</pubDate>
       
-      <guid>/tags/nitrogenase/</guid>
+      <guid>chrisgaby.github.io/tags/nitrogenase/</guid>
       <description></description>
     </item>
     
     <item>
       <title>PCR</title>
-      <link>/tags/pcr/</link>
+      <link>chrisgaby.github.io/tags/pcr/</link>
       <pubDate>Thu, 01 Jan 2015 00:00:00 +0000</pubDate>
       
-      <guid>/tags/pcr/</guid>
+      <guid>chrisgaby.github.io/tags/pcr/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Primers</title>
-      <link>/tags/primers/</link>
+      <link>chrisgaby.github.io/tags/primers/</link>
       <pubDate>Thu, 01 Jan 2015 00:00:00 +0000</pubDate>
       
-      <guid>/tags/primers/</guid>
+      <guid>chrisgaby.github.io/tags/primers/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Cluster Analysis</title>
-      <link>/tags/cluster-analysis/</link>
+      <link>chrisgaby.github.io/tags/cluster-analysis/</link>
       <pubDate>Fri, 01 Jul 2011 00:00:00 +0000</pubDate>
       
-      <guid>/tags/cluster-analysis/</guid>
+      <guid>chrisgaby.github.io/tags/cluster-analysis/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Cyanobacteria</title>
-      <link>/tags/cyanobacteria/</link>
+      <link>chrisgaby.github.io/tags/cyanobacteria/</link>
       <pubDate>Fri, 01 Jul 2011 00:00:00 +0000</pubDate>
       
-      <guid>/tags/cyanobacteria/</guid>
+      <guid>chrisgaby.github.io/tags/cyanobacteria/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Cyanobacteria: enzymology</title>
-      <link>/tags/cyanobacteria-enzymology/</link>
+      <link>chrisgaby.github.io/tags/cyanobacteria-enzymology/</link>
       <pubDate>Fri, 01 Jul 2011 00:00:00 +0000</pubDate>
       
-      <guid>/tags/cyanobacteria-enzymology/</guid>
+      <guid>chrisgaby.github.io/tags/cyanobacteria-enzymology/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Cyanobacteria: genetics</title>
-      <link>/tags/cyanobacteria-genetics/</link>
+      <link>chrisgaby.github.io/tags/cyanobacteria-genetics/</link>
       <pubDate>Fri, 01 Jul 2011 00:00:00 +0000</pubDate>
       
-      <guid>/tags/cyanobacteria-genetics/</guid>
+      <guid>chrisgaby.github.io/tags/cyanobacteria-genetics/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Databases</title>
-      <link>/tags/databases/</link>
+      <link>chrisgaby.github.io/tags/databases/</link>
       <pubDate>Fri, 01 Jul 2011 00:00:00 +0000</pubDate>
       
-      <guid>/tags/databases/</guid>
+      <guid>chrisgaby.github.io/tags/databases/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Environment</title>
-      <link>/tags/environment/</link>
+      <link>chrisgaby.github.io/tags/environment/</link>
       <pubDate>Fri, 01 Jul 2011 00:00:00 +0000</pubDate>
       
-      <guid>/tags/environment/</guid>
+      <guid>chrisgaby.github.io/tags/environment/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Gammaproteobacteria</title>
-      <link>/tags/gammaproteobacteria/</link>
+      <link>chrisgaby.github.io/tags/gammaproteobacteria/</link>
       <pubDate>Fri, 01 Jul 2011 00:00:00 +0000</pubDate>
       
-      <guid>/tags/gammaproteobacteria/</guid>
+      <guid>chrisgaby.github.io/tags/gammaproteobacteria/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Gammaproteobacteria: enzymology</title>
-      <link>/tags/gammaproteobacteria-enzymology/</link>
+      <link>chrisgaby.github.io/tags/gammaproteobacteria-enzymology/</link>
       <pubDate>Fri, 01 Jul 2011 00:00:00 +0000</pubDate>
       
-      <guid>/tags/gammaproteobacteria-enzymology/</guid>
+      <guid>chrisgaby.github.io/tags/gammaproteobacteria-enzymology/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Gammaproteobacteria: genetics</title>
-      <link>/tags/gammaproteobacteria-genetics/</link>
+      <link>chrisgaby.github.io/tags/gammaproteobacteria-genetics/</link>
       <pubDate>Fri, 01 Jul 2011 00:00:00 +0000</pubDate>
       
-      <guid>/tags/gammaproteobacteria-genetics/</guid>
+      <guid>chrisgaby.github.io/tags/gammaproteobacteria-genetics/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Genetic</title>
-      <link>/tags/genetic/</link>
+      <link>chrisgaby.github.io/tags/genetic/</link>
       <pubDate>Fri, 01 Jul 2011 00:00:00 +0000</pubDate>
       
-      <guid>/tags/genetic/</guid>
+      <guid>chrisgaby.github.io/tags/genetic/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Genetic Variation</title>
-      <link>/tags/genetic-variation/</link>
+      <link>chrisgaby.github.io/tags/genetic-variation/</link>
       <pubDate>Fri, 01 Jul 2011 00:00:00 +0000</pubDate>
       
-      <guid>/tags/genetic-variation/</guid>
+      <guid>chrisgaby.github.io/tags/genetic-variation/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Oxidoreductases</title>
-      <link>/tags/oxidoreductases/</link>
+      <link>chrisgaby.github.io/tags/oxidoreductases/</link>
       <pubDate>Fri, 01 Jul 2011 00:00:00 +0000</pubDate>
       
-      <guid>/tags/oxidoreductases/</guid>
+      <guid>chrisgaby.github.io/tags/oxidoreductases/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Oxidoreductases: genetics</title>
-      <link>/tags/oxidoreductases-genetics/</link>
+      <link>chrisgaby.github.io/tags/oxidoreductases-genetics/</link>
       <pubDate>Fri, 01 Jul 2011 00:00:00 +0000</pubDate>
       
-      <guid>/tags/oxidoreductases-genetics/</guid>
+      <guid>chrisgaby.github.io/tags/oxidoreductases-genetics/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Phylogeny</title>
-      <link>/tags/phylogeny/</link>
+      <link>chrisgaby.github.io/tags/phylogeny/</link>
       <pubDate>Fri, 01 Jul 2011 00:00:00 +0000</pubDate>
       
-      <guid>/tags/phylogeny/</guid>
+      <guid>chrisgaby.github.io/tags/phylogeny/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Soil</title>
-      <link>/tags/soil/</link>
+      <link>chrisgaby.github.io/tags/soil/</link>
       <pubDate>Fri, 01 Jul 2011 00:00:00 +0000</pubDate>
       
-      <guid>/tags/soil/</guid>
+      <guid>chrisgaby.github.io/tags/soil/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Soil: analysis</title>
-      <link>/tags/soil-analysis/</link>
+      <link>chrisgaby.github.io/tags/soil-analysis/</link>
       <pubDate>Fri, 01 Jul 2011 00:00:00 +0000</pubDate>
       
-      <guid>/tags/soil-analysis/</guid>
+      <guid>chrisgaby.github.io/tags/soil-analysis/</guid>
       <description></description>
     </item>
     
