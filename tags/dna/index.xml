@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DNA on John Christian Gaby, PhD</title>
+    <link>/tags/dna/</link>
+    <description>Recent content in DNA on John Christian Gaby, PhD</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 31 Aug 2020 00:00:00 +0000</lastBuildDate>
+    
+	    <atom:link href="/tags/dna/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>From DNA Quantity to Microbial Genome Equivalents</title>
+      <link>/post/from-dna-quantity-to-microbial-genome-equivalents/</link>
+      <pubDate>Mon, 31 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/from-dna-quantity-to-microbial-genome-equivalents/</guid>
+      <description>
+
+
+&lt;div id=&#34;introduction&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;When we extract microbial community DNA, we are accustomed to recovering nanogram or microgram quantities from sample materials such as soil or gut digesta, but do we have an understanding of how many bacterial genome equivalents such quantities represent?&lt;/p&gt;
+&lt;p&gt;Furthermore, given the DNA input requirements for current metagenomic sequencing library preparations, what is the equivalent number of input genomes?&lt;/p&gt;
+&lt;p&gt;In this blogpost, I will explore the relationship between DNA quantities and microbial genome equivalents. This will start with a review of microbial genome sizes reported in the scientific literature, then will proceed to calculation of the weight of single genomes. Thereafter I will exprapolate from the weight of a single microbial genome to the weight of microbial community DNA that may be expected from a given amount of soil or gut sample material. Finally, I will calculate the number of input microbial genomes that are used in metagenomic sequencing library preparations. By expressing metagenomic sequencing library inputs in terms of microbial genome equivalents, we will move from abstract DNA quatities to a more tangible expression as the number of microbial genomes.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;the-size-of-a-microbial-genome&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;The Size of a Microbial Genome&lt;/h2&gt;
+&lt;p&gt;The laboratory workhorse &lt;em&gt;Escherichia coli&lt;/em&gt; K12 has a genome size of 4.64 Mb.&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;/post/EcoliGenome.png&#34; alt=&#34;The E coli K12 reference genome from NCBI prokaryotic genomes.&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;The &lt;em&gt;E coli&lt;/em&gt; K12 reference genome from NCBI prokaryotic genomes.&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;On August 31, 2020, I downloaded a list of the NCBI RefSeq Prokaryotic Genomes. The list included statistics such as genome length for each genome.&lt;/p&gt;
+&lt;!-- Alternative ways to embed images --&gt;
+&lt;!-- This method works in markdown to access the image in the static/img directory --&gt;
+&lt;!-- 
+
+
+  
+
+
+
+
+&lt;figure&gt;
+
+&lt;img src=&#34;/img/RefSeqGenomes.png&#34; &gt;
+
+
+
+&lt;figcaption data-pre=&#34;Figure &#34; data-post=&#34;:&#34; &gt;
+  &lt;h4&gt;The Criteria Selected to Obtain a List of NCBI Refseq Prokaryotic Genomes&lt;/h4&gt;
+  
+&lt;/figcaption&gt;
+
+&lt;/figure&gt;
+ --&gt;
+&lt;!-- This method uses html code within R markdown to acces the image in the post directory. --&gt;
+&lt;!-- &lt;img alt = &#39;my new screenshot&#39; width=&#39;800&#39; src=&#39;/post/RefSeqGenomes.png&#39; /&gt; --&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;/post/RefSeqGenomes.png&#34; alt=&#34;The Criteria Selected to Obtain a List of NCBI Refseq Prokaryotic Genomes.&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;The Criteria Selected to Obtain a List of NCBI Refseq Prokaryotic Genomes.&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;The list was downloaded as a csv file. Let’s import the csv file and calculate some statistics for prokaryotic genome size.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(tidyverse)
+
+prokaryote.genomes.table &amp;lt;- read_csv(file = &amp;quot;prokaryotes.csv&amp;quot;)
+
+head(prokaryote.genomes.table) &lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## # A tibble: 6 x 16
+##   `#Organism Name` `Organism Group… Strain BioSample BioProject Assembly Level
+##   &amp;lt;chr&amp;gt;            &amp;lt;chr&amp;gt;            &amp;lt;chr&amp;gt;  &amp;lt;chr&amp;gt;     &amp;lt;chr&amp;gt;      &amp;lt;chr&amp;gt;    &amp;lt;chr&amp;gt;
+## 1 Pseudomonas flu… Bacteria;Proteo… DR397  SAMN1397… PRJNA6044… GCA_010… Comp…
+## 2 Xanthomonas cam… Bacteria;Proteo… MAFF1… SAMN1534… PRJNA6412… GCA_013… Comp…
+## 3 Yersinia pestis… Bacteria;Proteo… A1122  SAMN0260… PRJNA67155 GCA_000… Comp…
+## 4 Staphylococcus … Bacteria;Terrab… ATCC … SAMN1073… PRJNA5153… GCA_006… Comp…
+## 5 Lactococcus lac… Bacteria;Terrab… WFLU12 SAMN0821… PRJNA4231… GCA_002… Cont…
+## 6 Bacillus cereus  Bacteria;Terrab… FDAAR… SAMN1105… PRJNA2312… GCA_013… Comp…
+## # … with 9 more variables: `Size(Mb)` &amp;lt;dbl&amp;gt;, `GC%` &amp;lt;dbl&amp;gt;, Replicons &amp;lt;chr&amp;gt;,
+## #   WGS &amp;lt;chr&amp;gt;, Scaffolds &amp;lt;dbl&amp;gt;, CDS &amp;lt;dbl&amp;gt;, `Release Date` &amp;lt;dttm&amp;gt;, `GenBank
+## #   FTP` &amp;lt;chr&amp;gt;, `RefSeq FTP` &amp;lt;chr&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Let’s calculate some statistics for genome size:&lt;/p&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;n = 11710&lt;/li&gt;
+&lt;li&gt;mean = 4.371931&lt;/li&gt;
+&lt;li&gt;minimum = 0.185014&lt;/li&gt;
+&lt;li&gt;maximum = 16.0407&lt;/li&gt;
+&lt;li&gt;median = 4.050955&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;There is well over an order of magnitude variation in the size of prokaryotic genomes, ranging from 0.185014 to 16.0407. The largest genome among the refseq genomes belongs to &lt;em&gt;Minicystis rosea&lt;/em&gt; whereas the smallest genome belongs to &lt;em&gt;Metaprevotella massiliensis&lt;/em&gt;. It is notable that the smallest genome is classified as a Scaffold, and thus may not be accurate.&lt;/p&gt;
+&lt;p&gt;Let’s also take a look at the distribution:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(ggplot2)
+qplot(data = prokaryote.genomes.table, 
+      x = `Size(Mb)`, 
+      binwidth = 1, )&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2020-08-31-from-dna-quantity-to-microbial-genome-equivalents_files/figure-html/unnamed-chunk-2-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Let’s see how many genomes are available for each phylum in this dataset:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(tidyr)
+
+# Split the Organism Groups column into new columns named according to their respective taxonomy level
+prokaryote.genomes.table.split &amp;lt;- separate(data=prokaryote.genomes.table, 
+                                           col = `Organism Groups`, 
+                                           sep = &amp;quot;;&amp;quot;, 
+                                           into = c(&amp;quot;Domain&amp;quot;, &amp;quot;Phylum&amp;quot;, &amp;quot;Class&amp;quot;))
+
+summary(factor(prokaryote.genomes.table.split$Phylum))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##                   Acidobacteria                       Aquificae 
+##                              29                              21 
+##         Bacteria incertae sedis  Caldiserica/Cryosericota group 
+##                               4                               1 
+##                 Calditrichaeota                  Chrysiogenetes 
+##                               1                               2 
+##            Coprothermobacterota                 Deferribacteres 
+##                               2                               8 
+##                     Dictyoglomi                   Elusimicrobia 
+##                               2                               2 
+##                   Euryarchaeota                       FCB group 
+##                             346                            1329 
+##                    Fusobacteria Nitrospinae/Tectomicrobia group 
+##                              38                               1 
+##                     Nitrospirae                  Proteobacteria 
+##                              10                            4592 
+##                       PVC group                    Spirochaetes 
+##                              98                             141 
+##                   Synergistetes                      TACK group 
+##                              19                              62 
+##             Terrabacteria group           Thermodesulfobacteria 
+##                            4950                              12 
+##                     Thermotogae 
+##                              40&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;It looks like there are only a few phyla that have enough genomes to make a reliable histogram, so lets create a new dataset with only those phyla having &amp;gt; 90 genomes.&lt;/p&gt;
+&lt;p&gt;Let’s break the distribution down into separate density plots for each of the 6 phyla with over 90 genomes:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(ggplot2)
+
+phyla.subset.names &amp;lt;- names(which(summary(factor(prokaryote.genomes.table.split$Phylum)) &amp;gt; 90))
+prokaryote.genomes.table.split.reduced &amp;lt;- prokaryote.genomes.table.split[prokaryote.genomes.table.split$Phylum == phyla.subset.names[1] | 
+                                 prokaryote.genomes.table.split$Phylum == phyla.subset.names[2] | 
+                                 prokaryote.genomes.table.split$Phylum == phyla.subset.names[3] | 
+                                 prokaryote.genomes.table.split$Phylum == phyla.subset.names[4] | 
+                                 prokaryote.genomes.table.split$Phylum == phyla.subset.names[5] | 
+                                 prokaryote.genomes.table.split$Phylum == phyla.subset.names[6],]
+
+qplot(data=prokaryote.genomes.table.split.reduced, 
+      x = `Size(Mb)`, 
+      geom = &amp;quot;density&amp;quot;, 
+      color = Phylum, 
+      fill = Phylum, 
+      alpha = I(0.2))&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2020-08-31-from-dna-quantity-to-microbial-genome-equivalents_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Let’s split the figure into facets for each phylum:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(ggplot2)
+
+qplot(data=prokaryote.genomes.table.split.reduced, 
+      x = `Size(Mb)`, 
+      geom = &amp;quot;density&amp;quot;, 
+      color = Phylum, 
+      fill = Phylum, 
+      facets = Phylum ~ .)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2020-08-31-from-dna-quantity-to-microbial-genome-equivalents_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;960&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Based upon the separated density plots, it looks as if the genome size varies by phylum. Let’s see how much it varies by phylum:&lt;/p&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;Euryarchaeota = 3.1622121&lt;/li&gt;
+&lt;li&gt;FCB group = 4.4686722&lt;/li&gt;
+&lt;li&gt;Proteobacteria = 4.4354607&lt;/li&gt;
+&lt;li&gt;PVC group = 5.271497&lt;/li&gt;
+&lt;li&gt;Spirochaetes = 3.3388135&lt;/li&gt;
+&lt;li&gt;Terrabacteria group = 4.4780869&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Thus, it appears that there is considerable, phylum-dependent genome size variation ranging that ranges from 3.2 to 5.3 Mb.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;conclusion&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;While genome sizes may range over an order of magnitude and vary by phylum, the median 4.1 Mb size that I calculated from the refseq genomes is a useful approximation for prokaryotic genome size.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

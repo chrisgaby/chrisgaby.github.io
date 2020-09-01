@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.3.1">
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="John Christian Gaby">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="In this blogpost, I examine genome size among the 11,710 RefSeq representative prokaryotic genomes.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="chrisgaby.github.io/post/prokaryotic-genome-size/">
+
+  
+
+
+  
+
+  
+  
+  
+  <meta name="theme-color" content="#2962ff">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        
+      
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.2.0/leaflet.css" integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ==" crossorigin="anonymous">
+    
+
+    
+
+  
+
+  
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono&display=swap">
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/chrisgaby.github.io/css/academic.min.35387d828cf63a93f82a2d63a578781f.css">
+
+  
+
+  
+  
+  
+
+  
+
+  <link rel="manifest" href="/chrisgaby.github.io/site.webmanifest">
+  <link rel="icon" type="image/png" href="/chrisgaby.github.io/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/chrisgaby.github.io/img/icon-192.png">
+
+  <link rel="canonical" href="chrisgaby.github.io/post/prokaryotic-genome-size/">
+
+  
+  
+  
+  
+    
+    
+  
+  <meta property="twitter:card" content="summary">
+  
+  <meta property="og:site_name" content="John Christian Gaby, PhD">
+  <meta property="og:url" content="chrisgaby.github.io/post/prokaryotic-genome-size/">
+  <meta property="og:title" content="Prokaryotic Genome Size | John Christian Gaby, PhD">
+  <meta property="og:description" content="In this blogpost, I examine genome size among the 11,710 RefSeq representative prokaryotic genomes."><meta property="og:image" content="chrisgaby.github.io/img/icon-192.png">
+  <meta property="twitter:image" content="chrisgaby.github.io/img/icon-192.png"><meta property="og:locale" content="en-us">
+  
+  <meta property="article:published_time" content="2020-08-31T00:00:00&#43;00:00">
+  
+  <meta property="article:modified_time" content="2020-08-31T15:21:30&#43;02:00">
+  
+
+  
+
+
+  
+
+
+
+
+
+  <title>Prokaryotic Genome Size | John Christian Gaby, PhD</title>
+
+</head>
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0 compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+      <a class="navbar-brand" href="/chrisgaby.github.io/">John Christian Gaby, PhD</a>
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+    
+    <div class="collapse navbar-collapse" id="navbar">
+
+      
+      
+      <ul class="navbar-nav mr-auto">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/chrisgaby.github.io/#about"><span>About me</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/chrisgaby.github.io/#publications"><span>Publications</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/chrisgaby.github.io/#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/chrisgaby.github.io/files/cv.pdf"><span>CV</span></a>
+        </li>
+
+        
+        
+
+      
+      </ul>
+      <ul class="navbar-nav ml-auto">
+      
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+        </li>
+        
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+  <article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1 itemprop="name">Prokaryotic Genome Size</h1>
+
+  
+  <p class="page-subtitle">Calculation of summary statistics based upon the 11,710 RefSeq representative prokaryotic genomes</p>
+  
+
+  
+    
+
+
+
+<meta content="2020-08-31 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+<meta content="2020-08-31 15:21:30 &#43;0200 CEST" itemprop="dateModified">
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+
+
+  <span itemprop="author name" itemtype="http://schema.org/Person"><a href="chrisgaby.github.io/authors/john-christian-gaby/">John Christian Gaby</a></span>
+
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+          Last updated on
+      
+    
+    <time>Mon, Aug 31, 2020</time>
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    5 min read
+  </span>
+  
+
+  
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder"></i>
+    <a href="chrisgaby.github.io/categories/genome-calculations/">genome calculations</a></span>
+  
+
+  
+    
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=chrisgaby.github.io/post/prokaryotic-genome-size/&amp;text=Prokaryotic%20Genome%20Size" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=chrisgaby.github.io/post/prokaryotic-genome-size/&amp;t=Prokaryotic%20Genome%20Size" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Prokaryotic%20Genome%20Size&amp;body=chrisgaby.github.io/post/prokaryotic-genome-size/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=chrisgaby.github.io/post/prokaryotic-genome-size/&amp;title=Prokaryotic%20Genome%20Size" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://web.whatsapp.com/send?text=Prokaryotic%20Genome%20Size%20chrisgaby.github.io/post/prokaryotic-genome-size/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=chrisgaby.github.io/post/prokaryotic-genome-size/&amp;title=Prokaryotic%20Genome%20Size" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style" itemprop="articleBody">
+      
+
+
+<div id="introduction" class="section level2">
+<h2>Introduction</h2>
+<p>Prokaryotic genomes encompass a range of sizes whereby larger genomes may encode more genes that allow for the organism to respond to their environment and smaller, streamlined genomes may indicate adaptation to a less varying, host environment. I will use the table of RefSeq representative genomes downloaded from the <a href="https://www.ncbi.nlm.nih.gov/genome/browse#!/prokaryotes/">NCBI Prokaryotic Genomes</a> page to derive summary statistics and figures that describe the distribution of prokaryotic genome sizes.</p>
+</div>
+<div id="the-size-of-a-prokaryotic-genomes" class="section level2">
+<h2>The Size of a Prokaryotic Genomes</h2>
+<p>As an frame of reference, the familiar laboratory workhorse <em>Escherichia coli</em> K12 has a genome size of 4.64 Mb.</p>
+<div class="figure">
+<img src="/post/EcoliGenome.png" alt="The E coli K12 reference genome from NCBI prokaryotic genomes." />
+<p class="caption">The <em>E coli</em> K12 reference genome from NCBI prokaryotic genomes.</p>
+</div>
+<p>On August 31, 2020, I downloaded a list of the NCBI RefSeq Prokaryotic Genomes. The list included statistics such as genome length for each genome.</p>
+<div class="figure">
+<img src="/post/RefSeqGenomes.png" alt="The Criteria Selected to Obtain a List of NCBI Refseq Prokaryotic Genomes." />
+<p class="caption">The Criteria Selected to Obtain a List of NCBI Refseq Prokaryotic Genomes.</p>
+</div>
+<p>The list was downloaded as a csv file. Let’s import the csv file and calculate some statistics for prokaryotic genome size.</p>
+<pre class="r"><code>library(tidyverse)
+
+prokaryote.genomes.table &lt;- read_csv(file = &quot;prokaryotes.csv&quot;)
+
+head(prokaryote.genomes.table) </code></pre>
+<pre><code>## # A tibble: 6 x 16
+##   `#Organism Name` `Organism Group… Strain BioSample BioProject Assembly Level
+##   &lt;chr&gt;            &lt;chr&gt;            &lt;chr&gt;  &lt;chr&gt;     &lt;chr&gt;      &lt;chr&gt;    &lt;chr&gt;
+## 1 Pseudomonas flu… Bacteria;Proteo… DR397  SAMN1397… PRJNA6044… GCA_010… Comp…
+## 2 Xanthomonas cam… Bacteria;Proteo… MAFF1… SAMN1534… PRJNA6412… GCA_013… Comp…
+## 3 Yersinia pestis… Bacteria;Proteo… A1122  SAMN0260… PRJNA67155 GCA_000… Comp…
+## 4 Staphylococcus … Bacteria;Terrab… ATCC … SAMN1073… PRJNA5153… GCA_006… Comp…
+## 5 Lactococcus lac… Bacteria;Terrab… WFLU12 SAMN0821… PRJNA4231… GCA_002… Cont…
+## 6 Bacillus cereus  Bacteria;Terrab… FDAAR… SAMN1105… PRJNA2312… GCA_013… Comp…
+## # … with 9 more variables: `Size(Mb)` &lt;dbl&gt;, `GC%` &lt;dbl&gt;, Replicons &lt;chr&gt;,
+## #   WGS &lt;chr&gt;, Scaffolds &lt;dbl&gt;, CDS &lt;dbl&gt;, `Release Date` &lt;dttm&gt;, `GenBank
+## #   FTP` &lt;chr&gt;, `RefSeq FTP` &lt;chr&gt;</code></pre>
+<p>Let’s calculate some statistics for genome size:</p>
+<ol style="list-style-type: decimal">
+<li>n = 11710</li>
+<li>mean = 4.371931</li>
+<li>minimum = 0.185014</li>
+<li>maximum = 16.0407</li>
+<li>median = 4.050955</li>
+</ol>
+<p>There is well over an order of magnitude variation in the size of prokaryotic genomes, ranging from 0.185014 to 16.0407. The largest genome among the refseq genomes belongs to <em>Minicystis rosea</em> whereas the smallest genome belongs to <em>Metaprevotella massiliensis</em>. It is notable that the smallest genome is classified as a Scaffold and thus may not be accurate.</p>
+<p>Let’s also take a look at the distribution:</p>
+<pre class="r"><code>library(ggplot2)
+
+qplot(data = prokaryote.genomes.table, 
+      x = `Size(Mb)`, 
+      binwidth = 1)</code></pre>
+<p><img src="/post/2020-08-31-prokaryotic-genome-size_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p>Let’s see how many genomes are available for each phylum in this dataset:</p>
+<pre class="r"><code>library(tidyr)
+
+# Split the Organism Groups column into new columns named according to their respective taxonomy level
+prokaryote.genomes.table.split &lt;- separate(data=prokaryote.genomes.table, 
+                                           col = `Organism Groups`, 
+                                           sep = &quot;;&quot;, 
+                                           into = c(&quot;Domain&quot;, &quot;Phylum&quot;, &quot;Class&quot;))
+
+summary(factor(prokaryote.genomes.table.split$Phylum))</code></pre>
+<pre><code>##                   Acidobacteria                       Aquificae 
+##                              29                              21 
+##         Bacteria incertae sedis  Caldiserica/Cryosericota group 
+##                               4                               1 
+##                 Calditrichaeota                  Chrysiogenetes 
+##                               1                               2 
+##            Coprothermobacterota                 Deferribacteres 
+##                               2                               8 
+##                     Dictyoglomi                   Elusimicrobia 
+##                               2                               2 
+##                   Euryarchaeota                       FCB group 
+##                             346                            1329 
+##                    Fusobacteria Nitrospinae/Tectomicrobia group 
+##                              38                               1 
+##                     Nitrospirae                  Proteobacteria 
+##                              10                            4592 
+##                       PVC group                    Spirochaetes 
+##                              98                             141 
+##                   Synergistetes                      TACK group 
+##                              19                              62 
+##             Terrabacteria group           Thermodesulfobacteria 
+##                            4950                              12 
+##                     Thermotogae 
+##                              40</code></pre>
+<p>It looks like there are only a few phyla that have enough genomes to make a reliable histogram, so lets create a new dataset with only those phyla having &gt; 90 genomes.</p>
+<p>Let’s break the distribution down into separate density plots for each of the 6 phyla with over 90 genomes:</p>
+<pre class="r"><code>library(ggplot2)
+
+phyla.subset.names &lt;- names(which(summary(factor(prokaryote.genomes.table.split$Phylum)) &gt; 90))
+prokaryote.genomes.table.split.reduced &lt;- prokaryote.genomes.table.split[prokaryote.genomes.table.split$Phylum == phyla.subset.names[1] | 
+                                 prokaryote.genomes.table.split$Phylum == phyla.subset.names[2] | 
+                                 prokaryote.genomes.table.split$Phylum == phyla.subset.names[3] | 
+                                 prokaryote.genomes.table.split$Phylum == phyla.subset.names[4] | 
+                                 prokaryote.genomes.table.split$Phylum == phyla.subset.names[5] | 
+                                 prokaryote.genomes.table.split$Phylum == phyla.subset.names[6],]
+
+qplot(data=prokaryote.genomes.table.split.reduced, 
+      x = `Size(Mb)`, 
+      geom = &quot;density&quot;, 
+      color = Phylum, 
+      fill = Phylum, 
+      alpha = I(0.2))</code></pre>
+<p><img src="/post/2020-08-31-prokaryotic-genome-size_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p>We can see that there is considerable variation in the genome size distribution for each phylum. Let’s get a clearer view by using facets to separate out each phylum:</p>
+<pre class="r"><code>library(ggplot2)
+
+qplot(data=prokaryote.genomes.table.split.reduced, 
+      x = `Size(Mb)`, 
+      geom = &quot;density&quot;, 
+      color = Phylum, 
+      fill = Phylum, 
+      facets = Phylum ~ .)</code></pre>
+<p><img src="/post/2020-08-31-prokaryotic-genome-size_files/figure-html/unnamed-chunk-5-1.png" width="960" style="display: block; margin: auto;" /></p>
+<p>Based upon the separated density plots, it looks as if the genome size varies by phylum. Let’s see how much it varies by phylum:</p>
+<ol style="list-style-type: decimal">
+<li>Euryarchaeota = 3.1622121</li>
+<li>FCB group = 4.4686722</li>
+<li>Proteobacteria = 4.4354607</li>
+<li>PVC group = 5.271497</li>
+<li>Spirochaetes = 3.3388135</li>
+<li>Terrabacteria group = 4.4780869</li>
+</ol>
+<p>Thus, it appears that phylum-dependent genome size variation ranges from 3.2 to 5.3 Mb.</p>
+</div>
+<div id="genome-size-positively-correlates-with-number-of-coding-sequences" class="section level2">
+<h2>Genome Size Positively Correlates with Number of Coding Sequences</h2>
+<pre class="r"><code>library(ggplot2)
+
+qplot(data = prokaryote.genomes.table.split, 
+      x = `Size(Mb)`, 
+      y = CDS, 
+      color = Domain, 
+      alpha = I(0.2))</code></pre>
+<p><img src="/post/2020-08-31-prokaryotic-genome-size_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p>Genome size is strongly and positively correlated with the number of Coding Sequences (CDS) in the genome; put another way, larger genomes have more genes. There are outliers, though, and while those with zero CDS values may be attributable to missing CDS annotation, those with higher than expected CDS should be further explored. Archaea appear to follow a trend similar to Bacteria.</p>
+<p>Let’s check to see if the outliers are associated with a single finishing level:</p>
+<pre class="r"><code>library(ggplot2)
+
+qplot(data = prokaryote.genomes.table.split, 
+      x = `Size(Mb)`, 
+      y = CDS, 
+      color = Level, 
+      alpha = I(0.4))</code></pre>
+<p><img src="/post/2020-08-31-prokaryotic-genome-size_files/figure-html/unnamed-chunk-7-1.png" width="672" /> It appears that the outliers with zero CDS are mixed, but most of those with abnormally high CDS for their genome size are labeled as “Chromosome”. In further work, the taxonomic identity of these outliers may be explored.</p>
+</div>
+<div id="conclusion" class="section level2">
+<h2>Conclusion</h2>
+<p>The genome sizes in this set of 11710 RefSeq representative prokaryotes vary by phylum and span nearly two orders of magnitude from the smallest at 0.185014 Mb to the largest at 16.0407 Mb. The median genome size was determined to be 4.050955 megabases and is a useful approximation that may be used to estimate, for instance, the number of genome equivalents in a given quantity of DNA, or in determining the number of genome equivalents required by a sequencing library preparation, or in determining the number of genome equivalents in the output of a DNA sequencing run.</p>
+</div>
+
+    </div>
+
+    
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="chrisgaby.github.io/tags/genomics/">genomics</a>
+  
+  <a class="badge badge-light" href="chrisgaby.github.io/tags/genome-size/">genome size</a>
+  
+  <a class="badge badge-light" href="chrisgaby.github.io/tags/refseq/">refseq</a>
+  
+  <a class="badge badge-light" href="chrisgaby.github.io/tags/cds/">CDS</a>
+  
+</div>
+
+
+
+    
+      
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  
+
+
+
+
+
+  
+  
+  
+  
+  <div class="media author-card" itemscope itemtype="http://schema.org/Person">
+    
+
+    <div class="media-body">
+      <h5 class="card-title" itemprop="name"><a href="chrisgaby.github.io/authors/john-christian-gaby/"></a></h5>
+      
+      
+      <ul class="network-icon" aria-hidden="true">
+        
+      </ul>
+    </div>
+  </div>
+
+
+
+      
+      
+    
+
+    
+
+    
+
+
+  </div>
+</article>
+
+      
+
+    
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js" integrity="sha256-aYTdUrn6Ow1DDgh5JTc3aDGnnju48y/1c8s1dgkYPQ8=" crossorigin="anonymous"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/r.min.js"></script>
+        
+      
+
+      
+      
+    
+
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.2.0/leaflet.js" integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log==" crossorigin="anonymous"></script>
+    
+
+    
+    
+    
+
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script>
+      const search_index_filename = "/chrisgaby.github.io/index.json";
+      const i18n = {
+        'placeholder': "Search...",
+        'results': "results found",
+        'no_results': "No results found"
+      };
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/chrisgaby.github.io/js/academic.min.9881d84a7dbd704179a08d7d1d079225.js"></script>
+
+    
+
+
+
+
+
+
+  
+  <div class="container">
+    <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" id="back_to_top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+  </div>
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
