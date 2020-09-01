@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Radziah Wahid on John Christian Gaby, PhD</title>
-    <link>chrisgaby.github.io/authors/radziah-wahid/</link>
-    <description>Recent content in Radziah Wahid on John Christian Gaby, PhD</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
-    <language>en-us</language>
-    <lastBuildDate>Tue, 01 Jan 2019 00:00:00 +0000</lastBuildDate>
-    
-	    <atom:link href="chrisgaby.github.io/authors/radziah-wahid/index.xml" rel="self" type="application/rss+xml" />
-    
+    <title>Radziah Wahid | John Christian Gaby, PhD</title>
+    <link>https://chrisgaby.github.io/authors/radziah-wahid/</link>
+      <atom:link href="https://chrisgaby.github.io/authors/radziah-wahid/index.xml" rel="self" type="application/rss+xml" />
+    <description>Radziah Wahid</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 01 Jan 2019 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://chrisgaby.github.io/img/icon-192.png</url>
+      <title>Radziah Wahid</title>
+      <link>https://chrisgaby.github.io/authors/radziah-wahid/</link>
+    </image>
     
     <item>
       <title>Effects of H2 : CO2 ratio and H2 supply fluctuation on methane content and microbial community composition during in-situ biological biogas upgrading</title>
-      <link>chrisgaby.github.io/publication/wahid-2019/</link>
+      <link>https://chrisgaby.github.io/publication/wahid-2019/</link>
       <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
-      
-      <guid>chrisgaby.github.io/publication/wahid-2019/</guid>
+      <guid>https://chrisgaby.github.io/publication/wahid-2019/</guid>
       <description></description>
     </item>
     

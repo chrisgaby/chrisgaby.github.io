@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Patrick Heritier-Robbins on John Christian Gaby, PhD</title>
-    <link>chrisgaby.github.io/authors/patrick-heritier-robbins/</link>
-    <description>Recent content in Patrick Heritier-Robbins on John Christian Gaby, PhD</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
-    <language>en-us</language>
-    <lastBuildDate>Tue, 01 Jan 2019 00:00:00 +0000</lastBuildDate>
-    
-	    <atom:link href="chrisgaby.github.io/authors/patrick-heritier-robbins/index.xml" rel="self" type="application/rss+xml" />
-    
+    <title>Patrick Heritier-Robbins | John Christian Gaby, PhD</title>
+    <link>https://chrisgaby.github.io/authors/patrick-heritier-robbins/</link>
+      <atom:link href="https://chrisgaby.github.io/authors/patrick-heritier-robbins/index.xml" rel="self" type="application/rss+xml" />
+    <description>Patrick Heritier-Robbins</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 01 Jan 2019 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://chrisgaby.github.io/img/icon-192.png</url>
+      <title>Patrick Heritier-Robbins</title>
+      <link>https://chrisgaby.github.io/authors/patrick-heritier-robbins/</link>
+    </image>
     
     <item>
       <title>“Candidatus Macondimonas diazotrophica”, a novel gammaproteobacterial genus dominating crude-oil-contaminated coastal sediments</title>
-      <link>chrisgaby.github.io/publication/karthikeyan-2019/</link>
+      <link>https://chrisgaby.github.io/publication/karthikeyan-2019/</link>
       <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
-      
-      <guid>chrisgaby.github.io/publication/karthikeyan-2019/</guid>
+      <guid>https://chrisgaby.github.io/publication/karthikeyan-2019/</guid>
       <description></description>
     </item>
     

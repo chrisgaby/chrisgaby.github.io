@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Augusto Valderrama-Aguirre on John Christian Gaby, PhD</title>
-    <link>chrisgaby.github.io/authors/augusto-valderrama-aguirre/</link>
-    <description>Recent content in Augusto Valderrama-Aguirre on John Christian Gaby, PhD</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
-    <language>en-us</language>
-    <lastBuildDate>Mon, 01 Jan 2018 00:00:00 +0000</lastBuildDate>
-    
-	    <atom:link href="chrisgaby.github.io/authors/augusto-valderrama-aguirre/index.xml" rel="self" type="application/rss+xml" />
-    
+    <title>Augusto Valderrama-Aguirre | John Christian Gaby, PhD</title>
+    <link>https://chrisgaby.github.io/authors/augusto-valderrama-aguirre/</link>
+      <atom:link href="https://chrisgaby.github.io/authors/augusto-valderrama-aguirre/index.xml" rel="self" type="application/rss+xml" />
+    <description>Augusto Valderrama-Aguirre</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 01 Jan 2018 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://chrisgaby.github.io/img/icon-192.png</url>
+      <title>Augusto Valderrama-Aguirre</title>
+      <link>https://chrisgaby.github.io/authors/augusto-valderrama-aguirre/</link>
+    </image>
     
     <item>
       <title>Diazotroph community characterization via a highthroughput nifH amplicon sequencing and analysis pipeline</title>
-      <link>chrisgaby.github.io/publication/gaby-2018/</link>
+      <link>https://chrisgaby.github.io/publication/gaby-2018/</link>
       <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>chrisgaby.github.io/publication/gaby-2018/</guid>
+      <guid>https://chrisgaby.github.io/publication/gaby-2018/</guid>
       <description></description>
     </item>
     

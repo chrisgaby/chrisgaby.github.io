@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Genetic on John Christian Gaby, PhD</title>
-    <link>chrisgaby.github.io/tags/genetic/</link>
-    <description>Recent content in Genetic on John Christian Gaby, PhD</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
-    <language>en-us</language>
-    <lastBuildDate>Fri, 01 Jul 2011 00:00:00 +0000</lastBuildDate>
-    
-	    <atom:link href="chrisgaby.github.io/tags/genetic/index.xml" rel="self" type="application/rss+xml" />
-    
+    <title>Genetic | John Christian Gaby, PhD</title>
+    <link>https://chrisgaby.github.io/tags/genetic/</link>
+      <atom:link href="https://chrisgaby.github.io/tags/genetic/index.xml" rel="self" type="application/rss+xml" />
+    <description>Genetic</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 01 Jul 2011 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://chrisgaby.github.io/img/icon-192.png</url>
+      <title>Genetic</title>
+      <link>https://chrisgaby.github.io/tags/genetic/</link>
+    </image>
     
     <item>
       <title>A global census of nitrogenase diversity.</title>
-      <link>chrisgaby.github.io/publication/gaby-2011/</link>
+      <link>https://chrisgaby.github.io/publication/gaby-2011/</link>
       <pubDate>Fri, 01 Jul 2011 00:00:00 +0000</pubDate>
-      
-      <guid>chrisgaby.github.io/publication/gaby-2011/</guid>
+      <guid>https://chrisgaby.github.io/publication/gaby-2011/</guid>
       <description></description>
     </item>
     

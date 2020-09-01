@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Janet K. Hatt on John Christian Gaby, PhD</title>
-    <link>chrisgaby.github.io/authors/janet-k.-hatt/</link>
-    <description>Recent content in Janet K. Hatt on John Christian Gaby, PhD</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
-    <language>en-us</language>
-    <lastBuildDate>Tue, 01 Jan 2019 00:00:00 +0000</lastBuildDate>
-    
-	    <atom:link href="chrisgaby.github.io/authors/janet-k.-hatt/index.xml" rel="self" type="application/rss+xml" />
-    
+    <title>Janet K. Hatt | John Christian Gaby, PhD</title>
+    <link>https://chrisgaby.github.io/authors/janet-k.-hatt/</link>
+      <atom:link href="https://chrisgaby.github.io/authors/janet-k.-hatt/index.xml" rel="self" type="application/rss+xml" />
+    <description>Janet K. Hatt</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 01 Jan 2019 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://chrisgaby.github.io/img/icon-192.png</url>
+      <title>Janet K. Hatt</title>
+      <link>https://chrisgaby.github.io/authors/janet-k.-hatt/</link>
+    </image>
     
     <item>
       <title>“Candidatus Macondimonas diazotrophica”, a novel gammaproteobacterial genus dominating crude-oil-contaminated coastal sediments</title>
-      <link>chrisgaby.github.io/publication/karthikeyan-2019/</link>
+      <link>https://chrisgaby.github.io/publication/karthikeyan-2019/</link>
       <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
-      
-      <guid>chrisgaby.github.io/publication/karthikeyan-2019/</guid>
+      <guid>https://chrisgaby.github.io/publication/karthikeyan-2019/</guid>
       <description></description>
     </item>
     

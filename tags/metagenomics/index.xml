@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Metagenomics on John Christian Gaby, PhD</title>
-    <link>chrisgaby.github.io/tags/metagenomics/</link>
-    <description>Recent content in Metagenomics on John Christian Gaby, PhD</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
-    <language>en-us</language>
-    <lastBuildDate>Mon, 01 Jan 2018 00:00:00 +0000</lastBuildDate>
-    
-	    <atom:link href="chrisgaby.github.io/tags/metagenomics/index.xml" rel="self" type="application/rss+xml" />
-    
+    <title>Metagenomics | John Christian Gaby, PhD</title>
+    <link>https://chrisgaby.github.io/tags/metagenomics/</link>
+      <atom:link href="https://chrisgaby.github.io/tags/metagenomics/index.xml" rel="self" type="application/rss+xml" />
+    <description>Metagenomics</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 01 Jan 2018 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://chrisgaby.github.io/img/icon-192.png</url>
+      <title>Metagenomics</title>
+      <link>https://chrisgaby.github.io/tags/metagenomics/</link>
+    </image>
     
     <item>
       <title>Diazotroph community characterization via a highthroughput nifH amplicon sequencing and analysis pipeline</title>
-      <link>chrisgaby.github.io/publication/gaby-2018/</link>
+      <link>https://chrisgaby.github.io/publication/gaby-2018/</link>
       <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>chrisgaby.github.io/publication/gaby-2018/</guid>
+      <guid>https://chrisgaby.github.io/publication/gaby-2018/</guid>
       <description></description>
     </item>
     

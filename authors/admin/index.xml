@@ -2,20 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>John Christian Gaby, PhD</title>
-    <link>chrisgaby.github.io/authors/admin/</link>
-    <description>Recent content on John Christian Gaby, PhD</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
-    <language>en-us</language>
-    
-	    <atom:link href="chrisgaby.github.io/authors/admin/index.xml" rel="self" type="application/rss+xml" />
-    
+    <link>https://chrisgaby.github.io/authors/admin/</link>
+      <atom:link href="https://chrisgaby.github.io/authors/admin/index.xml" rel="self" type="application/rss+xml" />
+    <description>John Christian Gaby, PhD</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language>
+    <image>
+      <url>https://chrisgaby.github.io/img/icon-192.png</url>
+      <title>John Christian Gaby, PhD</title>
+      <link>https://chrisgaby.github.io/authors/admin/</link>
+    </image>
     
     <item>
       <title></title>
-      <link>chrisgaby.github.io/authors/admin/</link>
+      <link>https://chrisgaby.github.io/authors/admin/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>chrisgaby.github.io/authors/admin/</guid>
+      <guid>https://chrisgaby.github.io/authors/admin/</guid>
       <description>&lt;p&gt;John Christian Gaby is a researcher of microbial ecology at The Norwegian University of Life Sciences (NMBU) in Ås, Norway where he is integrated within the Bioinformatics and Applied Statistics group. His research interests include microbial ecology, biological nitrogen fixation, metagenomics, and bioinformatics. He contributes to projects on anaerobic digestion and biogas production, intestinal microbiomes, and soil microbial ecology.&lt;/p&gt;
 </description>
     </item>

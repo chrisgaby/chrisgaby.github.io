@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Amplification bias on John Christian Gaby, PhD</title>
-    <link>chrisgaby.github.io/tags/amplification-bias/</link>
-    <description>Recent content in Amplification bias on John Christian Gaby, PhD</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0000</lastBuildDate>
-    
-	    <atom:link href="chrisgaby.github.io/tags/amplification-bias/index.xml" rel="self" type="application/rss+xml" />
-    
+    <title>Amplification bias | John Christian Gaby, PhD</title>
+    <link>https://chrisgaby.github.io/tags/amplification-bias/</link>
+      <atom:link href="https://chrisgaby.github.io/tags/amplification-bias/index.xml" rel="self" type="application/rss+xml" />
+    <description>Amplification bias</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://chrisgaby.github.io/img/icon-192.png</url>
+      <title>Amplification bias</title>
+      <link>https://chrisgaby.github.io/tags/amplification-bias/</link>
+    </image>
     
     <item>
       <title>The Use of Degenerate Primers in qPCR Analysis of Functional Genes Can Cause Dramatic Quantification Bias as Revealed by Investigation of nifH Primer Performance</title>
-      <link>chrisgaby.github.io/publication/gaby-2017-a/</link>
+      <link>https://chrisgaby.github.io/publication/gaby-2017-a/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
-      
-      <guid>chrisgaby.github.io/publication/gaby-2017-a/</guid>
+      <guid>https://chrisgaby.github.io/publication/gaby-2017-a/</guid>
       <description></description>
     </item>
     

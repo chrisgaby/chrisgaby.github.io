@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>John Christian Gaby, PhD</title>
-    <link>chrisgaby.github.io/</link>
-    <description>Recent content on John Christian Gaby, PhD</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
-    <language>en-us</language>
-    <lastBuildDate>Mon, 31 Aug 2020 00:00:00 +0000</lastBuildDate>
-    
-	    <atom:link href="chrisgaby.github.io/index.xml" rel="self" type="application/rss+xml" />
-    
+    <link>https://chrisgaby.github.io/</link>
+      <atom:link href="https://chrisgaby.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <description>John Christian Gaby, PhD</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 31 Aug 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://chrisgaby.github.io/img/icon-192.png</url>
+      <title>John Christian Gaby, PhD</title>
+      <link>https://chrisgaby.github.io/</link>
+    </image>
     
     <item>
       <title>Prokaryotic Genome Size</title>
-      <link>chrisgaby.github.io/post/prokaryotic-genome-size/</link>
+      <link>https://chrisgaby.github.io/post/prokaryotic-genome-size/</link>
       <pubDate>Mon, 31 Aug 2020 00:00:00 +0000</pubDate>
-      
-      <guid>chrisgaby.github.io/post/prokaryotic-genome-size/</guid>
+      <guid>https://chrisgaby.github.io/post/prokaryotic-genome-size/</guid>
       <description>
 
 
@@ -28,12 +28,12 @@
 &lt;h2&gt;The Size of a Prokaryotic Genomes&lt;/h2&gt;
 &lt;p&gt;As an frame of reference, the familiar laboratory workhorse &lt;em&gt;Escherichia coli&lt;/em&gt; K12 has a genome size of 4.64 Mb.&lt;/p&gt;
 &lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;chrisgaby.github.io/post/EcoliGenome.png&#34; alt=&#34;The E coli K12 reference genome from NCBI prokaryotic genomes.&#34; /&gt;
+&lt;img src=&#34;https://chrisgaby.github.io/post/EcoliGenome.png&#34; alt=&#34;The E coli K12 reference genome from NCBI prokaryotic genomes.&#34; /&gt;
 &lt;p class=&#34;caption&#34;&gt;The &lt;em&gt;E coli&lt;/em&gt; K12 reference genome from NCBI prokaryotic genomes.&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;On August 31, 2020, I downloaded a list of the NCBI RefSeq Prokaryotic Genomes. The list included statistics such as genome length for each genome.&lt;/p&gt;
 &lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;chrisgaby.github.io/post/RefSeqGenomes.png&#34; alt=&#34;The Criteria Selected to Obtain a List of NCBI Refseq Prokaryotic Genomes.&#34; /&gt;
+&lt;img src=&#34;https://chrisgaby.github.io/post/RefSeqGenomes.png&#34; alt=&#34;The Criteria Selected to Obtain a List of NCBI Refseq Prokaryotic Genomes.&#34; /&gt;
 &lt;p class=&#34;caption&#34;&gt;The Criteria Selected to Obtain a List of NCBI Refseq Prokaryotic Genomes.&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;The list was downloaded as a csv file. Let’s import the csv file and calculate some statistics for prokaryotic genome size.&lt;/p&gt;
@@ -69,7 +69,7 @@ head(prokaryote.genomes.table) &lt;/code&gt;&lt;/pre&gt;
 qplot(data = prokaryote.genomes.table, 
       x = `Size(Mb)`, 
       binwidth = 1)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;chrisgaby.github.io/post/2020-08-31-prokaryotic-genome-size_files/figure-html/unnamed-chunk-2-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://chrisgaby.github.io/post/2020-08-31-prokaryotic-genome-size_files/figure-html/unnamed-chunk-2-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Let’s see how many genomes are available for each phylum in this dataset:&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(tidyr)
 
@@ -122,7 +122,7 @@ qplot(data=prokaryote.genomes.table.split.reduced,
       color = Phylum, 
       fill = Phylum, 
       alpha = I(0.2))&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;chrisgaby.github.io/post/2020-08-31-prokaryotic-genome-size_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://chrisgaby.github.io/post/2020-08-31-prokaryotic-genome-size_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;We can see that there is considerable variation in the genome size distribution for each phylum. Let’s get a clearer view by using facets to separate out each phylum:&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(ggplot2)
 
@@ -132,7 +132,7 @@ qplot(data=prokaryote.genomes.table.split.reduced,
       color = Phylum, 
       fill = Phylum, 
       facets = Phylum ~ .)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;chrisgaby.github.io/post/2020-08-31-prokaryotic-genome-size_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;960&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://chrisgaby.github.io/post/2020-08-31-prokaryotic-genome-size_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;960&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Based upon the separated density plots, it looks as if the genome size varies by phylum. Let’s see how much it varies by phylum:&lt;/p&gt;
 &lt;ol style=&#34;list-style-type: decimal&#34;&gt;
 &lt;li&gt;Euryarchaeota = 3.1622121&lt;/li&gt;
@@ -153,7 +153,7 @@ qplot(data = prokaryote.genomes.table.split,
       y = CDS, 
       color = Domain, 
       alpha = I(0.2))&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;chrisgaby.github.io/post/2020-08-31-prokaryotic-genome-size_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://chrisgaby.github.io/post/2020-08-31-prokaryotic-genome-size_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Genome size is strongly and positively correlated with the number of Coding Sequences (CDS) in the genome; put another way, larger genomes have more genes. There are outliers, though, and while those with zero CDS values may be attributable to missing CDS annotation, those with higher than expected CDS should be further explored. Archaea appear to follow a trend similar to Bacteria.&lt;/p&gt;
 &lt;p&gt;Let’s check to see if the outliers are associated with a single finishing level:&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(ggplot2)
@@ -163,7 +163,7 @@ qplot(data = prokaryote.genomes.table.split,
       y = CDS, 
       color = Level, 
       alpha = I(0.4))&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;chrisgaby.github.io/post/2020-08-31-prokaryotic-genome-size_files/figure-html/unnamed-chunk-7-1.png&#34; width=&#34;672&#34; /&gt; It appears that the outliers with zero CDS are mixed, but most of those with abnormally high CDS for their genome size are labeled as “Chromosome”. In further work, the taxonomic identity of these outliers may be explored.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://chrisgaby.github.io/post/2020-08-31-prokaryotic-genome-size_files/figure-html/unnamed-chunk-7-1.png&#34; width=&#34;672&#34; /&gt; It appears that the outliers with zero CDS are mixed, but most of those with abnormally high CDS for their genome size are labeled as “Chromosome”. In further work, the taxonomic identity of these outliers may be explored.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;conclusion&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Conclusion&lt;/h2&gt;
@@ -174,127 +174,113 @@ qplot(data = prokaryote.genomes.table.split,
     
     <item>
       <title>Effects of H2 : CO2 ratio and H2 supply fluctuation on methane content and microbial community composition during in-situ biological biogas upgrading</title>
-      <link>chrisgaby.github.io/publication/wahid-2019/</link>
+      <link>https://chrisgaby.github.io/publication/wahid-2019/</link>
       <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
-      
-      <guid>chrisgaby.github.io/publication/wahid-2019/</guid>
+      <guid>https://chrisgaby.github.io/publication/wahid-2019/</guid>
       <description></description>
     </item>
     
     <item>
       <title>“Candidatus Macondimonas diazotrophica”, a novel gammaproteobacterial genus dominating crude-oil-contaminated coastal sediments</title>
-      <link>chrisgaby.github.io/publication/karthikeyan-2019/</link>
+      <link>https://chrisgaby.github.io/publication/karthikeyan-2019/</link>
       <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
-      
-      <guid>chrisgaby.github.io/publication/karthikeyan-2019/</guid>
+      <guid>https://chrisgaby.github.io/publication/karthikeyan-2019/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Characterization of the fecal and mucosa-associated microbiota in dogs with colorectal epithelial tumors</title>
-      <link>chrisgaby.github.io/publication/herstad-2018/</link>
+      <link>https://chrisgaby.github.io/publication/herstad-2018/</link>
       <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>chrisgaby.github.io/publication/herstad-2018/</guid>
+      <guid>https://chrisgaby.github.io/publication/herstad-2018/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Diazotroph community characterization via a highthroughput nifH amplicon sequencing and analysis pipeline</title>
-      <link>chrisgaby.github.io/publication/gaby-2018/</link>
+      <link>https://chrisgaby.github.io/publication/gaby-2018/</link>
       <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>chrisgaby.github.io/publication/gaby-2018/</guid>
+      <guid>https://chrisgaby.github.io/publication/gaby-2018/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Feeding frequency influences process performance and microbial community composition in anaerobic digesters treating steam exploded food waste</title>
-      <link>chrisgaby.github.io/publication/svensson-2018/</link>
+      <link>https://chrisgaby.github.io/publication/svensson-2018/</link>
       <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>chrisgaby.github.io/publication/svensson-2018/</guid>
+      <guid>https://chrisgaby.github.io/publication/svensson-2018/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Microbial community characterization during anaerobic digestion of Scenedesmus spp. under mesophilic and thermophilic conditions</title>
-      <link>chrisgaby.github.io/publication/greses-2017/</link>
+      <link>https://chrisgaby.github.io/publication/greses-2017/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
-      
-      <guid>chrisgaby.github.io/publication/greses-2017/</guid>
+      <guid>https://chrisgaby.github.io/publication/greses-2017/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Molybdenum-based diazotrophy in a Sphagnum peatland in northern Minnesota</title>
-      <link>chrisgaby.github.io/publication/warren-2017/</link>
+      <link>https://chrisgaby.github.io/publication/warren-2017/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
-      
-      <guid>chrisgaby.github.io/publication/warren-2017/</guid>
+      <guid>https://chrisgaby.github.io/publication/warren-2017/</guid>
       <description></description>
     </item>
     
     <item>
       <title>The Use of Degenerate Primers in qPCR Analysis of Functional Genes Can Cause Dramatic Quantification Bias as Revealed by Investigation of nifH Primer Performance</title>
-      <link>chrisgaby.github.io/publication/gaby-2017-a/</link>
+      <link>https://chrisgaby.github.io/publication/gaby-2017-a/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
-      
-      <guid>chrisgaby.github.io/publication/gaby-2017-a/</guid>
+      <guid>https://chrisgaby.github.io/publication/gaby-2017-a/</guid>
       <description></description>
     </item>
     
     <item>
       <title>The effect of temperature and retention time on methane production and microbial community composition in staged anaerobic digesters fed with food waste</title>
-      <link>chrisgaby.github.io/publication/gaby-2017/</link>
+      <link>https://chrisgaby.github.io/publication/gaby-2017/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
-      
-      <guid>chrisgaby.github.io/publication/gaby-2017/</guid>
+      <guid>https://chrisgaby.github.io/publication/gaby-2017/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Assessment of Nitrogenase Diversity in the Environment</title>
-      <link>chrisgaby.github.io/publication/gaby-2015/</link>
+      <link>https://chrisgaby.github.io/publication/gaby-2015/</link>
       <pubDate>Thu, 01 Jan 2015 00:00:00 +0000</pubDate>
-      
-      <guid>chrisgaby.github.io/publication/gaby-2015/</guid>
+      <guid>https://chrisgaby.github.io/publication/gaby-2015/</guid>
       <description></description>
     </item>
     
     <item>
       <title>A comprehensive aligned nifH gene database: A multipurpose tool for studies of nitrogen-fixing bacteria.</title>
-      <link>chrisgaby.github.io/publication/gaby-2014/</link>
+      <link>https://chrisgaby.github.io/publication/gaby-2014/</link>
       <pubDate>Wed, 01 Jan 2014 00:00:00 +0000</pubDate>
-      
-      <guid>chrisgaby.github.io/publication/gaby-2014/</guid>
+      <guid>https://chrisgaby.github.io/publication/gaby-2014/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Correction : A comprehensive evaluation of PCR primers to amplify the nifH gene of nitrogenase</title>
-      <link>chrisgaby.github.io/publication/the-plosone-staff-2014/</link>
+      <link>https://chrisgaby.github.io/publication/the-plosone-staff-2014/</link>
       <pubDate>Wed, 01 Jan 2014 00:00:00 +0000</pubDate>
-      
-      <guid>chrisgaby.github.io/publication/the-plosone-staff-2014/</guid>
+      <guid>https://chrisgaby.github.io/publication/the-plosone-staff-2014/</guid>
       <description></description>
     </item>
     
     <item>
       <title>A comprehensive evaluation of PCR primers to amplify the textlessitextgreaternifHtextless/itextgreater gene of nitrogenase.</title>
-      <link>chrisgaby.github.io/publication/gaby-2012/</link>
+      <link>https://chrisgaby.github.io/publication/gaby-2012/</link>
       <pubDate>Sun, 01 Jan 2012 00:00:00 +0000</pubDate>
-      
-      <guid>chrisgaby.github.io/publication/gaby-2012/</guid>
+      <guid>https://chrisgaby.github.io/publication/gaby-2012/</guid>
       <description></description>
     </item>
     
     <item>
       <title>A global census of nitrogenase diversity.</title>
-      <link>chrisgaby.github.io/publication/gaby-2011/</link>
+      <link>https://chrisgaby.github.io/publication/gaby-2011/</link>
       <pubDate>Fri, 01 Jul 2011 00:00:00 +0000</pubDate>
-      
-      <guid>chrisgaby.github.io/publication/gaby-2011/</guid>
+      <guid>https://chrisgaby.github.io/publication/gaby-2011/</guid>
       <description></description>
     </item>
     
