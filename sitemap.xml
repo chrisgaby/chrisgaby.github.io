@@ -244,12 +244,6 @@
   </url>
   
   <url>
-    <loc>https://chrisgaby.github.io/tags/biogas/</loc>
-    <lastmod>2018-01-01T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://chrisgaby.github.io/tags/bioinformatics/</loc>
     <lastmod>2018-01-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -374,6 +368,12 @@
   
   <url>
     <loc>https://chrisgaby.github.io/tags/taxonomy/</loc>
+    <lastmod>2018-01-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chrisgaby.github.io/tags/biogas/</loc>
     <lastmod>2018-01-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -515,6 +515,12 @@
   </url>
   
   <url>
+    <loc>https://chrisgaby.github.io/tags/nifh/</loc>
+    <lastmod>2017-01-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://chrisgaby.github.io/tags/nitrogen-cycle-enzymes/</loc>
     <lastmod>2017-01-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -586,12 +592,6 @@
   
   <url>
     <loc>https://chrisgaby.github.io/tags/microbial-community-analysis/</loc>
-    <lastmod>2017-01-01T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://chrisgaby.github.io/tags/nifh/</loc>
     <lastmod>2017-01-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>

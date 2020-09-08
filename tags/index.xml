@@ -101,14 +101,6 @@
     </item>
     
     <item>
-      <title>Biogas</title>
-      <link>https://chrisgaby.github.io/tags/biogas/</link>
-      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
-      <guid>https://chrisgaby.github.io/tags/biogas/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Bioinformatics</title>
       <link>https://chrisgaby.github.io/tags/bioinformatics/</link>
       <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
@@ -177,6 +169,14 @@
       <link>https://chrisgaby.github.io/tags/taxonomy/</link>
       <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
       <guid>https://chrisgaby.github.io/tags/taxonomy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>biogas</title>
+      <link>https://chrisgaby.github.io/tags/biogas/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>https://chrisgaby.github.io/tags/biogas/</guid>
       <description></description>
     </item>
     
@@ -253,6 +253,14 @@
     </item>
     
     <item>
+      <title>NifH</title>
+      <link>https://chrisgaby.github.io/tags/nifh/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>https://chrisgaby.github.io/tags/nifh/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Nitrogen cycle enzymes</title>
       <link>https://chrisgaby.github.io/tags/nitrogen-cycle-enzymes/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
@@ -313,14 +321,6 @@
       <link>https://chrisgaby.github.io/tags/microbial-community-analysis/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
       <guid>https://chrisgaby.github.io/tags/microbial-community-analysis/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>nifH</title>
-      <link>https://chrisgaby.github.io/tags/nifh/</link>
-      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
-      <guid>https://chrisgaby.github.io/tags/nifh/</guid>
       <description></description>
     </item>
     
