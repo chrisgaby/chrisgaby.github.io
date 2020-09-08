@@ -26,22 +26,24 @@
 &lt;/div&gt;
 &lt;div id=&#34;the-size-of-a-prokaryotic-genomes&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;The Size of a Prokaryotic Genomes&lt;/h2&gt;
-&lt;p&gt;As an frame of reference, the familiar laboratory workhorse &lt;em&gt;Escherichia coli&lt;/em&gt; K12 has a genome size of 4.64 Mb.&lt;/p&gt;
+&lt;p&gt;As a frame of reference, the familiar laboratory workhorse &lt;em&gt;Escherichia coli&lt;/em&gt; K12 has a genome size of 4.64 Mb.&lt;/p&gt;
 &lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://chrisgaby.github.io/post/EcoliGenome.png&#34; alt=&#34;The E coli K12 reference genome from NCBI prokaryotic genomes.&#34; /&gt;
+&lt;img src=&#34;https://chrisgaby.github.io/img/EcoliGenome.png&#34; alt=&#34;The E coli K12 reference genome from NCBI prokaryotic genomes.&#34; /&gt;
 &lt;p class=&#34;caption&#34;&gt;The &lt;em&gt;E coli&lt;/em&gt; K12 reference genome from NCBI prokaryotic genomes.&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;On August 31, 2020, I downloaded a list of the NCBI RefSeq Prokaryotic Genomes. The list included statistics such as genome length for each genome.&lt;/p&gt;
 &lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://chrisgaby.github.io/post/RefSeqGenomes.png&#34; alt=&#34;The Criteria Selected to Obtain a List of NCBI Refseq Prokaryotic Genomes.&#34; /&gt;
+&lt;img src=&#34;https://chrisgaby.github.io/img/RefSeqGenomes.png&#34; alt=&#34;The Criteria Selected to Obtain a List of NCBI Refseq Prokaryotic Genomes.&#34; /&gt;
 &lt;p class=&#34;caption&#34;&gt;The Criteria Selected to Obtain a List of NCBI Refseq Prokaryotic Genomes.&lt;/p&gt;
 &lt;/div&gt;
-&lt;p&gt;The list was downloaded as a csv file. Let’s import the csv file and calculate some statistics for prokaryotic genome size.&lt;/p&gt;
+&lt;p&gt;The list was downloaded from NCBI as a csv file, and I have made this file &lt;a href=&#34;https://chrisgaby.github.io/files/prokaryotes.csv&#34;&gt;available for download&lt;/a&gt;. Let’s import the csv file and calculate some statistics for prokaryotic genome size.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(tidyverse)
 
+# Read the table into 
 prokaryote.genomes.table &amp;lt;- read_csv(file = &amp;quot;prokaryotes.csv&amp;quot;)
 
-head(prokaryote.genomes.table) &lt;/code&gt;&lt;/pre&gt;
+# Display the first few lines of the data frame.
+head(prokaryote.genomes.table)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## # A tibble: 6 x 16
 ##   `#Organism Name` `Organism Group… Strain BioSample BioProject Assembly Level
 ##   &amp;lt;chr&amp;gt;            &amp;lt;chr&amp;gt;            &amp;lt;chr&amp;gt;  &amp;lt;chr&amp;gt;     &amp;lt;chr&amp;gt;      &amp;lt;chr&amp;gt;    &amp;lt;chr&amp;gt;
@@ -54,7 +56,14 @@ head(prokaryote.genomes.table) &lt;/code&gt;&lt;/pre&gt;
 ## # … with 9 more variables: `Size(Mb)` &amp;lt;dbl&amp;gt;, `GC%` &amp;lt;dbl&amp;gt;, Replicons &amp;lt;chr&amp;gt;,
 ## #   WGS &amp;lt;chr&amp;gt;, Scaffolds &amp;lt;dbl&amp;gt;, CDS &amp;lt;dbl&amp;gt;, `Release Date` &amp;lt;dttm&amp;gt;, `GenBank
 ## #   FTP` &amp;lt;chr&amp;gt;, `RefSeq FTP` &amp;lt;chr&amp;gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Let’s calculate some statistics for genome size:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# How many genomes have data for length?
+length(prokaryote.genomes.table$`Size(Mb)`)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 11710&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Display the minimum, maximum, mean, median, and 1st and 3rd quartiles for the genome sizes.
+summary(prokaryote.genomes.table$`Size(Mb)`)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   0.185   2.992   4.051   4.372   5.279  16.041&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Let’s look at the summary statistics for genome size:&lt;/p&gt;
 &lt;ol style=&#34;list-style-type: decimal&#34;&gt;
 &lt;li&gt;n = 11710&lt;/li&gt;
 &lt;li&gt;mean = 4.371931&lt;/li&gt;
@@ -133,7 +142,7 @@ qplot(data=prokaryote.genomes.table.split.reduced,
       fill = Phylum, 
       facets = Phylum ~ .)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;https://chrisgaby.github.io/post/2020-08-31-prokaryotic-genome-size_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;960&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;Based upon the separated density plots, it looks as if the genome size varies by phylum. Let’s see how much it varies by phylum:&lt;/p&gt;
+&lt;p&gt;Based upon the separated density plots, it looks as if the genome size varies by phylum. Let’s see how much mean genome size varies by phylum:&lt;/p&gt;
 &lt;ol style=&#34;list-style-type: decimal&#34;&gt;
 &lt;li&gt;Euryarchaeota = 3.1622121&lt;/li&gt;
 &lt;li&gt;FCB group = 4.4686722&lt;/li&gt;
@@ -142,10 +151,11 @@ qplot(data=prokaryote.genomes.table.split.reduced,
 &lt;li&gt;Spirochaetes = 3.3388135&lt;/li&gt;
 &lt;li&gt;Terrabacteria group = 4.4780869&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Thus, it appears that phylum-dependent genome size variation ranges from 3.2 to 5.3 Mb.&lt;/p&gt;
+&lt;p&gt;Thus, it appears that phylum-dependent, mean genome size ranges from 3.2 to 5.3 Mb.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;genome-size-positively-correlates-with-number-of-coding-sequences&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Genome Size Positively Correlates with Number of Coding Sequences&lt;/h2&gt;
+&lt;p&gt;The prokaryotic genomes table from NCBI also indicates the number of coding sequences (CDS) in each genome. By creating a scatterplot of genome size vs. CDS, we may examine the relationship between genome size and number of CDS.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(ggplot2)
 
 qplot(data = prokaryote.genomes.table.split, 
@@ -154,7 +164,7 @@ qplot(data = prokaryote.genomes.table.split,
       color = Domain, 
       alpha = I(0.2))&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;https://chrisgaby.github.io/post/2020-08-31-prokaryotic-genome-size_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;Genome size is strongly and positively correlated with the number of Coding Sequences (CDS) in the genome; put another way, larger genomes have more genes. There are outliers, though, and while those with zero CDS values may be attributable to missing CDS annotation, those with higher than expected CDS should be further explored. Archaea appear to follow a trend similar to Bacteria.&lt;/p&gt;
+&lt;p&gt;Genome size is strongly and positively correlated with the number of CDS in the genome; put another way, larger genomes have more genes. There are outliers, though, and while those with zero CDS values may be attributable to missing CDS annotation, those with higher than expected CDS should be further explored. Archaea appear to follow a trend similar to Bacteria.&lt;/p&gt;
 &lt;p&gt;Let’s check to see if the outliers are associated with a single finishing level:&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(ggplot2)
 
@@ -167,7 +177,8 @@ qplot(data = prokaryote.genomes.table.split,
 &lt;/div&gt;
 &lt;div id=&#34;conclusion&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Conclusion&lt;/h2&gt;
-&lt;p&gt;The genome sizes in this set of 11710 RefSeq representative prokaryotes vary by phylum and span nearly two orders of magnitude from the smallest at 0.185014 Mb to the largest at 16.0407 Mb. The median genome size was determined to be 4.050955 megabases and is a useful approximation that may be used to estimate, for instance, the number of genome equivalents in a given quantity of DNA, or in determining the number of genome equivalents required by a sequencing library preparation, or in determining the number of genome equivalents in the output of a DNA sequencing run.&lt;/p&gt;
+&lt;p&gt;The genome sizes in this set of 11710 RefSeq representative prokaryotes vary by phylum and span nearly two orders of magnitude from the smallest at 0.185014 Mb to the largest at 16.0407 Mb. The median genome size was determined to be 4.050955 Mb and is a useful approximation that may be used to estimate, for instance, the number of genome equivalents in a given quantity of DNA, or in determining the number of genome equivalents required by a sequencing library preparation, or in determining the number of genome equivalents in the output of a DNA sequencing run.&lt;/p&gt;
+&lt;p&gt;This webpage was written using R Markdown, and the &lt;a href=&#34;https://chrisgaby.github.io/files/2020-08-31-prokaryotic-genome-size.Rmd&#34;&gt;Rmd file is available for download&lt;/a&gt; and is viewable as plain text or within RStudio.&lt;/p&gt;
 &lt;/div&gt;
 </description>
     </item>
