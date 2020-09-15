@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>intestinal microbiome | John Christian Gaby, PhD</title>
+    <link>https://chrisgaby.github.io/tags/intestinal-microbiome/</link>
+      <atom:link href="https://chrisgaby.github.io/tags/intestinal-microbiome/index.xml" rel="self" type="application/rss+xml" />
+    <description>intestinal microbiome</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 01 Jan 2018 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://chrisgaby.github.io/img/icon-192.png</url>
+      <title>intestinal microbiome</title>
+      <link>https://chrisgaby.github.io/tags/intestinal-microbiome/</link>
+    </image>
+    
+    <item>
+      <title>Characterization of the fecal and mucosa-associated microbiota in dogs with colorectal epithelial tumors</title>
+      <link>https://chrisgaby.github.io/publication/herstad-2018/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>https://chrisgaby.github.io/publication/herstad-2018/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

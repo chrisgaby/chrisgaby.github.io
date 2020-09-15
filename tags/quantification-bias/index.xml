@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>quantification bias | John Christian Gaby, PhD</title>
+    <link>https://chrisgaby.github.io/tags/quantification-bias/</link>
+      <atom:link href="https://chrisgaby.github.io/tags/quantification-bias/index.xml" rel="self" type="application/rss+xml" />
+    <description>quantification bias</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://chrisgaby.github.io/img/icon-192.png</url>
+      <title>quantification bias</title>
+      <link>https://chrisgaby.github.io/tags/quantification-bias/</link>
+    </image>
+    
+    <item>
+      <title>The Use of Degenerate Primers in qPCR Analysis of Functional Genes Can Cause Dramatic Quantification Bias as Revealed by Investigation of nifH Primer Performance</title>
+      <link>https://chrisgaby.github.io/publication/gaby-2017-a/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>https://chrisgaby.github.io/publication/gaby-2017-a/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

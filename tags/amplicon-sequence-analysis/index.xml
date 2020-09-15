@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>amplicon sequence analysis | John Christian Gaby, PhD</title>
+    <link>https://chrisgaby.github.io/tags/amplicon-sequence-analysis/</link>
+      <atom:link href="https://chrisgaby.github.io/tags/amplicon-sequence-analysis/index.xml" rel="self" type="application/rss+xml" />
+    <description>amplicon sequence analysis</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 01 Jan 2019 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://chrisgaby.github.io/img/icon-192.png</url>
+      <title>amplicon sequence analysis</title>
+      <link>https://chrisgaby.github.io/tags/amplicon-sequence-analysis/</link>
+    </image>
+    
+    <item>
+      <title>Effects of H2 : CO2 ratio and H2 supply fluctuation on methane content and microbial community composition during in-situ biological biogas upgrading</title>
+      <link>https://chrisgaby.github.io/publication/wahid-2019/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>https://chrisgaby.github.io/publication/wahid-2019/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Diazotroph community characterization via a highthroughput nifH amplicon sequencing and analysis pipeline</title>
+      <link>https://chrisgaby.github.io/publication/gaby-2018/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>https://chrisgaby.github.io/publication/gaby-2018/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Microbial community characterization during anaerobic digestion of Scenedesmus spp. under mesophilic and thermophilic conditions</title>
+      <link>https://chrisgaby.github.io/publication/greses-2017/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>https://chrisgaby.github.io/publication/greses-2017/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The effect of temperature and retention time on methane production and microbial community composition in staged anaerobic digesters fed with food waste</title>
+      <link>https://chrisgaby.github.io/publication/gaby-2017/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>https://chrisgaby.github.io/publication/gaby-2017/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

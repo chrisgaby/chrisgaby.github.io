@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Biomethane | John Christian Gaby, PhD</title>
+    <title>biomethane | John Christian Gaby, PhD</title>
     <link>https://chrisgaby.github.io/tags/biomethane/</link>
       <atom:link href="https://chrisgaby.github.io/tags/biomethane/index.xml" rel="self" type="application/rss+xml" />
-    <description>Biomethane</description>
+    <description>biomethane</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 01 Jan 2019 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://chrisgaby.github.io/img/icon-192.png</url>
-      <title>Biomethane</title>
+      <title>biomethane</title>
       <link>https://chrisgaby.github.io/tags/biomethane/</link>
     </image>
     
@@ -17,6 +17,30 @@
       <link>https://chrisgaby.github.io/publication/wahid-2019/</link>
       <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
       <guid>https://chrisgaby.github.io/publication/wahid-2019/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Feeding frequency influences process performance and microbial community composition in anaerobic digesters treating steam exploded food waste</title>
+      <link>https://chrisgaby.github.io/publication/svensson-2018/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>https://chrisgaby.github.io/publication/svensson-2018/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Microbial community characterization during anaerobic digestion of Scenedesmus spp. under mesophilic and thermophilic conditions</title>
+      <link>https://chrisgaby.github.io/publication/greses-2017/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>https://chrisgaby.github.io/publication/greses-2017/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The effect of temperature and retention time on methane production and microbial community composition in staged anaerobic digesters fed with food waste</title>
+      <link>https://chrisgaby.github.io/publication/gaby-2017/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>https://chrisgaby.github.io/publication/gaby-2017/</guid>
       <description></description>
     </item>
     

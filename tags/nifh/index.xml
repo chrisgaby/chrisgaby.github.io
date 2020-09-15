@@ -5,12 +5,28 @@
     <link>https://chrisgaby.github.io/tags/nifh/</link>
       <atom:link href="https://chrisgaby.github.io/tags/nifh/index.xml" rel="self" type="application/rss+xml" />
     <description>nifH</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 01 Jan 2019 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://chrisgaby.github.io/img/icon-192.png</url>
       <title>nifH</title>
       <link>https://chrisgaby.github.io/tags/nifh/</link>
     </image>
+    
+    <item>
+      <title>“Candidatus Macondimonas diazotrophica”, a novel gammaproteobacterial genus dominating crude-oil-contaminated coastal sediments</title>
+      <link>https://chrisgaby.github.io/publication/karthikeyan-2019/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>https://chrisgaby.github.io/publication/karthikeyan-2019/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Diazotroph community characterization via a highthroughput nifH amplicon sequencing and analysis pipeline</title>
+      <link>https://chrisgaby.github.io/publication/gaby-2018/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>https://chrisgaby.github.io/publication/gaby-2018/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>The Use of Degenerate Primers in qPCR Analysis of Functional Genes Can Cause Dramatic Quantification Bias as Revealed by Investigation of nifH Primer Performance</title>
@@ -25,6 +41,30 @@
       <link>https://chrisgaby.github.io/publication/gaby-2015/</link>
       <pubDate>Thu, 01 Jan 2015 00:00:00 +0000</pubDate>
       <guid>https://chrisgaby.github.io/publication/gaby-2015/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A comprehensive aligned nifH gene database: A multipurpose tool for studies of nitrogen-fixing bacteria</title>
+      <link>https://chrisgaby.github.io/publication/gaby-2014/</link>
+      <pubDate>Wed, 01 Jan 2014 00:00:00 +0000</pubDate>
+      <guid>https://chrisgaby.github.io/publication/gaby-2014/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A comprehensive evaluation of PCR primers to amplify the nifH gene of nitrogenase</title>
+      <link>https://chrisgaby.github.io/publication/gaby-2012/</link>
+      <pubDate>Sun, 01 Jan 2012 00:00:00 +0000</pubDate>
+      <guid>https://chrisgaby.github.io/publication/gaby-2012/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A global census of nitrogenase diversity</title>
+      <link>https://chrisgaby.github.io/publication/gaby-2011/</link>
+      <pubDate>Fri, 01 Jul 2011 00:00:00 +0000</pubDate>
+      <guid>https://chrisgaby.github.io/publication/gaby-2011/</guid>
       <description></description>
     </item>
     

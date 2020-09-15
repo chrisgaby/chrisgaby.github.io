@@ -1,22 +1,38 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Biogas | John Christian Gaby, PhD</title>
+    <title>biogas | John Christian Gaby, PhD</title>
     <link>https://chrisgaby.github.io/tags/biogas/</link>
       <atom:link href="https://chrisgaby.github.io/tags/biogas/index.xml" rel="self" type="application/rss+xml" />
-    <description>Biogas</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 01 Jan 2018 00:00:00 +0000</lastBuildDate>
+    <description>biogas</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 01 Jan 2019 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://chrisgaby.github.io/img/icon-192.png</url>
-      <title>Biogas</title>
+      <title>biogas</title>
       <link>https://chrisgaby.github.io/tags/biogas/</link>
     </image>
+    
+    <item>
+      <title>Effects of H2 : CO2 ratio and H2 supply fluctuation on methane content and microbial community composition during in-situ biological biogas upgrading</title>
+      <link>https://chrisgaby.github.io/publication/wahid-2019/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>https://chrisgaby.github.io/publication/wahid-2019/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Feeding frequency influences process performance and microbial community composition in anaerobic digesters treating steam exploded food waste</title>
       <link>https://chrisgaby.github.io/publication/svensson-2018/</link>
       <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
       <guid>https://chrisgaby.github.io/publication/svensson-2018/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Microbial community characterization during anaerobic digestion of Scenedesmus spp. under mesophilic and thermophilic conditions</title>
+      <link>https://chrisgaby.github.io/publication/greses-2017/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>https://chrisgaby.github.io/publication/greses-2017/</guid>
       <description></description>
     </item>
     

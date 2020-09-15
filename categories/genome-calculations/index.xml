@@ -5,12 +5,361 @@
     <link>https://chrisgaby.github.io/categories/genome-calculations/</link>
       <atom:link href="https://chrisgaby.github.io/categories/genome-calculations/index.xml" rel="self" type="application/rss+xml" />
     <description>genome calculations</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 31 Aug 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 09 Sep 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://chrisgaby.github.io/img/icon-192.png</url>
       <title>genome calculations</title>
       <link>https://chrisgaby.github.io/categories/genome-calculations/</link>
     </image>
+    
+    <item>
+      <title>Prokaryotic Genome Weight</title>
+      <link>https://chrisgaby.github.io/post/prokaryotic-genome-weight/</link>
+      <pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>https://chrisgaby.github.io/post/prokaryotic-genome-weight/</guid>
+      <description>
+
+
+&lt;div id=&#34;introduction&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;In a previous blogpost, I explored &lt;a href=&#34;https://chrisgaby.github.io/post/prokaryotic-genome-size/index.html&#34;&gt;prokaryotic genome size&lt;/a&gt; (i.e. the length of a prokaryotic genome in number of nucleotides). In this blogpost, I will take the previously determined genome sizes and multiply them against the molecular weight of a DNA base pair to arrive at the mass of a prokaryotic genome. I start by examining the structural components of DNA (the 4 nitrogenous bases, a pentose sugar called deoxyribose, and phosphate) and their elemental composition, and then I will determine the amount of mass variation that could result from natural variation in genome GC content.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;determining-the-number-of-atoms-of-each-element-in-a-dna-base-pair&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Determining the Number of Atoms of Each Element in a DNA Base Pair&lt;/h2&gt;
+&lt;p&gt;DNA is a macromolecule that consists of a sequence of chemically linked nucleotides. Nucleotides are comprised of a nucleoside linked to a phosphate. Nucleosides consist of a nitrogenous base such as a purine (A or G) or a pyrimidine (T or C) linked to a sugar, which in the case of DNA is the pentose sugar deoxyribose. Hence, there are 3 components of DNA:&lt;/p&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;Phosphate&lt;/li&gt;
+&lt;li&gt;Pentose sugar deoxyribose&lt;/li&gt;
+&lt;li&gt;Nitrogenous bases Adenine, Thymine, Cytosine, and Guanine&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Whereas each nucleotide in DNA contains phosphate and deoxyribose, the nitrogenous base will vary. Indeed, it this variation in the sequence of nitrogenous bases along the length of a genome that determines the information content of the macromolecule and ultimately the identity of the organism.&lt;/p&gt;
+&lt;p&gt;Let’s take a closer look at the 3 components of DNA by examining their molecular structure, determining the number of atoms of each element in their structure, and then calculating their molecular mass.&lt;/p&gt;
+&lt;div id=&#34;the-phosphate&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;The Phosphate&lt;/h3&gt;
+&lt;p&gt;Phosphate is the simplest of the 3 DNA components, consting of 1 phosphorus atom and 4 oxygen atoms:&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://chrisgaby.github.io/img/PO4.jpg&#34; alt=&#34;The structure of a lone phosphate molecule.&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;The structure of a lone phosphate molecule.&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;This view of a phosphate molecule was generated using &lt;a href=&#34;http://jmol.sourceforge.net/&#34;&gt;Jmol&lt;/a&gt; from an &lt;a href=&#34;https://chrisgaby.github.io/files/PO4_ideal.sdf&#34;&gt;sdf format file representing the structure of PO&lt;sub&gt;4&lt;/sub&gt;&lt;/a&gt;. The sdf file was downloaded from the RCSB Protein Databank webpage for &lt;a href=&#34;https://www.rcsb.org/ligand/PO4&#34;&gt;PO&lt;sub&gt;4&lt;/sub&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The colors in the molecular structures presented in this blogpost correspond to the CPK (Corey, Pauling, Koltun) color scheme:&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;color: rgb(144,144,144); font-size:20pt;&#34;&gt;carbon is grey&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;color: rgb(255,255,255); background-color: black; font-size:20pt;&#34;&gt;hydrogen is white&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;color: rgb(255,0,31); font-size:20pt;&#34;&gt;oxygen is red&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;color: rgb(22,88,240); font-size:20pt;&#34;&gt;nitrogen is blue&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;color: rgb(255,123,44); font-size:20pt;&#34;&gt;phosphorus is orange&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;the-pentose-sugar-deoxyribose&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;The Pentose Sugar Deoxyribose&lt;/h3&gt;
+&lt;p&gt;The pentose sugar deoxyribose, along with phosphate, form the backbone of DNA by linking the nucleotides. In DNA, deoxyribose forms a furanose ring as in this view of the structure of beta-D-2-Deoxyribose:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://chrisgaby.github.io/img/beta-D-2-Deoxyribose.jpg&#34; alt=&#34;The structure of beta-D-2-Deoxyribose&#34; /&gt;.&lt;/p&gt;
+&lt;p&gt;I downloaded the &lt;a href=&#34;https://chrisgaby.github.io/files/beta-D-2-Deoxyribose.sdf&#34;&gt;sdf format file for the chemical structure of beta-D-2-Deoxyribose&lt;/a&gt; from &lt;a href=&#34;https://pubchem.ncbi.nlm.nih.gov/compound/439576&#34;&gt;PubChem&lt;/a&gt; in order to produce the above molecular structure image within &lt;a href=&#34;http://jmol.sourceforge.net/&#34;&gt;Jmol&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The chemical formula for &lt;a href=&#34;https://pubchem.ncbi.nlm.nih.gov/compound/439576&#34;&gt;beta-D-2-Deoxyribose at PubChem&lt;/a&gt; is C&lt;sub&gt;5&lt;/sub&gt;H&lt;sub&gt;10&lt;/sub&gt;O&lt;sub&gt;4&lt;/sub&gt;.&lt;/p&gt;
+&lt;p&gt;I will now calculate the molecular mass of beta-D-2-Deoxyribose. For reference, these are the atomic masses of the elements in DNA:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr class=&#34;header&#34;&gt;
+&lt;th&gt;Element&lt;/th&gt;
+&lt;th&gt;Atomic Mass&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;C&lt;/td&gt;
+&lt;td&gt;12.0107&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;O&lt;/td&gt;
+&lt;td&gt;15.9994&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;N&lt;/td&gt;
+&lt;td&gt;14.0067&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;P&lt;/td&gt;
+&lt;td&gt;30.9738&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;H&lt;/td&gt;
+&lt;td&gt;1.0079&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;The mass of each element is conveniently accessible via the &lt;code&gt;mass()&lt;/code&gt; function in the R package &lt;code&gt;PeriodicTable&lt;/code&gt;.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(PeriodicTable)
+
+# Create the data frame based on the formula for deoxyribose.
+deoxyribose.df1&amp;lt;- data.frame(element = c(&amp;quot;C&amp;quot;,&amp;quot;H&amp;quot;,&amp;quot;O&amp;quot;), freq = c(5,10,4))
+
+# Add a 3rd column that is the atomic mass of each element.
+deoxyribose.df2 &amp;lt;- cbind(deoxyribose.df1, MW = PeriodicTable::mass(deoxyribose.df1[1:nrow(deoxyribose.df1),1]))
+
+# Add a 4th column that is the total molecular weight of each element
+# in the deoxyribose molecule. This is the product of the atomic
+# mass and the number of atoms of each element.
+deoxyribose.df3 &amp;lt;- cbind(deoxyribose.df2, MW.tot = deoxyribose.df2[,2] * deoxyribose.df2[,3])
+
+deoxyribose.df3&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##   element freq       MW  MW.tot
+## 1       C    5 12.01070 60.0535
+## 2       H   10  1.00794 10.0794
+## 3       O    4 15.99940 63.9976&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;sum(deoxyribose.df3[,&amp;quot;MW.tot&amp;quot;])&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 134.1305&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The molecular weight of deoxyribose is determined to be 134.1305 g/mol, which matches the molecular weight for &lt;a href=&#34;https://pubchem.ncbi.nlm.nih.gov/compound/439576&#34;&gt;beta-D-2-Deoxyribose at PubChem&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;the-nitrogenous-bases&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;The Nitrogenous Bases&lt;/h3&gt;
+&lt;p&gt;I’ll obtain the number of C, N, O, and H atoms in each nitrogenous base by using a column from the Protein Data Bank (PDB) files for the molecular model of each base. The PDB files for each nitrogenous base were obtained from the “required case study files” for an online &lt;a href=&#34;https://www.ks.uiuc.edu/Training/CaseStudies/&#34;&gt;DNA case study&lt;/a&gt; written by Leonardo Trabuco and Elizabeth Villa.&lt;/p&gt;
+&lt;div id=&#34;adenine&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Adenine&lt;/h4&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://chrisgaby.github.io/img/adenine.jpg&#34; alt=&#34;The molecular structure of adenine.&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;The molecular structure of adenine.&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;I will obtain the number of atoms of each element in the adenine strucutre by parsing its &lt;a href=&#34;https://chrisgaby.github.io/files/adenine.pdb&#34;&gt;PDB file&lt;/a&gt;.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(tidyverse)
+
+# Read the adenine PDB file into a tibble, skipping the first row
+# that causes the column of interest to be missed.
+adenine &amp;lt;- read_table2(file = &amp;quot;../../static/files/adenine.pdb&amp;quot;, 
+                       col_names = FALSE, 
+                       skip = 1)
+
+# Remove the last row that only contains &amp;quot;end&amp;quot;.
+A.atoms &amp;lt;- adenine[seq(1,(nrow(adenine)-1)),12]
+
+# Make a table with the total number of atoms of each type.
+A.table &amp;lt;- table(A.atoms)
+A.table&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## A.atoms
+## C H N 
+## 5 5 5&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The results corroborate with the C&lt;sub&gt;5&lt;/sub&gt;N&lt;sub&gt;5&lt;/sub&gt;H&lt;sub&gt;5&lt;/sub&gt; chemical formula for &lt;a href=&#34;https://pubchem.ncbi.nlm.nih.gov/compound/190&#34;&gt;adenine on PubChem&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Next, I will calculate the total molar mass of the adenine molecule. To do this, I will need the atomic mass of each element:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(PeriodicTable)
+
+# Change to a data frame.
+A.df &amp;lt;- as.data.frame(A.table)
+
+# Add a 3rd column that is the atomic mass of each element.
+A.df2 &amp;lt;- cbind(A.df, MW = PeriodicTable::mass(A.df[1:nrow(A.df),1]))
+
+# Add a 4th column that is the total molecular weight of each element
+# in the nucleotide base molecule. This is the product of the atomic
+# mass and the number of atoms of each element.
+A.df3 &amp;lt;- cbind(A.df2, MW.tot = A.df2[,2] * A.df2[,3])
+
+A.df3&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##   A.atoms Freq       MW  MW.tot
+## 1       C    5 12.01070 60.0535
+## 2       H    5  1.00794  5.0397
+## 3       N    5 14.00670 70.0335&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;sum(A.df3[,&amp;quot;MW.tot&amp;quot;])&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 135.1267&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Hence, the molar mass of adenine is determined to be 135.1267 g/mol, which corroborates with the molar mass of 135.13 g/mol listed for &lt;a href=&#34;https://pubchem.ncbi.nlm.nih.gov/compound/190&#34;&gt;adenine on PubChem&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;thymine-cytosine-and-guanine&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Thymine, Cytosine, and Guanine&lt;/h4&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://chrisgaby.github.io/img/thymine.jpg&#34; alt=&#34;The molecular structure of thymine.&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;The molecular structure of thymine.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://chrisgaby.github.io/img/cytosine.jpg&#34; alt=&#34;The molecular structure of cytosine.&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;The molecular structure of cytosine.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://chrisgaby.github.io/img/guanine.jpg&#34; alt=&#34;The molecular structure of guanine.&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;The molecular structure of guanine.&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;I will now adapt the previous code for determining the molar mass of adenine into a custom function named &lt;code&gt;nucMolarMass&lt;/code&gt;, which takes as input the PDB file, extracts the column that lists each atom in the molecule, and sums the mass of all atoms to obtain the overall molar mass for the nitrogenous base.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(tidyverse)
+library(PeriodicTable)
+
+nucMolarMass &amp;lt;- function(filename) 
+{
+ 
+# Read the adenine PDB file into a tibble, skipping the first row
+# that causes the column of interest to be missed. 
+ nuc &amp;lt;- read_table2(file = paste0(&amp;quot;./static/files/&amp;quot;,filename), 
+                       col_names = FALSE, 
+                       skip = 1)
+
+# Remove the last row that only contains &amp;quot;end&amp;quot;.
+nuc.atoms &amp;lt;- nuc[seq(1,(nrow(nuc)-1)),12]
+
+# Make a table with the total number of atoms of each type.
+nuc.table &amp;lt;- table(nuc.atoms)
+
+# Change to a data frame.
+nuc.df &amp;lt;- as.data.frame(nuc.table)
+
+# Add a 3rd column that is the atomic mass of each element.
+nuc.df2 &amp;lt;- cbind(nuc.df, MW = PeriodicTable::mass(nuc.df[1:nrow(nuc.df),1]))
+
+# Add a 4th column that is the total molecular weight of each element
+# in the nucleotide base molecule. This is the product of the atomic
+# mass and the number of atoms of each element.
+nuc.df3 &amp;lt;- cbind(nuc.df2, MW.tot = nuc.df2[,2] * nuc.df2[,3])
+
+sum(nuc.df3[,&amp;quot;MW.tot&amp;quot;])
+ 
+}
+
+# Set the working directory to prevent issues with file input.
+setwd(&amp;quot;/home/chrisgaby/github/My_Website/&amp;quot;)
+
+# Print the adenine molar mass.
+T.MM &amp;lt;- nucMolarMass(&amp;quot;thymine.pdb&amp;quot;)
+print(paste(&amp;quot;The molar mass for thymine is&amp;quot;, T.MM))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;The molar mass for thymine is 126.11334&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Print the guanine molar mass.
+G.MM &amp;lt;- nucMolarMass(&amp;quot;guanine.pdb&amp;quot;)
+print(paste(&amp;quot;The molar mass for guanine is&amp;quot;, G.MM))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;The molar mass for guanine is 151.1261&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Print the cytosine molar mass.
+C.MM &amp;lt;- nucMolarMass(&amp;quot;cytosine.pdb&amp;quot;)
+print(paste(&amp;quot;The molar mass for cytosine is&amp;quot;, C.MM))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;The molar mass for cytosine is 111.102&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;On PubChem, the molar mass of &lt;a href=&#34;https://pubchem.ncbi.nlm.nih.gov/compound/1135&#34;&gt;thymine&lt;/a&gt; is 126.11g/mol, of &lt;a href=&#34;https://pubchem.ncbi.nlm.nih.gov/compound/135398634&#34;&gt;guanine&lt;/a&gt; is 151.13 g/mol, and of &lt;a href=&#34;https://pubchem.ncbi.nlm.nih.gov/compound/597&#34;&gt;cytosine&lt;/a&gt; is 111.1 g/mol, which all corroborate with the results above.&lt;/p&gt;
+&lt;p&gt;You can download the PDB files for &lt;a href=&#34;https://chrisgaby.github.io/files/thymine.pdb&#34;&gt;thymine&lt;/a&gt;, &lt;a href=&#34;https://chrisgaby.github.io/files/cytosine.pdb&#34;&gt;cytosine&lt;/a&gt;, and &lt;a href=&#34;https://chrisgaby.github.io/files/guanine.pdb&#34;&gt;guanine&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;dna-base-pairing&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;DNA Base Pairing&lt;/h2&gt;
+&lt;p&gt;Hence, DNA may contain adenine (A), thymine (T), cytosine (C), and guanine (G) bases. In double stranded DNA there is complementarity between strands whereby A forms a linkage with T that consists of 2 hydrogen bonds, whereas G forms a linkage with C that consists of 3 hydrogen bonds. The AT and GC base pairing is illustrated in the following molecular structure images:&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://chrisgaby.github.io/img/ATBasePair.png&#34; alt=&#34;An AT base pair.&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;An AT base pair.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://chrisgaby.github.io/img/GCBasePair.png&#34; alt=&#34;A GC base pair.&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;A GC base pair.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://chrisgaby.github.io/img/ATandGCBasePair.png&#34; alt=&#34;An AT and a GC base pair shown together.&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;An AT and a GC base pair shown together.&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;These images of DNA base pairs were obtained online from &lt;a href=&#34;http://MolviZ.Org&#34;&gt;MolviZ.Org&lt;/a&gt; on the &lt;a href=&#34;http://biomodel.uah.es/en/model4/dna/index.htm&#34;&gt;DNA Structure page&lt;/a&gt; by Eric Martz and Angel Herráez, wherein their &lt;a href=&#34;http://biomodel.uah.es/en/model1/dna/pares.htm&#34;&gt;Nucleotide Pairing model&lt;/a&gt; is particularly useful for illustrating the basic principles of DNA molecular composition and geometry.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;the-weight-of-an-at-vs.a-gc-base-pair&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;The Weight of an AT vs. a GC Base Pair&lt;/h2&gt;
+&lt;p&gt;We can see from the images and calculations above that the 4 nitrogenous bases vary in molecular structure and in the number of atoms of each element that comprise them, and hence there are differences in the molar mass of each nitrogenous base.&lt;/p&gt;
+&lt;p&gt;Now let’s examine the molar mass of an AT and a GC base pair to determine whether they may have substantially different masses. Here I’ll use the PDB file for a GC base pair to extract the number of atoms of each element in the same manner as for calculating the molar mass of the nitrogenous bases.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(tidyverse)
+
+# Read the CG base pair PDB file into a tibble. Skip the first 2 rows that
+# do not contain the desired data.
+CG &amp;lt;- read_table2(file = &amp;quot;../../static/files/c-g_b.pdb&amp;quot;, 
+                       col_names = FALSE, 
+                       skip = 2)
+
+# Only the rows with ATOM in column 1 are the ones that should be retained.
+CG2 &amp;lt;- CG[grep(&amp;quot;ATOM&amp;quot;,CG$X1), ]
+
+CG.atoms&amp;lt;- substr(as.data.frame(CG2)[,3], 1, 1)
+
+# Make a table with the total number of atoms of each type.
+CG.table &amp;lt;- table(CG.atoms)
+CG.table&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## CG.atoms
+##  C  H  N  O  P 
+## 19 24  8 12  2&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;It looks like the GC base pair has the formula C&lt;sub&gt;19&lt;/sub&gt;H&lt;sub&gt;24&lt;/sub&gt;N&lt;sub&gt;8&lt;/sub&gt;O&lt;sub&gt;12&lt;/sub&gt;P&lt;sub&gt;2&lt;/sub&gt;. Let’s determine the molecular mass of the GC base pair using the following code, which is similar to how we calculated the molecular mass of adenine above.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(PeriodicTable)
+
+# Change to a data frame.
+CG.df &amp;lt;- as.data.frame(CG.table)
+
+# Add a 3rd column that is the atomic mass of each element.
+CG.df2 &amp;lt;- cbind(CG.df, MW = PeriodicTable::mass(CG.df[1:nrow(CG.df),1]))
+
+# Add a 4th column that is the total molecular weight of each element
+# in the nucleotide base molecule. This is the product of the atomic
+# mass and the number of atoms of each element.
+CG.df3 &amp;lt;- cbind(CG.df2, MW.tot = CG.df2[,2] * CG.df2[,3])
+
+CG.df3&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##   CG.atoms Freq       MW    MW.tot
+## 1        C   19 12.01070 228.20330
+## 2        H   24  1.00794  24.19056
+## 3        N    8 14.00670 112.05360
+## 4        O   12 15.99940 191.99280
+## 5        P    2 30.97376  61.94752&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;sum(CG.df3[,&amp;quot;MW.tot&amp;quot;])&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 618.3878&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;And thus the molar mass of a GC base pair is 618.3878 g/mol.&lt;/p&gt;
+&lt;p&gt;Now let’s perform the same calculation of molecular mass for an AT base pair.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(tidyverse)
+
+# Read the CG base pair PDB file into a tibble. Skip the first 2 rows that
+# do not contain the desired data.
+AT &amp;lt;- read_table2(file = &amp;quot;../../static/files/t-a.pdb&amp;quot;, 
+                       col_names = FALSE, 
+                       skip = 2)
+
+# Only the rows with ATOM in column 1 are the ones that should be retained.
+AT2 &amp;lt;- AT[grep(&amp;quot;ATOM&amp;quot;,AT$X1), ]
+
+AT.atoms&amp;lt;- substr(as.data.frame(AT2)[,3], 1, 1)
+
+# Make a table with the total number of atoms of each type.
+AT.table &amp;lt;- table(AT.atoms)
+AT.table&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## AT.atoms
+##  C  H  N  O  P 
+## 20 25  7 12  2&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This AT base pair has the formula C&lt;sub&gt;20&lt;/sub&gt;H&lt;sub&gt;25&lt;/sub&gt;N&lt;sub&gt;7&lt;/sub&gt;O&lt;sub&gt;12&lt;/sub&gt;P&lt;sub&gt;2&lt;/sub&gt;.&lt;/p&gt;
+&lt;p&gt;Now let’s calculate the molecular weight of an AT base pair.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(PeriodicTable)
+
+# Change to a data frame.
+AT.df &amp;lt;- as.data.frame(AT.table)
+
+# Add a 3rd column that is the atomic mass of each element.
+AT.df2 &amp;lt;- cbind(AT.df, MW = PeriodicTable::mass(AT.df[1:nrow(AT.df),1]))
+
+# Add a 4th column that is the total molecular weight of each element
+# in the nucleotide base molecule. This is the product of the atomic
+# mass and the number of atoms of each element.
+AT.df3 &amp;lt;- cbind(AT.df2, MW.tot = AT.df2[,2] * AT.df2[,3])
+
+AT.df3&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##   AT.atoms Freq       MW    MW.tot
+## 1        C   20 12.01070 240.21400
+## 2        H   25  1.00794  25.19850
+## 3        N    7 14.00670  98.04690
+## 4        O   12 15.99940 191.99280
+## 5        P    2 30.97376  61.94752&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;sum(AT.df3[,&amp;quot;MW.tot&amp;quot;])&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 617.3997&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Thus an AT base pair has a molar mass of 617.3997 vs. 618.3878 for a GC base pair. This is equivalent to a difference of 0.16%, or less than one fifth of one percent between the base pairs, a negligible amount.&lt;/p&gt;
+&lt;p&gt;A rule of thumb is that the &lt;a href=&#34;https://sfvideo.blob.core.windows.net/sitefinity/docs/default-source/biotech-basics/molecular-facts-and-figures.pdf?sfvrsn=4563407_4&#34;&gt;average weight of a DNA base pair is 650 daltons&lt;/a&gt;. A dalton weighs 1.66054 x10&lt;sup&gt;-24&lt;/sup&gt; g, and so 650 daltons weigh 1.079351 zg. According to this rule, the 4.64 Mb genome of &lt;em&gt;E. coli&lt;/em&gt; K12 would weigh 4.64 x10&lt;sup&gt;6&lt;/sup&gt; bp X 1.0794 x10&lt;sup&gt;-21&lt;/sup&gt; g/bp = 5.0081891 fg.&lt;/p&gt;
+&lt;p&gt;In my previous blogpost on &lt;a href=&#34;https://chrisgaby.github.io/post/prokaryotic-genome-size/index.html&#34;&gt;prokaryotic genome size&lt;/a&gt;, I determined the median prokaryotic genome size was 4.050955 Mbp, whereas the smallest was 0.185014 Mbp and the largest was 16.0407 Mbp.&lt;/p&gt;
+&lt;p&gt;Let’s start with calculating the mass of the median genome:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[4.050955 \times 10^{6} bp * \frac{650 Da}{bp} * \frac{1.66054 \times 10^{-24} g}{1 Da} * \frac{1\times10^{15}fg}{1 g} \]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;= 4.3724023 fg weight of the median genome size.&lt;/p&gt;
+&lt;p&gt;Using the above formula, the largest genome weighs 17.3135456 fg while the smallest genome weighs 0.199695 fg.&lt;/p&gt;
+&lt;p&gt;Note that the 650 dalton rule of thumb is described as the mass of one DNA base pair as a sodium salt. However, the value that I obtained is for the mass of a DNA base pair is 618 daltons, a discrepancy of 32 daltons. A sodium atom weighs ~23 daltons, and so even then &lt;strong&gt;there are about 9 daltons that remain unaccounted, and the source of this discrepancy should be identified&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Also note that on the Thermo Fisher website for &lt;a href=&#34;https://www.thermofisher.com/no/en/home/references/ambion-tech-support/rna-tools-and-calculators/dna-and-rna-molecular-weights-and-conversions.html&#34;&gt;DNA and RNA Molecular Weights and Conversions&lt;/a&gt;, under the heading “Nucleic Acid Molecular Weight Conversions” and subheading “Approximate M.W.’s of Nucleic Acids”, the folowing approximation is listed, which &lt;strong&gt;also deviates from my result of 618 daltons for the weight of a DNA base pair&lt;/strong&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;M.W. of dsDNA = (# nucleotides x 607.4) + 157.9&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div id=&#34;conclusion&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;The structure and composition of the 4 nitrogenous bases of DNA (A, T, G, and C) vary as does their molecular weight which ranges from 111.1 daltons for cytosine to 151.13 daltons for guanine. However, in double-stranded DNA, due to the formation of AT and GC base pairs, the difference in molecular weight of the individual bases is offset such that there is less than one fifth of one percent difference in the molecular weight of an AT base pair (617.3997 Da) vs. a GC base pair (618.3878 Da). Hence, differences in prokaryotic genome mass due to GC content variation would be negligible, and sequence length is the most influential factor determining the mass of prokaryotic genomes, which vary from 0.199695 fg for the smallest genome to 17.313546 fg for the largest, with a median mass of 4.372402 fg.&lt;/p&gt;
+&lt;p&gt;In the next blogpost, I will extrapolate from the mass of a single prokaryotic genome to the mass of prokaryotic community DNA to be expected from the typical amounts of sample material used in DNA extractions.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;additional-resources&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Additional Resources&lt;/h2&gt;
+&lt;p&gt;A summary of useful DNA facts and figures is presented in &lt;a href=&#34;https://sfvideo.blob.core.windows.net/sitefinity/docs/default-source/biotech-basics/molecular-facts-and-figures.pdf?sfvrsn=4563407_4&#34;&gt;IDT’s Molecular Facts and Figures pdf&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
     
     <item>
       <title>Prokaryotic Genome Size</title>
@@ -39,7 +388,7 @@
 &lt;p&gt;The list was downloaded from NCBI as a csv file, and I have made this file &lt;a href=&#34;https://chrisgaby.github.io/files/prokaryotes.csv&#34;&gt;available for download&lt;/a&gt;. Let’s import the csv file and calculate some statistics for prokaryotic genome size.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(tidyverse)
 
-# Read the table into 
+# Read the table into a tibble.
 prokaryote.genomes.table &amp;lt;- read_csv(file = &amp;quot;prokaryotes.csv&amp;quot;)
 
 # Display the first few lines of the data frame.
@@ -178,7 +527,7 @@ qplot(data = prokaryote.genomes.table.split,
 &lt;div id=&#34;conclusion&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Conclusion&lt;/h2&gt;
 &lt;p&gt;The genome sizes in this set of 11710 RefSeq representative prokaryotes vary by phylum and span nearly two orders of magnitude from the smallest at 0.185014 Mb to the largest at 16.0407 Mb. The median genome size was determined to be 4.050955 Mb and is a useful approximation that may be used to estimate, for instance, the number of genome equivalents in a given quantity of DNA, or in determining the number of genome equivalents required by a sequencing library preparation, or in determining the number of genome equivalents in the output of a DNA sequencing run.&lt;/p&gt;
-&lt;p&gt;This webpage was written using R Markdown, and the &lt;a href=&#34;https://chrisgaby.github.io/files/2020-08-31-prokaryotic-genome-size.Rmd&#34;&gt;Rmd file is available for download&lt;/a&gt; and is viewable as plain text or within RStudio.&lt;/p&gt;
+&lt;p&gt;This webpage was composed using R Markdown, and the &lt;a href=&#34;https://chrisgaby.github.io/files/2020-08-31-prokaryotic-genome-size.Rmd&#34;&gt;Rmd file is available for download&lt;/a&gt; and may be viewed as a plain text file or by opening the file within RStudio.&lt;/p&gt;
 &lt;/div&gt;
 </description>
     </item>

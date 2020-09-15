@@ -5,12 +5,20 @@
     <link>https://chrisgaby.github.io/tags/sphagnum/</link>
       <atom:link href="https://chrisgaby.github.io/tags/sphagnum/index.xml" rel="self" type="application/rss+xml" />
     <description>Sphagnum</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 01 Jan 2018 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://chrisgaby.github.io/img/icon-192.png</url>
       <title>Sphagnum</title>
       <link>https://chrisgaby.github.io/tags/sphagnum/</link>
     </image>
+    
+    <item>
+      <title>Diazotroph community characterization via a highthroughput nifH amplicon sequencing and analysis pipeline</title>
+      <link>https://chrisgaby.github.io/publication/gaby-2018/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>https://chrisgaby.github.io/publication/gaby-2018/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Molybdenum-based diazotrophy in a Sphagnum peatland in northern Minnesota</title>

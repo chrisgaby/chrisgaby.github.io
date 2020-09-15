@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gulf of Mexico oil spill | John Christian Gaby, PhD</title>
+    <link>https://chrisgaby.github.io/tags/gulf-of-mexico-oil-spill/</link>
+      <atom:link href="https://chrisgaby.github.io/tags/gulf-of-mexico-oil-spill/index.xml" rel="self" type="application/rss+xml" />
+    <description>Gulf of Mexico oil spill</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 01 Jan 2019 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://chrisgaby.github.io/img/icon-192.png</url>
+      <title>Gulf of Mexico oil spill</title>
+      <link>https://chrisgaby.github.io/tags/gulf-of-mexico-oil-spill/</link>
+    </image>
+    
+    <item>
+      <title>“Candidatus Macondimonas diazotrophica”, a novel gammaproteobacterial genus dominating crude-oil-contaminated coastal sediments</title>
+      <link>https://chrisgaby.github.io/publication/karthikeyan-2019/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>https://chrisgaby.github.io/publication/karthikeyan-2019/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Diazotroph community characterization via a highthroughput nifH amplicon sequencing and analysis pipeline</title>
+      <link>https://chrisgaby.github.io/publication/gaby-2018/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>https://chrisgaby.github.io/publication/gaby-2018/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
