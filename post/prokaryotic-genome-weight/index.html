@@ -132,7 +132,7 @@
     
       <meta property="article:published_time" content="2020-09-09T00:00:00&#43;00:00">
     
-    <meta property="article:modified_time" content="2020-09-16T00:08:03&#43;02:00">
+    <meta property="article:modified_time" content="2020-09-21T17:44:30&#43;02:00">
   
 
   
@@ -172,7 +172,7 @@
   "headline": "Prokaryotic Genome Weight",
   
   "datePublished": "2020-09-09T00:00:00Z",
-  "dateModified": "2020-09-16T00:08:03+02:00",
+  "dateModified": "2020-09-21T17:44:30+02:00",
   
   "publisher": {
     "@type": "Organization",
@@ -482,7 +482,7 @@
           Last updated on
       
     
-    Wed, Sep 16, 2020
+    Mon, Sep 21, 2020
   </span>
   
 
@@ -491,7 +491,7 @@
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    12 min read
+    13 min read
   </span>
   
 
@@ -627,6 +627,24 @@
 <h2>Introduction</h2>
 <p>In a previous blogpost, I explored <a href="/post/prokaryotic-genome-size/index.html">prokaryotic genome size</a> (i.e. the length of a prokaryotic genome in number of nucleotides). In this blogpost, I will take the previously determined genome sizes and multiply them against the molecular weight of a DNA base pair to arrive at the mass of a prokaryotic genome. I start by examining the structural components of DNA (the 4 nitrogenous bases, a pentose sugar called deoxyribose, and phosphate) and their elemental composition, and then I will determine the amount of mass variation that could result from natural variation in genome GC content.</p>
 </div>
+<div id="load-packages" class="section level2">
+<h2>Load Packages</h2>
+<p>Let’s load the packages that we’ll use in this blogpost up front so that we don’t have to search the code snippets in order to find the dependencies. There are 2 packages that we’ll use:</p>
+<ol style="list-style-type: decimal">
+<li>Tidyverse for importing data into a Tibble object</li>
+<li>PeriodicTable, which includes a function for retrieving the atomic masses of the elements</li>
+</ol>
+<pre class="r"><code>library(tidyverse)</code></pre>
+<pre><code>## ── Attaching packages ───────────────────────────────────────────────────────────────────────────────────────────────────────── tidyverse 1.3.0 ──</code></pre>
+<pre><code>## ✔ ggplot2 3.2.1     ✔ purrr   0.3.3
+## ✔ tibble  2.1.3     ✔ dplyr   0.8.3
+## ✔ tidyr   1.0.0     ✔ stringr 1.4.0
+## ✔ readr   1.3.1     ✔ forcats 0.4.0</code></pre>
+<pre><code>## ── Conflicts ──────────────────────────────────────────────────────────────────────────────────────────────────────────── tidyverse_conflicts() ──
+## ✖ dplyr::filter() masks stats::filter()
+## ✖ dplyr::lag()    masks stats::lag()</code></pre>
+<pre class="r"><code>library(PeriodicTable)</code></pre>
+</div>
 <div id="determining-the-number-of-atoms-of-each-element-in-a-dna-base-pair" class="section level2">
 <h2>Determining the Number of Atoms of Each Element in a DNA Base Pair</h2>
 <p>DNA is a macromolecule that consists of a sequence of chemically linked nucleotides. Nucleotides are comprised of a nucleoside linked to a phosphate. Nucleosides consist of a nitrogenous base such as a purine (A or G) or a pyrimidine (T or C) linked to a sugar, which in the case of DNA is the pentose sugar deoxyribose. Hence, there are 3 components of DNA:</p>
@@ -690,9 +708,7 @@
 </tbody>
 </table>
 <p>The mass of each element is conveniently accessible via the <code>mass()</code> function in the R package <code>PeriodicTable</code>.</p>
-<pre class="r"><code>library(PeriodicTable)
-
-# Create the data frame based on the formula for deoxyribose.
+<pre class="r"><code># Create the data frame based on the formula for deoxyribose.
 deoxyribose.df1&lt;- data.frame(element = c(&quot;C&quot;,&quot;H&quot;,&quot;O&quot;), freq = c(5,10,4))
 
 # Add a 3rd column that is the atomic mass of each element.
@@ -721,10 +737,8 @@ deoxyribose.df3</code></pre>
 <img src="/img/adenine.jpg" alt="The molecular structure of adenine." />
 <p class="caption">The molecular structure of adenine.</p>
 </div>
-<p>I will obtain the number of atoms of each element in the adenine strucutre by parsing its <a href="/files/adenine.pdb">PDB file</a>.</p>
-<pre class="r"><code>library(tidyverse)
-
-# Read the adenine PDB file into a tibble, skipping the first row
+<p>I will obtain the number of atoms of each element in the adenine structure by parsing its <a href="/files/adenine.pdb">PDB file</a>.</p>
+<pre class="r"><code># Read the adenine PDB file into a tibble, skipping the first row
 # that causes the column of interest to be missed.
 adenine &lt;- read_table2(file = &quot;../../static/files/adenine.pdb&quot;, 
                        col_names = FALSE, 
@@ -741,9 +755,7 @@ A.table</code></pre>
 ## 5 5 5</code></pre>
 <p>The results corroborate with the C<sub>5</sub>N<sub>5</sub>H<sub>5</sub> chemical formula for <a href="https://pubchem.ncbi.nlm.nih.gov/compound/190">adenine on PubChem</a>.</p>
 <p>Next, I will calculate the total molar mass of the adenine molecule. To do this, I will need the atomic mass of each element:</p>
-<pre class="r"><code>library(PeriodicTable)
-
-# Change to a data frame.
+<pre class="r"><code># Change to a data frame.
 A.df &lt;- as.data.frame(A.table)
 
 # Add a 3rd column that is the atomic mass of each element.
@@ -778,10 +790,7 @@ A.df3</code></pre>
 <p class="caption">The molecular structure of guanine.</p>
 </div>
 <p>I will now adapt the previous code for determining the molar mass of adenine into a custom function named <code>nucMolarMass</code>, which takes as input the PDB file, extracts the column that lists each atom in the molecule, and sums the mass of all atoms to obtain the overall molar mass for the nitrogenous base.</p>
-<pre class="r"><code>library(tidyverse)
-library(PeriodicTable)
-
-nucMolarMass &lt;- function(filename) 
+<pre class="r"><code>nucMolarMass &lt;- function(filename) 
 {
  
 # Read the adenine PDB file into a tibble, skipping the first row
@@ -852,9 +861,7 @@ print(paste(&quot;The molar mass for cytosine is&quot;, C.MM))</code></pre>
 <h2>The Weight of an AT vs. a GC Base Pair</h2>
 <p>We can see from the images and calculations above that the 4 nitrogenous bases vary in molecular structure and in the number of atoms of each element that comprise them, and hence there are differences in the molar mass of each nitrogenous base.</p>
 <p>Now let’s examine the molar mass of an AT and a GC base pair to determine whether they may have substantially different masses. Here I’ll use the PDB file for a GC base pair to extract the number of atoms of each element in the same manner as for calculating the molar mass of the nitrogenous bases.</p>
-<pre class="r"><code>library(tidyverse)
-
-# Read the CG base pair PDB file into a tibble. Skip the first 2 rows that
+<pre class="r"><code># Read the CG base pair PDB file into a tibble. Skip the first 2 rows that
 # do not contain the desired data.
 CG &lt;- read_table2(file = &quot;../../static/files/c-g_b.pdb&quot;, 
                        col_names = FALSE, 
@@ -872,9 +879,7 @@ CG.table</code></pre>
 ##  C  H  N  O  P 
 ## 19 24  8 12  2</code></pre>
 <p>It looks like the GC base pair has the formula C<sub>19</sub>H<sub>24</sub>N<sub>8</sub>O<sub>12</sub>P<sub>2</sub>. Let’s determine the molecular mass of the GC base pair using the following code, which is similar to how we calculated the molecular mass of adenine above.</p>
-<pre class="r"><code>library(PeriodicTable)
-
-# Change to a data frame.
+<pre class="r"><code># Change to a data frame.
 CG.df &lt;- as.data.frame(CG.table)
 
 # Add a 3rd column that is the atomic mass of each element.
@@ -896,9 +901,7 @@ CG.df3</code></pre>
 <pre><code>## [1] 618.3878</code></pre>
 <p>And thus the molar mass of a GC base pair is 618.3878 g/mol.</p>
 <p>Now let’s perform the same calculation of molecular mass for an AT base pair.</p>
-<pre class="r"><code>library(tidyverse)
-
-# Read the CG base pair PDB file into a tibble. Skip the first 2 rows that
+<pre class="r"><code># Read the CG base pair PDB file into a tibble. Skip the first 2 rows that
 # do not contain the desired data.
 AT &lt;- read_table2(file = &quot;../../static/files/t-a.pdb&quot;, 
                        col_names = FALSE, 
@@ -917,9 +920,7 @@ AT.table</code></pre>
 ## 20 25  7 12  2</code></pre>
 <p>This AT base pair has the formula C<sub>20</sub>H<sub>25</sub>N<sub>7</sub>O<sub>12</sub>P<sub>2</sub>.</p>
 <p>Now let’s calculate the molecular weight of an AT base pair.</p>
-<pre class="r"><code>library(PeriodicTable)
-
-# Change to a data frame.
+<pre class="r"><code># Change to a data frame.
 AT.df &lt;- as.data.frame(AT.table)
 
 # Add a 3rd column that is the atomic mass of each element.
