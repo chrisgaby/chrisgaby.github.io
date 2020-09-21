@@ -5,12 +5,36 @@
     <link>https://chrisgaby.github.io/tags/</link>
       <atom:link href="https://chrisgaby.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <description>Tags</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 09 Sep 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 15 Sep 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://chrisgaby.github.io/img/icon-192.png</url>
       <title>Tags</title>
       <link>https://chrisgaby.github.io/tags/</link>
     </image>
+    
+    <item>
+      <title>GC content</title>
+      <link>https://chrisgaby.github.io/tags/gc-content/</link>
+      <pubDate>Tue, 15 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>https://chrisgaby.github.io/tags/gc-content/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GC%</title>
+      <link>https://chrisgaby.github.io/tags/gc/</link>
+      <pubDate>Tue, 15 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>https://chrisgaby.github.io/tags/gc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>genomics</title>
+      <link>https://chrisgaby.github.io/tags/genomics/</link>
+      <pubDate>Tue, 15 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>https://chrisgaby.github.io/tags/genomics/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>DNA molecular weight</title>
@@ -25,14 +49,6 @@
       <link>https://chrisgaby.github.io/tags/genome-weight/</link>
       <pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate>
       <guid>https://chrisgaby.github.io/tags/genome-weight/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>genomics</title>
-      <link>https://chrisgaby.github.io/tags/genomics/</link>
-      <pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate>
-      <guid>https://chrisgaby.github.io/tags/genomics/</guid>
       <description></description>
     </item>
     

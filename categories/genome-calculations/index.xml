@@ -5,12 +5,175 @@
     <link>https://chrisgaby.github.io/categories/genome-calculations/</link>
       <atom:link href="https://chrisgaby.github.io/categories/genome-calculations/index.xml" rel="self" type="application/rss+xml" />
     <description>genome calculations</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 09 Sep 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 15 Sep 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://chrisgaby.github.io/img/icon-192.png</url>
       <title>genome calculations</title>
       <link>https://chrisgaby.github.io/categories/genome-calculations/</link>
     </image>
+    
+    <item>
+      <title>Prokaryotic Genome GC Content</title>
+      <link>https://chrisgaby.github.io/post/prokaryotic-genome-gc-content/</link>
+      <pubDate>Tue, 15 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>https://chrisgaby.github.io/post/prokaryotic-genome-gc-content/</guid>
+      <description>
+
+
+&lt;div id=&#34;introduction&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;Prokaryotic genomes vary in GC content. Indeed, the percent GC content of a prokaryotic genome is considered a characteristic of the organism, and closely-related organisms often have similar GC contents. Even at the phylum level of the taxnomic hierarchy for prokaryotes, organisms may share a similar range of GC contents. For example, Actinobacteria are sometimes referred to as the high GC gram positives while Firmicutes are referred to as the low GC gram positives. In this blogpost, I will use the same data table of 11,710 RefSeq representative prokaryotic genomes that was used in a &lt;a href=&#34;https://chrisgaby.github.io/post/prokaryotic-genome-size/index.html&#34;&gt;prior blogpost where I examined genome size&lt;/a&gt;, except I will analyze the column indicating the percent GC content of the genome.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;load-libraries&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Load libraries&lt;/h2&gt;
+&lt;p&gt;Let’s load all the required libraries upfront so that one doesn’t have to search each code snippet for the required packages.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(ggplot2)
+library(tidyverse)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## ── Attaching packages ───────────────────────────────────────────────────────────────────────────────────────────────────────── tidyverse 1.3.0 ──&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## ✔ tibble  2.1.3     ✔ dplyr   0.8.3
+## ✔ tidyr   1.0.0     ✔ stringr 1.4.0
+## ✔ readr   1.3.1     ✔ forcats 0.4.0
+## ✔ purrr   0.3.3&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## ── Conflicts ──────────────────────────────────────────────────────────────────────────────────────────────────────────── tidyverse_conflicts() ──
+## ✖ dplyr::filter() masks stats::filter()
+## ✖ dplyr::lag()    masks stats::lag()&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;load-the-data-and-produce-summary-statistics&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Load the Data and Produce Summary Statistics&lt;/h2&gt;
+&lt;p&gt;I will begin by loading the aforementioned table of prokaryotic genome metadata, and then I will geneate summary data to examine the range of GC contents for the prokaryotes represented in that table.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;setwd(&amp;quot;/home/chrisgaby/github/My_Website/&amp;quot;)
+
+# Read the table into a tibble.
+prokaryote.genomes.table &amp;lt;- read_csv(file = &amp;quot;./static/files/prokaryotes.csv&amp;quot;)
+
+# Display the minimum, maximum, mean, median, and 1st and 3rd quartiles
+# for the genome sizes.
+summary(prokaryote.genomes.table$`GC%`)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   22.40   41.00   54.80   53.18   65.50   77.00&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;It looks like GC% ranges from 22.4 to 77%, a difference of 54.6%!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;histogram-of-gc&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Histogram of GC%&lt;/h2&gt;
+&lt;p&gt;Let’s examine the distribution of GC% for all the prokaryotic genomes.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;qplot(data = prokaryote.genomes.table, 
+      x = `GC%`, 
+      binwidth = 1)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://chrisgaby.github.io/post/2020-09-15-prokaryotic-genome-gc-content_files/figure-html/unnamed-chunk-2-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;The distribution is bimodal.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;gc-for-the-principle-taxonomic-groupings&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;GC% for the Principle Taxonomic Groupings&lt;/h2&gt;
+&lt;p&gt;Note that the descriptors used in the table to refer to taxonomy include multi-phylum groupings like “FCB group”, “PVC group”, and “Terrabacteria”. Hence, we’ll separate the “Organism Groups” column with this information into 3 new columns for the taxonomic levels (TL) designated TL1, TL2, and TL3, and then we’ll examine the GC% distribution for the 6 most abundant groups at TL2.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Split the Organism Groups column into new columns named according to their
+# respective taxonomy level, abbreviated TL1, TL2, and TL3.
+prokaryote.genomes.table.split &amp;lt;- separate(data=prokaryote.genomes.table, 
+                                           col = `Organism Groups`, 
+                                           sep = &amp;quot;;&amp;quot;, 
+                                           into = c(&amp;quot;TL1&amp;quot;, &amp;quot;TL2&amp;quot;, &amp;quot;TL3&amp;quot;))
+
+TL2.subset.names &amp;lt;- names(which(summary(factor(prokaryote.genomes.table.split$TL2)) &amp;gt; 90))
+prokaryote.genomes.table.split.reduced &amp;lt;- prokaryote.genomes.table.split[prokaryote.genomes.table.split$TL2 == TL2.subset.names[1] | 
+                                 prokaryote.genomes.table.split$TL2 == TL2.subset.names[2] | 
+                                 prokaryote.genomes.table.split$TL2 == TL2.subset.names[3] | 
+                                 prokaryote.genomes.table.split$TL2 == TL2.subset.names[4] | 
+                                 prokaryote.genomes.table.split$TL2 == TL2.subset.names[5] | 
+                                 prokaryote.genomes.table.split$TL2 == TL2.subset.names[6],]
+
+qplot(data=prokaryote.genomes.table.split.reduced, 
+      x = `GC%`, 
+      geom = &amp;quot;density&amp;quot;, 
+      color = TL2, 
+      fill = TL2, 
+      alpha = I(0.2))&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://chrisgaby.github.io/post/2020-09-15-prokaryotic-genome-gc-content_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;It looks like some phyla have a bimodal GC% distribution too.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;faceted-phylum-gc&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Faceted Phylum GC%&lt;/h2&gt;
+&lt;p&gt;Let’s separate these TL2 groups into their own facets.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;qplot(data=prokaryote.genomes.table.split.reduced, 
+      x = `GC%`, 
+      geom = &amp;quot;density&amp;quot;, 
+      color = TL2, 
+      fill = TL2, 
+      facets = TL2 ~ .)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://chrisgaby.github.io/post/2020-09-15-prokaryotic-genome-gc-content_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;960&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;The Proteobacteria and Spirochaetes have bimodal genome GC% distributions, and thus it seems there are taxa within these phyla with distinct GC% contents.&lt;/p&gt;
+&lt;p&gt;Some of these designations like PVC group and Terrabacteria group are supercategories that contain several traditional phyla.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;terrabacteria-phyla-gc&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Terrabacteria Phyla GC%&lt;/h2&gt;
+&lt;p&gt;Let’s divide the Terrabacteria group up into the phyla that comprise it.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Display the taxa within Terrabacteria.
+unique(prokaryote.genomes.table.split[prokaryote.genomes.table.split$TL2 == 
+                                        &amp;quot;Terrabacteria group&amp;quot;,&amp;quot;TL3&amp;quot;])&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## # A tibble: 9 x 1
+##   TL3                                
+##   &amp;lt;chr&amp;gt;                              
+## 1 Firmicutes                         
+## 2 Actinobacteria                     
+## 3 Cyanobacteria/Melainabacteria group
+## 4 Tenericutes                        
+## 5 Deinococcus-Thermus                
+## 6 Chloroflexi                        
+## 7 unclassified Terrabacteria group   
+## 8 Armatimonadetes                    
+## 9 Abditibacteriota&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The Terrabacteria group contains both the high and low GC gram positives Actinobacteria and Firmicutes. Let’s see if we have enough data points in each phylum to create another distribution.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# The number of rows for each phylum indicates the number of datapoints
+# for each phylum
+nrow(prokaryote.genomes.table.split[prokaryote.genomes.table.split$TL3 == 
+                                      &amp;quot;Actinobacteria&amp;quot;,])&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 2319&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;nrow(prokaryote.genomes.table.split[prokaryote.genomes.table.split$TL3 == 
+                                      &amp;quot;Firmicutes&amp;quot;,])&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 2217&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;nrow(prokaryote.genomes.table.split[prokaryote.genomes.table.split$TL3 == 
+                                      &amp;quot;Cyanobacteria/Melainabacteria group&amp;quot;,])&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 134&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;nrow(prokaryote.genomes.table.split[prokaryote.genomes.table.split$TL3 == 
+                                      &amp;quot;Tenericutes&amp;quot;,])&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 159&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;nrow(prokaryote.genomes.table.split[prokaryote.genomes.table.split$TL3 == 
+                                      &amp;quot;Deinococcus-Thermus&amp;quot;,])&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 73&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;nrow(prokaryote.genomes.table.split[prokaryote.genomes.table.split$TL3 == 
+                                      &amp;quot;Chloroflexi&amp;quot;,])&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 43&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;nrow(prokaryote.genomes.table.split[prokaryote.genomes.table.split$TL3 == 
+                                      &amp;quot;unclassified Terrabacteria group&amp;quot;,])&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 1&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;nrow(prokaryote.genomes.table.split[prokaryote.genomes.table.split$TL3 == 
+                                      &amp;quot;Armatimonadetes&amp;quot;,])&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 3&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;nrow(prokaryote.genomes.table.split[prokaryote.genomes.table.split$TL3 == 
+                                      &amp;quot;Abditibacteriota&amp;quot;,])&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 1&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;It looks like only Actinobacteria, Firmicutes, Cyanobacteria/Melainabacteria group, and Tenericutes have more than 100 data points. We’ll proceed with these 4 phyla for the following visualization.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Create a Terrabacteria dataframe with only the 4 phyla haveing over 100 datapoints.
+Terra.4TL2.df &amp;lt;- prokaryote.genomes.table.split[prokaryote.genomes.table.split$TL3 == &amp;quot;Actinobacteria&amp;quot; |
+  prokaryote.genomes.table.split$TL3 == &amp;quot;Firmicutes&amp;quot; |
+  prokaryote.genomes.table.split$TL3 == &amp;quot;Cyanobacteria/Melainabacteria group&amp;quot; |
+  prokaryote.genomes.table.split$TL3 == &amp;quot;Tenericutes&amp;quot;,]
+
+# Create the plot faceted by the information in the TL3 column.
+qplot(data=Terra.4TL2.df, 
+      x = `GC%`, 
+      geom = &amp;quot;density&amp;quot;, 
+      color = TL3, 
+      fill = TL3, 
+      facets = TL3 ~ .)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://chrisgaby.github.io/post/2020-09-15-prokaryotic-genome-gc-content_files/figure-html/unnamed-chunk-7-1.png&#34; width=&#34;960&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;The Firmicutes have a median GC% of 40.3% vs. the Actinobacteria whose median GC% is 69.9%.&lt;/p&gt;
+&lt;p&gt;The Firmicutes exhibit a wide distribution of genome GC%, thereby leading to a standard deviation of 7.3900331, whereas the Tenericutes have a relatively narrow distribution, with a corresponding standard deviation of 2.7652308.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;conclusion&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;Genome GC content can vary by more than 50% depending on the organism. Closely-related organisms tend to have similar GC%. For example, Actinobacteria are high GC%, gram positive organisms whose median GC% was determined to be 70% herein, while the Firmicutes are low GC%, gram postitive organisms whose median GC% was 40% herein. Based upon the current genome representation in this dataset, some phyla like the the Tenericutes have a narrow distribution of GC% whereas others like the Firmicutes have a wide range. Still other phyla like the Proteobacteria and Spirochaetes appear bimodal, suggesting that there are lower order taxa in these phyla with distinct genome GC% contents.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
     
     <item>
       <title>Prokaryotic Genome Weight</title>

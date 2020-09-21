@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.5.0">
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="John Christian Gaby">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="In this blogpost, I explore the range of genome GC contents using a data table of 11,710 refseq prokaryotic genomes.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://chrisgaby.github.io/post/prokaryotic-genome-gc-content/">
+
+  
+
+
+  
+  
+  
+  <meta name="theme-color" content="#2962ff">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        
+      
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.2.0/leaflet.css" integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ==" crossorigin="anonymous">
+    
+
+    
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.min.04a87a1cb9027e3c50f566322527c56f.css">
+
+  
+
+  
+  
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-177026255-1', 'auto');
+      
+      ga('require', 'eventTracker');
+      ga('require', 'outboundLinkTracker');
+      ga('require', 'urlChangeTracker');
+      ga('send', 'pageview');
+    </script>
+    <script async src="https://www.google-analytics.com/analytics.js"></script>
+    
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
+    
+  
+  
+
+  
+
+  <link rel="manifest" href="/index.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon-32.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="https://chrisgaby.github.io/post/prokaryotic-genome-gc-content/">
+
+  
+  
+  
+  
+    
+    
+  
+  
+  <meta property="twitter:card" content="summary">
+  
+  <meta property="og:site_name" content="John Christian Gaby, PhD">
+  <meta property="og:url" content="https://chrisgaby.github.io/post/prokaryotic-genome-gc-content/">
+  <meta property="og:title" content="Prokaryotic Genome GC Content | John Christian Gaby, PhD">
+  <meta property="og:description" content="In this blogpost, I explore the range of genome GC contents using a data table of 11,710 refseq prokaryotic genomes."><meta property="og:image" content="https://chrisgaby.github.io/img/icon-192.png">
+  <meta property="twitter:image" content="https://chrisgaby.github.io/img/icon-192.png"><meta property="og:locale" content="en-us">
+  
+    
+      <meta property="article:published_time" content="2020-09-15T00:00:00&#43;00:00">
+    
+    <meta property="article:modified_time" content="2020-09-21T17:28:36&#43;02:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://chrisgaby.github.io/post/prokaryotic-genome-gc-content/"
+  },
+  "headline": "Prokaryotic Genome GC Content",
+  
+  "datePublished": "2020-09-15T00:00:00Z",
+  "dateModified": "2020-09-21T17:28:36+02:00",
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "John Christian Gaby, PhD",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://chrisgaby.github.io/img/icon-512.png"
+    }
+  },
+  "description": "In this blogpost, I explore the range of genome GC contents using a data table of 11,710 refseq prokaryotic genomes."
+}
+</script>
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+  <title>Prokaryotic Genome GC Content | John Christian Gaby, PhD</title>
+
+</head>
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0 compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+      <a class="navbar-brand" href="/">John Christian Gaby, PhD</a>
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+    
+    <div class="collapse navbar-collapse" id="navbar">
+
+      
+      
+      <ul class="navbar-nav mr-auto">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>About me</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#posts"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#publications"><span>Publications</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/files/cv.pdf"><span>CV</span></a>
+        </li>
+
+        
+        
+
+      
+      </ul>
+      <ul class="navbar-nav ml-auto">
+      
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+        </li>
+        
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+  <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>Prokaryotic Genome GC Content</h1>
+
+  
+  <p class="page-subtitle">Visualizing the distribution of prokaryotic genome GC content within phyla.</p>
+  
+
+  
+    
+
+
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+
+
+  <span><a href="/authors/john-christian-gaby/">John Christian Gaby</a></span>
+
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+          Last updated on
+      
+    
+    Mon, Sep 21, 2020
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    5 min read
+  </span>
+  
+
+  
+  
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder mr-1"></i><a href="/categories/genome-calculations/">genome calculations</a></span>
+  
+
+  
+    
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://chrisgaby.github.io/post/prokaryotic-genome-gc-content/&amp;text=Prokaryotic%20Genome%20GC%20Content" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://chrisgaby.github.io/post/prokaryotic-genome-gc-content/&amp;t=Prokaryotic%20Genome%20GC%20Content" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Prokaryotic%20Genome%20GC%20Content&amp;body=https://chrisgaby.github.io/post/prokaryotic-genome-gc-content/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://chrisgaby.github.io/post/prokaryotic-genome-gc-content/&amp;title=Prokaryotic%20Genome%20GC%20Content" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://web.whatsapp.com/send?text=Prokaryotic%20Genome%20GC%20Content%20https://chrisgaby.github.io/post/prokaryotic-genome-gc-content/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://chrisgaby.github.io/post/prokaryotic-genome-gc-content/&amp;title=Prokaryotic%20Genome%20GC%20Content" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      
+
+
+<div id="introduction" class="section level2">
+<h2>Introduction</h2>
+<p>Prokaryotic genomes vary in GC content. Indeed, the percent GC content of a prokaryotic genome is considered a characteristic of the organism, and closely-related organisms often have similar GC contents. Even at the phylum level of the taxnomic hierarchy for prokaryotes, organisms may share a similar range of GC contents. For example, Actinobacteria are sometimes referred to as the high GC gram positives while Firmicutes are referred to as the low GC gram positives. In this blogpost, I will use the same data table of 11,710 RefSeq representative prokaryotic genomes that was used in a <a href="/post/prokaryotic-genome-size/index.html">prior blogpost where I examined genome size</a>, except I will analyze the column indicating the percent GC content of the genome.</p>
+</div>
+<div id="load-libraries" class="section level2">
+<h2>Load libraries</h2>
+<p>Let’s load all the required libraries upfront so that one doesn’t have to search each code snippet for the required packages.</p>
+<pre class="r"><code>library(ggplot2)
+library(tidyverse)</code></pre>
+<pre><code>## ── Attaching packages ───────────────────────────────────────────────────────────────────────────────────────────────────────── tidyverse 1.3.0 ──</code></pre>
+<pre><code>## ✔ tibble  2.1.3     ✔ dplyr   0.8.3
+## ✔ tidyr   1.0.0     ✔ stringr 1.4.0
+## ✔ readr   1.3.1     ✔ forcats 0.4.0
+## ✔ purrr   0.3.3</code></pre>
+<pre><code>## ── Conflicts ──────────────────────────────────────────────────────────────────────────────────────────────────────────── tidyverse_conflicts() ──
+## ✖ dplyr::filter() masks stats::filter()
+## ✖ dplyr::lag()    masks stats::lag()</code></pre>
+</div>
+<div id="load-the-data-and-produce-summary-statistics" class="section level2">
+<h2>Load the Data and Produce Summary Statistics</h2>
+<p>I will begin by loading the aforementioned table of prokaryotic genome metadata, and then I will geneate summary data to examine the range of GC contents for the prokaryotes represented in that table.</p>
+<pre class="r"><code>setwd(&quot;/home/chrisgaby/github/My_Website/&quot;)
+
+# Read the table into a tibble.
+prokaryote.genomes.table &lt;- read_csv(file = &quot;./static/files/prokaryotes.csv&quot;)
+
+# Display the minimum, maximum, mean, median, and 1st and 3rd quartiles
+# for the genome sizes.
+summary(prokaryote.genomes.table$`GC%`)</code></pre>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   22.40   41.00   54.80   53.18   65.50   77.00</code></pre>
+<p>It looks like GC% ranges from 22.4 to 77%, a difference of 54.6%!</p>
+</div>
+<div id="histogram-of-gc" class="section level2">
+<h2>Histogram of GC%</h2>
+<p>Let’s examine the distribution of GC% for all the prokaryotic genomes.</p>
+<pre class="r"><code>qplot(data = prokaryote.genomes.table, 
+      x = `GC%`, 
+      binwidth = 1)</code></pre>
+<p><img src="/post/2020-09-15-prokaryotic-genome-gc-content_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p>The distribution is bimodal.</p>
+</div>
+<div id="gc-for-the-principle-taxonomic-groupings" class="section level2">
+<h2>GC% for the Principle Taxonomic Groupings</h2>
+<p>Note that the descriptors used in the table to refer to taxonomy include multi-phylum groupings like “FCB group”, “PVC group”, and “Terrabacteria”. Hence, we’ll separate the “Organism Groups” column with this information into 3 new columns for the taxonomic levels (TL) designated TL1, TL2, and TL3, and then we’ll examine the GC% distribution for the 6 most abundant groups at TL2.</p>
+<pre class="r"><code># Split the Organism Groups column into new columns named according to their
+# respective taxonomy level, abbreviated TL1, TL2, and TL3.
+prokaryote.genomes.table.split &lt;- separate(data=prokaryote.genomes.table, 
+                                           col = `Organism Groups`, 
+                                           sep = &quot;;&quot;, 
+                                           into = c(&quot;TL1&quot;, &quot;TL2&quot;, &quot;TL3&quot;))
+
+TL2.subset.names &lt;- names(which(summary(factor(prokaryote.genomes.table.split$TL2)) &gt; 90))
+prokaryote.genomes.table.split.reduced &lt;- prokaryote.genomes.table.split[prokaryote.genomes.table.split$TL2 == TL2.subset.names[1] | 
+                                 prokaryote.genomes.table.split$TL2 == TL2.subset.names[2] | 
+                                 prokaryote.genomes.table.split$TL2 == TL2.subset.names[3] | 
+                                 prokaryote.genomes.table.split$TL2 == TL2.subset.names[4] | 
+                                 prokaryote.genomes.table.split$TL2 == TL2.subset.names[5] | 
+                                 prokaryote.genomes.table.split$TL2 == TL2.subset.names[6],]
+
+qplot(data=prokaryote.genomes.table.split.reduced, 
+      x = `GC%`, 
+      geom = &quot;density&quot;, 
+      color = TL2, 
+      fill = TL2, 
+      alpha = I(0.2))</code></pre>
+<p><img src="/post/2020-09-15-prokaryotic-genome-gc-content_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p>It looks like some phyla have a bimodal GC% distribution too.</p>
+</div>
+<div id="faceted-phylum-gc" class="section level2">
+<h2>Faceted Phylum GC%</h2>
+<p>Let’s separate these TL2 groups into their own facets.</p>
+<pre class="r"><code>qplot(data=prokaryote.genomes.table.split.reduced, 
+      x = `GC%`, 
+      geom = &quot;density&quot;, 
+      color = TL2, 
+      fill = TL2, 
+      facets = TL2 ~ .)</code></pre>
+<p><img src="/post/2020-09-15-prokaryotic-genome-gc-content_files/figure-html/unnamed-chunk-4-1.png" width="960" style="display: block; margin: auto;" /></p>
+<p>The Proteobacteria and Spirochaetes have bimodal genome GC% distributions, and thus it seems there are taxa within these phyla with distinct GC% contents.</p>
+<p>Some of these designations like PVC group and Terrabacteria group are supercategories that contain several traditional phyla.</p>
+</div>
+<div id="terrabacteria-phyla-gc" class="section level2">
+<h2>Terrabacteria Phyla GC%</h2>
+<p>Let’s divide the Terrabacteria group up into the phyla that comprise it.</p>
+<pre class="r"><code># Display the taxa within Terrabacteria.
+unique(prokaryote.genomes.table.split[prokaryote.genomes.table.split$TL2 == 
+                                        &quot;Terrabacteria group&quot;,&quot;TL3&quot;])</code></pre>
+<pre><code>## # A tibble: 9 x 1
+##   TL3                                
+##   &lt;chr&gt;                              
+## 1 Firmicutes                         
+## 2 Actinobacteria                     
+## 3 Cyanobacteria/Melainabacteria group
+## 4 Tenericutes                        
+## 5 Deinococcus-Thermus                
+## 6 Chloroflexi                        
+## 7 unclassified Terrabacteria group   
+## 8 Armatimonadetes                    
+## 9 Abditibacteriota</code></pre>
+<p>The Terrabacteria group contains both the high and low GC gram positives Actinobacteria and Firmicutes. Let’s see if we have enough data points in each phylum to create another distribution.</p>
+<pre class="r"><code># The number of rows for each phylum indicates the number of datapoints
+# for each phylum
+nrow(prokaryote.genomes.table.split[prokaryote.genomes.table.split$TL3 == 
+                                      &quot;Actinobacteria&quot;,])</code></pre>
+<pre><code>## [1] 2319</code></pre>
+<pre class="r"><code>nrow(prokaryote.genomes.table.split[prokaryote.genomes.table.split$TL3 == 
+                                      &quot;Firmicutes&quot;,])</code></pre>
+<pre><code>## [1] 2217</code></pre>
+<pre class="r"><code>nrow(prokaryote.genomes.table.split[prokaryote.genomes.table.split$TL3 == 
+                                      &quot;Cyanobacteria/Melainabacteria group&quot;,])</code></pre>
+<pre><code>## [1] 134</code></pre>
+<pre class="r"><code>nrow(prokaryote.genomes.table.split[prokaryote.genomes.table.split$TL3 == 
+                                      &quot;Tenericutes&quot;,])</code></pre>
+<pre><code>## [1] 159</code></pre>
+<pre class="r"><code>nrow(prokaryote.genomes.table.split[prokaryote.genomes.table.split$TL3 == 
+                                      &quot;Deinococcus-Thermus&quot;,])</code></pre>
+<pre><code>## [1] 73</code></pre>
+<pre class="r"><code>nrow(prokaryote.genomes.table.split[prokaryote.genomes.table.split$TL3 == 
+                                      &quot;Chloroflexi&quot;,])</code></pre>
+<pre><code>## [1] 43</code></pre>
+<pre class="r"><code>nrow(prokaryote.genomes.table.split[prokaryote.genomes.table.split$TL3 == 
+                                      &quot;unclassified Terrabacteria group&quot;,])</code></pre>
+<pre><code>## [1] 1</code></pre>
+<pre class="r"><code>nrow(prokaryote.genomes.table.split[prokaryote.genomes.table.split$TL3 == 
+                                      &quot;Armatimonadetes&quot;,])</code></pre>
+<pre><code>## [1] 3</code></pre>
+<pre class="r"><code>nrow(prokaryote.genomes.table.split[prokaryote.genomes.table.split$TL3 == 
+                                      &quot;Abditibacteriota&quot;,])</code></pre>
+<pre><code>## [1] 1</code></pre>
+<p>It looks like only Actinobacteria, Firmicutes, Cyanobacteria/Melainabacteria group, and Tenericutes have more than 100 data points. We’ll proceed with these 4 phyla for the following visualization.</p>
+<pre class="r"><code># Create a Terrabacteria dataframe with only the 4 phyla haveing over 100 datapoints.
+Terra.4TL2.df &lt;- prokaryote.genomes.table.split[prokaryote.genomes.table.split$TL3 == &quot;Actinobacteria&quot; |
+  prokaryote.genomes.table.split$TL3 == &quot;Firmicutes&quot; |
+  prokaryote.genomes.table.split$TL3 == &quot;Cyanobacteria/Melainabacteria group&quot; |
+  prokaryote.genomes.table.split$TL3 == &quot;Tenericutes&quot;,]
+
+# Create the plot faceted by the information in the TL3 column.
+qplot(data=Terra.4TL2.df, 
+      x = `GC%`, 
+      geom = &quot;density&quot;, 
+      color = TL3, 
+      fill = TL3, 
+      facets = TL3 ~ .)</code></pre>
+<p><img src="/post/2020-09-15-prokaryotic-genome-gc-content_files/figure-html/unnamed-chunk-7-1.png" width="960" style="display: block; margin: auto;" /></p>
+<p>The Firmicutes have a median GC% of 40.3% vs. the Actinobacteria whose median GC% is 69.9%.</p>
+<p>The Firmicutes exhibit a wide distribution of genome GC%, thereby leading to a standard deviation of 7.3900331, whereas the Tenericutes have a relatively narrow distribution, with a corresponding standard deviation of 2.7652308.</p>
+</div>
+<div id="conclusion" class="section level2">
+<h2>Conclusion</h2>
+<p>Genome GC content can vary by more than 50% depending on the organism. Closely-related organisms tend to have similar GC%. For example, Actinobacteria are high GC%, gram positive organisms whose median GC% was determined to be 70% herein, while the Firmicutes are low GC%, gram postitive organisms whose median GC% was 40% herein. Based upon the current genome representation in this dataset, some phyla like the the Tenericutes have a narrow distribution of GC% whereas others like the Firmicutes have a wide range. Still other phyla like the Proteobacteria and Spirochaetes appear bimodal, suggesting that there are lower order taxa in these phyla with distinct genome GC% contents.</p>
+</div>
+
+    </div>
+
+    
+
+
+    
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tags/genomics/">genomics</a>
+  
+  <a class="badge badge-light" href="/tags/gc/">GC%</a>
+  
+  <a class="badge badge-light" href="/tags/gc-content/">GC content</a>
+  
+</div>
+
+
+
+    
+      
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="media author-card">
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="/authors/john-christian-gaby/"></a></h5>
+      
+      
+      <ul class="network-icon" aria-hidden="true">
+        
+      </ul>
+    </div>
+  </div>
+
+
+
+      
+      
+      <div class="article-widget">
+        <div class="hr-light"></div>
+        <h3>Related</h3>
+        <ul>
+          
+          <li><a href="/post/prokaryotic-genome-weight/">Prokaryotic Genome Weight</a></li>
+          
+          <li><a href="/post/prokaryotic-genome-size/">Prokaryotic Genome Size</a></li>
+          
+        </ul>
+      </div>
+      
+    
+
+    
+
+    
+
+
+  </div>
+</article>
+
+      
+
+    
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js" integrity="sha256-aYTdUrn6Ow1DDgh5JTc3aDGnnju48y/1c8s1dgkYPQ8=" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/r.min.js"></script>
+        
+      
+
+      
+      
+    
+
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.2.0/leaflet.js" integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log==" crossorigin="anonymous"></script>
+    
+
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script>
+      const search_index_filename = "/index.json";
+      const i18n = {
+        'placeholder': "Search...",
+        'results': "results found",
+        'no_results': "No results found"
+      };
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.f92d7215d2132cd354f657f0bc9cc542.js"></script>
+
+    
+
+
+
+
+
+
+  
+  <div class="container">
+    <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" id="back_to_top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+  </div>
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
