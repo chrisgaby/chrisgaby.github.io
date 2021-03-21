@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sabina Leanti La Rosa | John Christian Gaby, PhD</title>
+    <link>https://chrisgaby.github.io/authors/sabina-leanti-la-rosa/</link>
+      <atom:link href="https://chrisgaby.github.io/authors/sabina-leanti-la-rosa/index.xml" rel="self" type="application/rss+xml" />
+    <description>Sabina Leanti La Rosa</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 01 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://chrisgaby.github.io/img/icon-192.png</url>
+      <title>Sabina Leanti La Rosa</title>
+      <link>https://chrisgaby.github.io/authors/sabina-leanti-la-rosa/</link>
+    </image>
+    
+    <item>
+      <title>Isolation and characterization of extracellular vesicles secreted in vitro by porcine microbiota</title>
+      <link>https://chrisgaby.github.io/publication/lagos-2020/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>https://chrisgaby.github.io/publication/lagos-2020/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Microbiota-directed fibre activates both targeted and secondary metabolic shifts in the distal gut</title>
+      <link>https://chrisgaby.github.io/publication/michalak-2020/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>https://chrisgaby.github.io/publication/michalak-2020/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

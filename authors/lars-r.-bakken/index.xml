@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lars R. Bakken | John Christian Gaby, PhD</title>
+    <link>https://chrisgaby.github.io/authors/lars-r.-bakken/</link>
+      <atom:link href="https://chrisgaby.github.io/authors/lars-r.-bakken/index.xml" rel="self" type="application/rss+xml" />
+    <description>Lars R. Bakken</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 01 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://chrisgaby.github.io/img/icon-192.png</url>
+      <title>Lars R. Bakken</title>
+      <link>https://chrisgaby.github.io/authors/lars-r.-bakken/</link>
+    </image>
+    
+    <item>
+      <title>Contingent Effects of Liming on N2O-Emissions Driven by Autotrophic Nitrification</title>
+      <link>https://chrisgaby.github.io/publication/nadeem-2020/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>https://chrisgaby.github.io/publication/nadeem-2020/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
