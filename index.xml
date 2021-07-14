@@ -5,12 +5,825 @@
     <link>https://chrisgaby.github.io/</link>
       <atom:link href="https://chrisgaby.github.io/index.xml" rel="self" type="application/rss+xml" />
     <description>John Christian Gaby, PhD</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 13 Dec 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 04 Jul 2021 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://chrisgaby.github.io/img/icon-192.png</url>
       <title>John Christian Gaby, PhD</title>
       <link>https://chrisgaby.github.io/</link>
     </image>
+    
+    <item>
+      <title>Create a Word List</title>
+      <link>https://chrisgaby.github.io/post/2021-07-04-unixpipesforforeignlanguagelearning/</link>
+      <pubDate>Sun, 04 Jul 2021 00:00:00 +0000</pubDate>
+      <guid>https://chrisgaby.github.io/post/2021-07-04-unixpipesforforeignlanguagelearning/</guid>
+      <description>
+
+
+&lt;div id=&#34;introduction&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;Vocabulary lists are a useful way to identify words of unknown meaning when reading a document. In particular, students of a foreign language may find a vocabulary list useful when preparing to read a literary work. A comprehensive vocabulary list can be quickly created from a plain text file on a computer by using a series of UNIX shell commands. The commands can even generate a list that is alphabetized and non-redundant. Herein I will demonstrate the use of UNIX shell commands to derive such a vocabulary list of Spanish words from the literary work &lt;em&gt;Don Quijote&lt;/em&gt;, written by Miguel de Cervantes Saavedra.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;download-plain-text-of-cervantes-don-quijote&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Download Plain Text of Cervantes&#39; &lt;em&gt;Don Quijote&lt;/em&gt;&lt;/h2&gt;
+&lt;p&gt;First, the book is downloaded in plain text format from its location on the Project Gutenberg website. It is saved locally in the working directory as the file &lt;code&gt;CervantesDonQuijote.txt&lt;/code&gt;. The command &lt;code&gt;wget&lt;/code&gt; downloads files from the world wide web via http, https, or ftp, and by using the &lt;code&gt;-O&lt;/code&gt; parameter, we may specify the name of the file to be saved in the working directory of our computer.&lt;/p&gt;
+&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;wget https://www.gutenberg.org/files/2000/2000-0.txt -O CervantesDonQuijote.txt
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## --2021-07-14 00:07:14--  https://www.gutenberg.org/files/2000/2000-0.txt
+## Resolving www.gutenberg.org (www.gutenberg.org)... 2610:28:3090:3000:0:bad:cafe:47, 152.19.134.47
+## Connecting to www.gutenberg.org (www.gutenberg.org)|2610:28:3090:3000:0:bad:cafe:47|:443... connected.
+## HTTP request sent, awaiting response... 200 OK
+## Length: 2226045 (2.1M) [text/plain]
+## Saving to: ‘CervantesDonQuijote.txt’
+## 
+##      0K .......... .......... .......... .......... ..........  2%  445K 5s
+##     50K .......... .......... .......... .......... ..........  4%  894K 3s
+##    100K .......... .......... .......... .......... ..........  6% 22.1M 2s
+##    150K .......... .......... .......... .......... ..........  9%  909K 2s
+##    200K .......... .......... .......... .......... .......... 11% 37.8M 2s
+##    250K .......... .......... .......... .......... .......... 13% 42.0M 1s
+##    300K .......... .......... .......... .......... .......... 16% 57.6M 1s
+##    350K .......... .......... .......... .......... .......... 18% 1.45M 1s
+##    400K .......... .......... .......... .......... .......... 20% 1.57M 1s
+##    450K .......... .......... .......... .......... .......... 23% 75.8M 1s
+##    500K .......... .......... .......... .......... .......... 25% 66.7M 1s
+##    550K .......... .......... .......... .......... .......... 27% 17.3M 1s
+##    600K .......... .......... .......... .......... .......... 29% 79.1M 1s
+##    650K .......... .......... .......... .......... .......... 32% 36.4M 1s
+##    700K .......... .......... .......... .......... .......... 34% 73.4M 1s
+##    750K .......... .......... .......... .......... .......... 36% 2.85M 1s
+##    800K .......... .......... .......... .......... .......... 39% 1.63M 1s
+##    850K .......... .......... .......... .......... .......... 41% 16.7M 0s
+##    900K .......... .......... .......... .......... .......... 43% 80.9M 0s
+##    950K .......... .......... .......... .......... .......... 46% 54.6M 0s
+##   1000K .......... .......... .......... .......... .......... 48% 93.4M 0s
+##   1050K .......... .......... .......... .......... .......... 50% 15.9M 0s
+##   1100K .......... .......... .......... .......... .......... 52%  128M 0s
+##   1150K .......... .......... .......... .......... .......... 55%  104M 0s
+##   1200K .......... .......... .......... .......... .......... 57%  136M 0s
+##   1250K .......... .......... .......... .......... .......... 59% 17.7M 0s
+##   1300K .......... .......... .......... .......... .......... 62% 28.1M 0s
+##   1350K .......... .......... .......... .......... .......... 64%  140M 0s
+##   1400K .......... .......... .......... .......... .......... 66% 21.8M 0s
+##   1450K .......... .......... .......... .......... .......... 69% 52.5M 0s
+##   1500K .......... .......... .......... .......... .......... 71%  113M 0s
+##   1550K .......... .......... .......... .......... .......... 73%  110M 0s
+##   1600K .......... .......... .......... .......... .......... 75% 5.88M 0s
+##   1650K .......... .......... .......... .......... .......... 78% 26.6M 0s
+##   1700K .......... .......... .......... .......... .......... 80% 1.68M 0s
+##   1750K .......... .......... .......... .......... .......... 82% 2.61M 0s
+##   1800K .......... .......... .......... .......... .......... 85% 76.5M 0s
+##   1850K .......... .......... .......... .......... .......... 87% 82.2M 0s
+##   1900K .......... .......... .......... .......... .......... 89% 80.6M 0s
+##   1950K .......... .......... .......... .......... .......... 92% 79.9M 0s
+##   2000K .......... .......... .......... .......... .......... 94% 84.5M 0s
+##   2050K .......... .......... .......... .......... .......... 96% 98.9M 0s
+##   2100K .......... .......... .......... .......... .......... 98% 92.3M 0s
+##   2150K .......... .......... ...                             100% 94.9M=0.4s
+## 
+## 2021-07-14 00:07:15 (4.96 MB/s) - ‘CervantesDonQuijote.txt’ saved [2226045/2226045]&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;identify-the-gutenberg-header-and-footer-for-removal&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Identify the Gutenberg Header and Footer for Removal&lt;/h2&gt;
+&lt;p&gt;Project Gutenberg ebooks contain a header that includes identifying information on the ebook such as title, author, and language. Following the body of the literary work, there is a footer that contains the Project Gutenberg License. As the header and footer are extraneous to the literary work, the lines on which they occur will be identified in order to later remove them and leave only the text of &lt;em&gt;Don Quijote&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;The UNIX shell command &lt;code&gt;cat&lt;/code&gt;, short for &amp;quot;concatenate&amp;quot;, reads the contents of a file and outputs them, and as its name implies may be used to concatenate multiple files. In our case, we will only use it to read and output our text file. The UNIX shell command &lt;code&gt;head&lt;/code&gt; displays a set number of lines from the beginning, or &amp;quot;head&amp;quot;, of a file, whereas the command &lt;code&gt;tail&lt;/code&gt; does the same, but at the end, or &amp;quot;tail&amp;quot;, of a file. The pipe character &lt;code&gt;|&lt;/code&gt; takes the output of a command and uses it as input for the subsequent command, enabling a chain of commands to perform operations on a single data source without having to save and reload the new version of the data that results from each command.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;-n&lt;/code&gt; parameter of the &lt;code&gt;head&lt;/code&gt; and &lt;code&gt;tail&lt;/code&gt; commands specifies the number of lines to output, and one has to progressively increase the number of lines until one can see that the entirety of the header or footer is displayed, then note the line numbers where the beginning and end of the literary text occur.&lt;/p&gt;
+&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;# Find the header.
+cat CervantesDonQuijote.txt --number | head -n 50
+
+# Find the footer.
+cat CervantesDonQuijote.txt --number | tail -n 400
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##      1   ﻿The Project Gutenberg eBook of Don Quijote, by Miguel de Cervantes Saavedra
+##      2   
+##      3   This eBook is for the use of anyone anywhere in the United States and
+##      4   most other parts of the world at no cost and with almost no restrictions
+##      5   whatsoever. You may copy it, give it away or re-use it under the terms
+##      6   of the Project Gutenberg License included with this eBook or online at
+##      7   www.gutenberg.org. If you are not located in the United States, you
+##      8   will have to check the laws of the country where you are located before
+##      9   using this eBook.
+##     10   
+##     11   Title: Don Quijote
+##     12   
+##     13   Author: Miguel de Cervantes Saavedra
+##     14   
+##     15   Release Date: December, 1999 [eBook #2000]
+##     16   [Most recently updated: January 2, 2020]
+##     17   
+##     18   Language: Spanish
+##     19   
+##     20   Character set encoding: UTF-8
+##     21   
+##     22   Produced by: an anonymous Project Gutenberg volunteer and Joaquin Cuenca Abela
+##     23   
+##     24   *** START OF THE PROJECT GUTENBERG EBOOK DON QUIJOTE ***
+##     25   
+##     26   
+##     27   
+##     28   
+##     29   El ingenioso hidalgo don Quijote de la Mancha
+##     30   
+##     31   
+##     32   
+##     33   por Miguel de Cervantes Saavedra
+##     34   
+##     35   
+##     36   
+##     37   
+##     38   
+##     39   El ingenioso hidalgo don Quijote de la Mancha
+##     40   
+##     41   
+##     42     
+##     43   Tasa
+##     44   
+##     45     
+##     46   Testimonio de las erratas
+##     47   
+##     48     
+##     49   El Rey
+##     50   
+##  37663   que acreditó su ventura
+##  37664   morir cuerdo y vivir loco.
+##  37665   
+##  37666   Y el prudentísimo Cide Hamete dijo a su pluma:
+##  37667   
+##  37668   — Aquí quedarás, colgada desta espetera y deste hilo de alambre, ni sé si
+##  37669   bien cortada o mal tajada péñola mía, adonde vivirás luengos siglos, si
+##  37670   presuntuosos y malandrines historiadores no te descuelgan para profanarte.
+##  37671   Pero, antes que a ti lleguen, les puedes advertir, y decirles en el mejor
+##  37672   modo que pudieres:
+##  37673   
+##  37674   &amp;#39;&amp;#39;¡Tate, tate, folloncicos!
+##  37675   De ninguno sea tocada;
+##  37676   porque esta impresa, buen rey,
+##  37677   para mí estaba guardada.
+##  37678   
+##  37679   Para mí sola nació don Quijote, y yo para él; él supo obrar y yo escribir;
+##  37680   solos los dos somos para en uno, a despecho y pesar del escritor fingido y
+##  37681   tordesillesco que se atrevió, o se ha de atrever, a escribir con pluma de
+##  37682   avestruz grosera y mal deliñada las hazañas de mi valeroso caballero,
+##  37683   porque no es carga de sus hombros ni asunto de su resfriado ingenio; a
+##  37684   quien advertirás, si acaso llegas a conocerle, que deje reposar en la
+##  37685   sepultura los cansados y ya podridos huesos de don Quijote, y no le quiera
+##  37686   llevar, contra todos los fueros de la muerte, a Castilla la Vieja,
+##  37687   haciéndole salir de la fuesa donde real y verdaderamente yace tendido de
+##  37688   largo a largo, imposibilitado de hacer tercera jornada y salida nueva; que,
+##  37689   para hacer burla de tantas como hicieron tantos andantes caballeros, bastan
+##  37690   las dos que él hizo, tan a gusto y beneplácito de las gentes a cuya noticia
+##  37691   llegaron, así en éstos como en los estraños reinos&amp;#39;&amp;#39;. Y con esto cumplirás
+##  37692   con tu cristiana profesión, aconsejando bien a quien mal te quiere, y yo
+##  37693   quedaré satisfecho y ufano de haber sido el primero que gozó el fruto de
+##  37694   sus escritos enteramente, como deseaba, pues no ha sido otro mi deseo que
+##  37695   poner en aborrecimiento de los hombres las fingidas y disparatadas
+##  37696   historias de los libros de caballerías, que, por las de mi verdadero don
+##  37697   Quijote, van ya tropezando, y han de caer del todo, sin duda alguna. Vale.
+##  37698   
+##  37699   Fin
+##  37700   
+##  37701   
+##  37702   
+##  37703   
+##  37704   *** END OF THE PROJECT GUTENBERG EBOOK DON QUIJOTE ***
+##  37705   
+##  37706   ***** This file should be named 2000-0.txt or 2000-0.zip *****
+##  37707   This and all associated files of various formats will be found in:
+##  37708       https://www.gutenberg.org/2/0/0/2000/
+##  37709   
+##  37710   Updated editions will replace the previous one--the old editions will
+##  37711   be renamed.
+##  37712   
+##  37713   Creating the works from print editions not protected by U.S. copyright
+##  37714   law means that no one owns a United States copyright in these works,
+##  37715   so the Foundation (and you!) can copy and distribute it in the United
+##  37716   States without permission and without paying copyright
+##  37717   royalties. Special rules, set forth in the General Terms of Use part
+##  37718   of this license, apply to copying and distributing Project
+##  37719   Gutenberg-tm electronic works to protect the PROJECT GUTENBERG-tm
+##  37720   concept and trademark. Project Gutenberg is a registered trademark,
+##  37721   and may not be used if you charge for the eBooks, unless you receive
+##  37722   specific permission. If you do not charge anything for copies of this
+##  37723   eBook, complying with the rules is very easy. You may use this eBook
+##  37724   for nearly any purpose such as creation of derivative works, reports,
+##  37725   performances and research. They may be modified and printed and given
+##  37726   away--you may do practically ANYTHING in the United States with eBooks
+##  37727   not protected by U.S. copyright law. Redistribution is subject to the
+##  37728   trademark license, especially commercial redistribution.
+##  37729   
+##  37730   START: FULL LICENSE
+##  37731   
+##  37732   THE FULL PROJECT GUTENBERG LICENSE
+##  37733   PLEASE READ THIS BEFORE YOU DISTRIBUTE OR USE THIS WORK
+##  37734   
+##  37735   To protect the Project Gutenberg-tm mission of promoting the free
+##  37736   distribution of electronic works, by using or distributing this work
+##  37737   (or any other work associated in any way with the phrase &amp;quot;Project
+##  37738   Gutenberg&amp;quot;), you agree to comply with all the terms of the Full
+##  37739   Project Gutenberg-tm License available with this file or online at
+##  37740   www.gutenberg.org/license.
+##  37741   
+##  37742   Section 1. General Terms of Use and Redistributing Project
+##  37743   Gutenberg-tm electronic works
+##  37744   
+##  37745   1.A. By reading or using any part of this Project Gutenberg-tm
+##  37746   electronic work, you indicate that you have read, understand, agree to
+##  37747   and accept all the terms of this license and intellectual property
+##  37748   (trademark/copyright) agreement. If you do not agree to abide by all
+##  37749   the terms of this agreement, you must cease using and return or
+##  37750   destroy all copies of Project Gutenberg-tm electronic works in your
+##  37751   possession. If you paid a fee for obtaining a copy of or access to a
+##  37752   Project Gutenberg-tm electronic work and you do not agree to be bound
+##  37753   by the terms of this agreement, you may obtain a refund from the
+##  37754   person or entity to whom you paid the fee as set forth in paragraph
+##  37755   1.E.8.
+##  37756   
+##  37757   1.B. &amp;quot;Project Gutenberg&amp;quot; is a registered trademark. It may only be
+##  37758   used on or associated in any way with an electronic work by people who
+##  37759   agree to be bound by the terms of this agreement. There are a few
+##  37760   things that you can do with most Project Gutenberg-tm electronic works
+##  37761   even without complying with the full terms of this agreement. See
+##  37762   paragraph 1.C below. There are a lot of things you can do with Project
+##  37763   Gutenberg-tm electronic works if you follow the terms of this
+##  37764   agreement and help preserve free future access to Project Gutenberg-tm
+##  37765   electronic works. See paragraph 1.E below.
+##  37766   
+##  37767   1.C. The Project Gutenberg Literary Archive Foundation (&amp;quot;the
+##  37768   Foundation&amp;quot; or PGLAF), owns a compilation copyright in the collection
+##  37769   of Project Gutenberg-tm electronic works. Nearly all the individual
+##  37770   works in the collection are in the public domain in the United
+##  37771   States. If an individual work is unprotected by copyright law in the
+##  37772   United States and you are located in the United States, we do not
+##  37773   claim a right to prevent you from copying, distributing, performing,
+##  37774   displaying or creating derivative works based on the work as long as
+##  37775   all references to Project Gutenberg are removed. Of course, we hope
+##  37776   that you will support the Project Gutenberg-tm mission of promoting
+##  37777   free access to electronic works by freely sharing Project Gutenberg-tm
+##  37778   works in compliance with the terms of this agreement for keeping the
+##  37779   Project Gutenberg-tm name associated with the work. You can easily
+##  37780   comply with the terms of this agreement by keeping this work in the
+##  37781   same format with its attached full Project Gutenberg-tm License when
+##  37782   you share it without charge with others.
+##  37783   
+##  37784   1.D. The copyright laws of the place where you are located also govern
+##  37785   what you can do with this work. Copyright laws in most countries are
+##  37786   in a constant state of change. If you are outside the United States,
+##  37787   check the laws of your country in addition to the terms of this
+##  37788   agreement before downloading, copying, displaying, performing,
+##  37789   distributing or creating derivative works based on this work or any
+##  37790   other Project Gutenberg-tm work. The Foundation makes no
+##  37791   representations concerning the copyright status of any work in any
+##  37792   country outside the United States.
+##  37793   
+##  37794   1.E. Unless you have removed all references to Project Gutenberg:
+##  37795   
+##  37796   1.E.1. The following sentence, with active links to, or other
+##  37797   immediate access to, the full Project Gutenberg-tm License must appear
+##  37798   prominently whenever any copy of a Project Gutenberg-tm work (any work
+##  37799   on which the phrase &amp;quot;Project Gutenberg&amp;quot; appears, or with which the
+##  37800   phrase &amp;quot;Project Gutenberg&amp;quot; is associated) is accessed, displayed,
+##  37801   performed, viewed, copied or distributed:
+##  37802   
+##  37803     This eBook is for the use of anyone anywhere in the United States and
+##  37804     most other parts of the world at no cost and with almost no
+##  37805     restrictions whatsoever. You may copy it, give it away or re-use it
+##  37806     under the terms of the Project Gutenberg License included with this
+##  37807     eBook or online at www.gutenberg.org. If you are not located in the
+##  37808     United States, you will have to check the laws of the country where
+##  37809     you are located before using this eBook.
+##  37810   
+##  37811   1.E.2. If an individual Project Gutenberg-tm electronic work is
+##  37812   derived from texts not protected by U.S. copyright law (does not
+##  37813   contain a notice indicating that it is posted with permission of the
+##  37814   copyright holder), the work can be copied and distributed to anyone in
+##  37815   the United States without paying any fees or charges. If you are
+##  37816   redistributing or providing access to a work with the phrase &amp;quot;Project
+##  37817   Gutenberg&amp;quot; associated with or appearing on the work, you must comply
+##  37818   either with the requirements of paragraphs 1.E.1 through 1.E.7 or
+##  37819   obtain permission for the use of the work and the Project Gutenberg-tm
+##  37820   trademark as set forth in paragraphs 1.E.8 or 1.E.9.
+##  37821   
+##  37822   1.E.3. If an individual Project Gutenberg-tm electronic work is posted
+##  37823   with the permission of the copyright holder, your use and distribution
+##  37824   must comply with both paragraphs 1.E.1 through 1.E.7 and any
+##  37825   additional terms imposed by the copyright holder. Additional terms
+##  37826   will be linked to the Project Gutenberg-tm License for all works
+##  37827   posted with the permission of the copyright holder found at the
+##  37828   beginning of this work.
+##  37829   
+##  37830   1.E.4. Do not unlink or detach or remove the full Project Gutenberg-tm
+##  37831   License terms from this work, or any files containing a part of this
+##  37832   work or any other work associated with Project Gutenberg-tm.
+##  37833   
+##  37834   1.E.5. Do not copy, display, perform, distribute or redistribute this
+##  37835   electronic work, or any part of this electronic work, without
+##  37836   prominently displaying the sentence set forth in paragraph 1.E.1 with
+##  37837   active links or immediate access to the full terms of the Project
+##  37838   Gutenberg-tm License.
+##  37839   
+##  37840   1.E.6. You may convert to and distribute this work in any binary,
+##  37841   compressed, marked up, nonproprietary or proprietary form, including
+##  37842   any word processing or hypertext form. However, if you provide access
+##  37843   to or distribute copies of a Project Gutenberg-tm work in a format
+##  37844   other than &amp;quot;Plain Vanilla ASCII&amp;quot; or other format used in the official
+##  37845   version posted on the official Project Gutenberg-tm web site
+##  37846   (www.gutenberg.org), you must, at no additional cost, fee or expense
+##  37847   to the user, provide a copy, a means of exporting a copy, or a means
+##  37848   of obtaining a copy upon request, of the work in its original &amp;quot;Plain
+##  37849   Vanilla ASCII&amp;quot; or other form. Any alternate format must include the
+##  37850   full Project Gutenberg-tm License as specified in paragraph 1.E.1.
+##  37851   
+##  37852   1.E.7. Do not charge a fee for access to, viewing, displaying,
+##  37853   performing, copying or distributing any Project Gutenberg-tm works
+##  37854   unless you comply with paragraph 1.E.8 or 1.E.9.
+##  37855   
+##  37856   1.E.8. You may charge a reasonable fee for copies of or providing
+##  37857   access to or distributing Project Gutenberg-tm electronic works
+##  37858   provided that
+##  37859   
+##  37860   * You pay a royalty fee of 20% of the gross profits you derive from
+##  37861     the use of Project Gutenberg-tm works calculated using the method
+##  37862     you already use to calculate your applicable taxes. The fee is owed
+##  37863     to the owner of the Project Gutenberg-tm trademark, but he has
+##  37864     agreed to donate royalties under this paragraph to the Project
+##  37865     Gutenberg Literary Archive Foundation. Royalty payments must be paid
+##  37866     within 60 days following each date on which you prepare (or are
+##  37867     legally required to prepare) your periodic tax returns. Royalty
+##  37868     payments should be clearly marked as such and sent to the Project
+##  37869     Gutenberg Literary Archive Foundation at the address specified in
+##  37870     Section 4, &amp;quot;Information about donations to the Project Gutenberg
+##  37871     Literary Archive Foundation.&amp;quot;
+##  37872   
+##  37873   * You provide a full refund of any money paid by a user who notifies
+##  37874     you in writing (or by e-mail) within 30 days of receipt that s/he
+##  37875     does not agree to the terms of the full Project Gutenberg-tm
+##  37876     License. You must require such a user to return or destroy all
+##  37877     copies of the works possessed in a physical medium and discontinue
+##  37878     all use of and all access to other copies of Project Gutenberg-tm
+##  37879     works.
+##  37880   
+##  37881   * You provide, in accordance with paragraph 1.F.3, a full refund of
+##  37882     any money paid for a work or a replacement copy, if a defect in the
+##  37883     electronic work is discovered and reported to you within 90 days of
+##  37884     receipt of the work.
+##  37885   
+##  37886   * You comply with all other terms of this agreement for free
+##  37887     distribution of Project Gutenberg-tm works.
+##  37888   
+##  37889   1.E.9. If you wish to charge a fee or distribute a Project
+##  37890   Gutenberg-tm electronic work or group of works on different terms than
+##  37891   are set forth in this agreement, you must obtain permission in writing
+##  37892   from both the Project Gutenberg Literary Archive Foundation and The
+##  37893   Project Gutenberg Trademark LLC, the owner of the Project Gutenberg-tm
+##  37894   trademark. Contact the Foundation as set forth in Section 3 below.
+##  37895   
+##  37896   1.F.
+##  37897   
+##  37898   1.F.1. Project Gutenberg volunteers and employees expend considerable
+##  37899   effort to identify, do copyright research on, transcribe and proofread
+##  37900   works not protected by U.S. copyright law in creating the Project
+##  37901   Gutenberg-tm collection. Despite these efforts, Project Gutenberg-tm
+##  37902   electronic works, and the medium on which they may be stored, may
+##  37903   contain &amp;quot;Defects,&amp;quot; such as, but not limited to, incomplete, inaccurate
+##  37904   or corrupt data, transcription errors, a copyright or other
+##  37905   intellectual property infringement, a defective or damaged disk or
+##  37906   other medium, a computer virus, or computer codes that damage or
+##  37907   cannot be read by your equipment.
+##  37908   
+##  37909   1.F.2. LIMITED WARRANTY, DISCLAIMER OF DAMAGES - Except for the &amp;quot;Right
+##  37910   of Replacement or Refund&amp;quot; described in paragraph 1.F.3, the Project
+##  37911   Gutenberg Literary Archive Foundation, the owner of the Project
+##  37912   Gutenberg-tm trademark, and any other party distributing a Project
+##  37913   Gutenberg-tm electronic work under this agreement, disclaim all
+##  37914   liability to you for damages, costs and expenses, including legal
+##  37915   fees. YOU AGREE THAT YOU HAVE NO REMEDIES FOR NEGLIGENCE, STRICT
+##  37916   LIABILITY, BREACH OF WARRANTY OR BREACH OF CONTRACT EXCEPT THOSE
+##  37917   PROVIDED IN PARAGRAPH 1.F.3. YOU AGREE THAT THE FOUNDATION, THE
+##  37918   TRADEMARK OWNER, AND ANY DISTRIBUTOR UNDER THIS AGREEMENT WILL NOT BE
+##  37919   LIABLE TO YOU FOR ACTUAL, DIRECT, INDIRECT, CONSEQUENTIAL, PUNITIVE OR
+##  37920   INCIDENTAL DAMAGES EVEN IF YOU GIVE NOTICE OF THE POSSIBILITY OF SUCH
+##  37921   DAMAGE.
+##  37922   
+##  37923   1.F.3. LIMITED RIGHT OF REPLACEMENT OR REFUND - If you discover a
+##  37924   defect in this electronic work within 90 days of receiving it, you can
+##  37925   receive a refund of the money (if any) you paid for it by sending a
+##  37926   written explanation to the person you received the work from. If you
+##  37927   received the work on a physical medium, you must return the medium
+##  37928   with your written explanation. The person or entity that provided you
+##  37929   with the defective work may elect to provide a replacement copy in
+##  37930   lieu of a refund. If you received the work electronically, the person
+##  37931   or entity providing it to you may choose to give you a second
+##  37932   opportunity to receive the work electronically in lieu of a refund. If
+##  37933   the second copy is also defective, you may demand a refund in writing
+##  37934   without further opportunities to fix the problem.
+##  37935   
+##  37936   1.F.4. Except for the limited right of replacement or refund set forth
+##  37937   in paragraph 1.F.3, this work is provided to you &amp;#39;AS-IS&amp;#39;, WITH NO
+##  37938   OTHER WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+##  37939   LIMITED TO WARRANTIES OF MERCHANTABILITY OR FITNESS FOR ANY PURPOSE.
+##  37940   
+##  37941   1.F.5. Some states do not allow disclaimers of certain implied
+##  37942   warranties or the exclusion or limitation of certain types of
+##  37943   damages. If any disclaimer or limitation set forth in this agreement
+##  37944   violates the law of the state applicable to this agreement, the
+##  37945   agreement shall be interpreted to make the maximum disclaimer or
+##  37946   limitation permitted by the applicable state law. The invalidity or
+##  37947   unenforceability of any provision of this agreement shall not void the
+##  37948   remaining provisions.
+##  37949   
+##  37950   1.F.6. INDEMNITY - You agree to indemnify and hold the Foundation, the
+##  37951   trademark owner, any agent or employee of the Foundation, anyone
+##  37952   providing copies of Project Gutenberg-tm electronic works in
+##  37953   accordance with this agreement, and any volunteers associated with the
+##  37954   production, promotion and distribution of Project Gutenberg-tm
+##  37955   electronic works, harmless from all liability, costs and expenses,
+##  37956   including legal fees, that arise directly or indirectly from any of
+##  37957   the following which you do or cause to occur: (a) distribution of this
+##  37958   or any Project Gutenberg-tm work, (b) alteration, modification, or
+##  37959   additions or deletions to any Project Gutenberg-tm work, and (c) any
+##  37960   Defect you cause.
+##  37961   
+##  37962   Section 2. Information about the Mission of Project Gutenberg-tm
+##  37963   
+##  37964   Project Gutenberg-tm is synonymous with the free distribution of
+##  37965   electronic works in formats readable by the widest variety of
+##  37966   computers including obsolete, old, middle-aged and new computers. It
+##  37967   exists because of the efforts of hundreds of volunteers and donations
+##  37968   from people in all walks of life.
+##  37969   
+##  37970   Volunteers and financial support to provide volunteers with the
+##  37971   assistance they need are critical to reaching Project Gutenberg-tm&amp;#39;s
+##  37972   goals and ensuring that the Project Gutenberg-tm collection will
+##  37973   remain freely available for generations to come. In 2001, the Project
+##  37974   Gutenberg Literary Archive Foundation was created to provide a secure
+##  37975   and permanent future for Project Gutenberg-tm and future
+##  37976   generations. To learn more about the Project Gutenberg Literary
+##  37977   Archive Foundation and how your efforts and donations can help, see
+##  37978   Sections 3 and 4 and the Foundation information page at
+##  37979   www.gutenberg.org
+##  37980   
+##  37981   Section 3. Information about the Project Gutenberg Literary
+##  37982   Archive Foundation
+##  37983   
+##  37984   The Project Gutenberg Literary Archive Foundation is a non profit
+##  37985   501(c)(3) educational corporation organized under the laws of the
+##  37986   state of Mississippi and granted tax exempt status by the Internal
+##  37987   Revenue Service. The Foundation&amp;#39;s EIN or federal tax identification
+##  37988   number is 64-6221541. Contributions to the Project Gutenberg Literary
+##  37989   Archive Foundation are tax deductible to the full extent permitted by
+##  37990   U.S. federal laws and your state&amp;#39;s laws.
+##  37991   
+##  37992   The Foundation&amp;#39;s principal office is in Fairbanks, Alaska, with the
+##  37993   mailing address: PO Box 750175, Fairbanks, AK 99775, but its
+##  37994   volunteers and employees are scattered throughout numerous
+##  37995   locations. Its business office is located at 809 North 1500 West, Salt
+##  37996   Lake City, UT 84116, (801) 596-1887. Email contact links and up to
+##  37997   date contact information can be found at the Foundation&amp;#39;s web site and
+##  37998   official page at www.gutenberg.org/contact
+##  37999   
+##  38000   For additional contact information:
+##  38001   
+##  38002       Dr. Gregory B. Newby
+##  38003       Chief Executive and Director
+##  38004       gbnewby@pglaf.org
+##  38005   
+##  38006   Section 4. Information about Donations to the Project Gutenberg
+##  38007   Literary Archive Foundation
+##  38008   
+##  38009   Project Gutenberg-tm depends upon and cannot survive without wide
+##  38010   spread public support and donations to carry out its mission of
+##  38011   increasing the number of public domain and licensed works that can be
+##  38012   freely distributed in machine readable form accessible by the widest
+##  38013   array of equipment including outdated equipment. Many small donations
+##  38014   ($1 to $5,000) are particularly important to maintaining tax exempt
+##  38015   status with the IRS.
+##  38016   
+##  38017   The Foundation is committed to complying with the laws regulating
+##  38018   charities and charitable donations in all 50 states of the United
+##  38019   States. Compliance requirements are not uniform and it takes a
+##  38020   considerable effort, much paperwork and many fees to meet and keep up
+##  38021   with these requirements. We do not solicit donations in locations
+##  38022   where we have not received written confirmation of compliance. To SEND
+##  38023   DONATIONS or determine the status of compliance for any particular
+##  38024   state visit www.gutenberg.org/donate
+##  38025   
+##  38026   While we cannot and do not solicit contributions from states where we
+##  38027   have not met the solicitation requirements, we know of no prohibition
+##  38028   against accepting unsolicited donations from donors in such states who
+##  38029   approach us with offers to donate.
+##  38030   
+##  38031   International donations are gratefully accepted, but we cannot make
+##  38032   any statements concerning tax treatment of donations received from
+##  38033   outside the United States. U.S. laws alone swamp our small staff.
+##  38034   
+##  38035   Please check the Project Gutenberg Web pages for current donation
+##  38036   methods and addresses. Donations are accepted in a number of other
+##  38037   ways including checks, online payments and credit card donations. To
+##  38038   donate, please visit: www.gutenberg.org/donate
+##  38039   
+##  38040   Section 5. General Information About Project Gutenberg-tm electronic works.
+##  38041   
+##  38042   Professor Michael S. Hart was the originator of the Project
+##  38043   Gutenberg-tm concept of a library of electronic works that could be
+##  38044   freely shared with anyone. For forty years, he produced and
+##  38045   distributed Project Gutenberg-tm eBooks with only a loose network of
+##  38046   volunteer support.
+##  38047   
+##  38048   Project Gutenberg-tm eBooks are often created from several printed
+##  38049   editions, all of which are confirmed as not protected by copyright in
+##  38050   the U.S. unless a copyright notice is included. Thus, we do not
+##  38051   necessarily keep eBooks in compliance with any particular paper
+##  38052   edition.
+##  38053   
+##  38054   Most people start at our Web site which has the main PG search
+##  38055   facility: www.gutenberg.org
+##  38056   
+##  38057   This Web site includes information about Project Gutenberg-tm,
+##  38058   including how to make donations to the Project Gutenberg Literary
+##  38059   Archive Foundation, how to help produce our new eBooks, and how to
+##  38060   subscribe to our email newsletter to hear about new eBooks.
+##  38061   
+##  38062   &lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Reading the line numbers that are displayed at the left of the output, the text of the book begins on line 29 and ends on line 37699.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;list-characters-that-occur-in-the-text&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;List Characters That Occur in the Text&lt;/h2&gt;
+&lt;p&gt;In processing the text to create the vocabulary list, we will need to delete punctuation, numbers, and other characters that are not letters of the alphabet that occur in the vocabulary words themselves. Otherwise, when punctuation occurs adjacent to a word, then we could end up with multiple occurrences of the word, differing by the adjacent puctuation, in our vocabulary list, such as occurs in the following:&lt;/p&gt;
+&lt;p&gt;abajo&lt;/p&gt;
+&lt;p&gt;abajo,&lt;/p&gt;
+&lt;p&gt;abajo;&lt;/p&gt;
+&lt;p&gt;abajo.&lt;/p&gt;
+&lt;p&gt;whereby we can see that 4 instances of the word &amp;quot;abajo&amp;quot; are created because of the attached punctuation characters. Hence, punctuation should be eliminated from the text in order to create a non-redundant vocabulary list.&lt;/p&gt;
+&lt;p&gt;The following piped commands will list the unique characters in the text after standard punctuation has been deleted. The pipe begins with the sed command, short for &lt;code&gt;stream editor&lt;/code&gt;, which can edit text. In our case, we use it to simply read the text file and exclude the Project Gutenberg header and footer as explained earlier. Then, the &lt;code&gt;tr&lt;/code&gt; command, short for &lt;code&gt;translate&lt;/code&gt; as it may be used to replace one character with another, is used to delete punctuation characters in the &amp;quot;punctuation character class&amp;quot;, which is a pre-defined list of punctuation characters that is invoked with &lt;code&gt;[:punct:]&lt;/code&gt;. The command &lt;code&gt;grep&lt;/code&gt;, short for &amp;quot;global regular expression print&amp;quot;, allows searching for pattern matches. In our case, the &lt;code&gt;-o&lt;/code&gt; parameter, which from the help for the command is said to &amp;quot;show only the part of a line matching PATTERN&amp;quot;, is combined with the REGEX wildcard &amp;quot;.&amp;quot;, which represents any character except the newline character. When used in this way the &lt;code&gt;grep&lt;/code&gt; command effectively breaks the text up into one character on each line of the output, which is then sorted with the &lt;code&gt;sort&lt;/code&gt; command into alphabetical order, and then the &lt;code&gt;uniq&lt;/code&gt; command reduces the list to only the unique characters that appear in the text (minus the punctuation characters that were deleted by the &lt;code&gt;tr -d &#39;[:punct:]&#39;&lt;/code&gt; command of course).&lt;/p&gt;
+&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;sed -n &amp;#39;29,27699p&amp;#39; CervantesDonQuijote.txt | tr -d &amp;#39;[:punct:]&amp;#39; | grep -o . | sort | uniq
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##  
+## ¡
+## ¿
+## «
+## »
+## —
+## 
+## 0
+## 1
+## 2
+## 3
+## 4
+## 5
+## 6
+## 7
+## a
+## A
+## á
+## Á
+## à
+## b
+## B
+## c
+## C
+## d
+## D
+## e
+## E
+## é
+## É
+## f
+## F
+## g
+## G
+## h
+## H
+## i
+## I
+## í
+## Í
+## ï
+## j
+## J
+## l
+## L
+## m
+## M
+## n
+## N
+## ñ
+## Ñ
+## o
+## O
+## ó
+## Ó
+## p
+## P
+## q
+## Q
+## r
+## R
+## s
+## S
+## t
+## T
+## u
+## U
+## ú
+## Ú
+## ü
+## v
+## V
+## W
+## x
+## X
+## y
+## Y
+## z
+## Z&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;At the top of the output, we can see 5 characters that are not included in the punctuation character class, and thus were not removed:&lt;/p&gt;
+&lt;p&gt;¡ ¿ « » —&lt;/p&gt;
+&lt;p&gt;We&#39;ll need to specifically name these characters for deletion in order to make the vocabulary list.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;create-an-alphabetical-dictionary-of-don-quijote&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Create An Alphabetical Dictionary of Don Quijote&lt;/h2&gt;
+&lt;p&gt;Below, a piped series of commands creates an initial version of the non-redundant, alphabetized vocabulary list. It contains 10 commands:&lt;/p&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;As described above, the &lt;code&gt;sed&lt;/code&gt; command reads the text file and outputs its contents while excluding the extraneous Project Gutenberg text by reading the file at the line right after the header ends and stopping at the line right before the footer begins.&lt;/li&gt;
+&lt;li&gt;The &lt;code&gt;tr&lt;/code&gt; command replaces the space character &amp;quot; &amp;quot; with newlines indicated by &lt;code&gt;\n&lt;/code&gt;, effectively separating each word onto its own line.&lt;/li&gt;
+&lt;li&gt;The &lt;code&gt;sed&lt;/code&gt; command is again invoked to remove the &lt;code&gt;¡&lt;/code&gt; character, which is unique to the Spanish text and will not be removed by deleting the punctuation character class &lt;code&gt;&#39;[:punct:]&#39;&lt;/code&gt; later in the pipe. For some reason that I do not know, but that I nevertheless discovered through trial and error, attempting to delete this character using the &lt;code&gt;tr&lt;/code&gt; command results in misconversion of the á character throughout words in the list.&lt;/li&gt;
+&lt;li&gt;The &lt;code&gt;tr&lt;/code&gt; command is used to convert uppercase letters to lowercase, thus eliminating redundant occurrences of words due to capitalization of the first letter of the word at the beginning of sentences. Commands in UNIX are generally case-sensitive.&lt;/li&gt;
+&lt;li&gt;The &lt;code&gt;tr&lt;/code&gt; command is used to delete digits, or numbers throughout.&lt;/li&gt;
+&lt;li&gt;The &lt;code&gt;tr&lt;/code&gt; command is used to delete the punctuation characters &lt;code&gt;«»—¿&lt;/code&gt; that were identified as specific to this text and missed by the standard punctuation character class &lt;code&gt;&#39;[:punct:]&#39;&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;The &lt;code&gt;tr&lt;/code&gt; command is used to delete the standard punctuation character class.&lt;/li&gt;
+&lt;li&gt;The &lt;code&gt;tr&lt;/code&gt; command is used to delete occurrences of carriage returns with the escape sequence &lt;code&gt;\r&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;The &lt;code&gt;sort&lt;/code&gt; command arranges te output alphabetically and at this point contains multiple occurrences of identical words.&lt;/li&gt;
+&lt;li&gt;The &lt;code&gt;uniq&lt;/code&gt; command reduces multiple occurrences of the same word to a single instance.&lt;/li&gt;
+&lt;li&gt;Finally, the &lt;code&gt;&amp;gt;&lt;/code&gt; indicates for the standard output to be re-directed to a file named &lt;code&gt;CervantesDonQuijoteSpanishWordList.txt&#39;. The&lt;/code&gt;&amp;gt;` will overwrite the file if it already exists but will create it if it doesn&#39;t already exist.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;sed -n &amp;#39;29,37699p&amp;#39; CervantesDonQuijote.txt | tr &amp;quot; &amp;quot; &amp;quot;\n&amp;quot; | sed &amp;#39;s/¡//&amp;#39; | tr [:upper:] [:lower:] | tr -d &amp;#39;[:digit:]&amp;#39; | tr -d &amp;quot;«»—¿&amp;quot; | tr -d &amp;#39;[:punct:]&amp;#39; | tr -d &amp;#39;\r&amp;#39; | sort | uniq &amp;gt; CervantesDonQuijoteSpanishWordList.txt
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;examine-the-first-and-last-10-words-in-the-list&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Examine the First and Last 10 Words in the List&lt;/h2&gt;
+&lt;p&gt;Let&#39;s use the &lt;code&gt;head&lt;/code&gt; and &lt;code&gt;tail&lt;/code&gt; commands to examine the first 10 and last 10 words in the list.&lt;/p&gt;
+&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;head CervantesDonQuijoteSpanishWordList.txt
+
+tail CervantesDonQuijoteSpanishWordList.txt
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## 
+## a
+## á
+## abad
+## abadejo
+## abades
+## abadesa
+## abaja
+## abajan
+## abajarse
+## zoroástrica
+## zorra
+## zorras
+## zorruna
+## zuecos
+## zulema
+## zumban
+## zurdo
+## zurrón
+## zuzaban&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This small sample of words in the list looks good. However, on deeper inspection of the list in a text editor, I identified the occurrence of Roman numerals, and these will need to be removed.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;identify-and-remove-roman-numerals&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Identify and Remove Roman Numerals&lt;/h2&gt;
+&lt;p&gt;Roman numerals consist of the characters &amp;quot;ivxlcm&amp;quot;, and they appear in our list because the characters used to denote them are also used in regular words. To remove Roman numerals, we&#39;ll need to find the lines in the vocabulary list that consist solely of the characters &amp;quot;ivxlcm&amp;quot;, and for this we&#39;ll use the &lt;code&gt;grep&lt;/code&gt; command with a regular expression that specifies the word must begin with these characters, consist of one or more of the characters, and end with these characters. The following code produces a list of words consisting of the Roman numeral characters:&lt;/p&gt;
+&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;# This also grabs real words like &amp;quot;mi&amp;quot;, &amp;quot;mil&amp;quot;, &amp;quot;vi&amp;quot;, vil&amp;quot;, &amp;quot;civil&amp;quot;.
+grep &amp;quot;^[ivxlcm]*$&amp;quot; CervantesDonQuijoteSpanishWordList.txt 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## 
+## c
+## civil
+## i
+## ii
+## iii
+## iv
+## ix
+## l
+## li
+## lii
+## liii
+## liv
+## lix
+## lv
+## lvi
+## lvii
+## lviii
+## lx
+## lxi
+## lxii
+## lxiii
+## lxiv
+## lxix
+## lxv
+## lxvi
+## lxvii
+## lxviii
+## lxx
+## lxxi
+## lxxii
+## lxxiii
+## lxxiv
+## mi
+## mil
+## v
+## vi
+## vii
+## viii
+## vil
+## x
+## xi
+## xii
+## xiii
+## xiv
+## xix
+## xl
+## xli
+## xlii
+## xliii
+## xliv
+## xlix
+## xlv
+## xlvi
+## xlvii
+## xlviii
+## xv
+## xvi
+## xvii
+## xviii
+## xx
+## xxi
+## xxii
+## xxiii
+## xxiv
+## xxix
+## xxv
+## xxvi
+## xxvii
+## xxviii
+## xxx
+## xxxi
+## xxxii
+## xxxiii
+## xxxiv
+## xxxix
+## xxxv
+## xxxvi
+## xxxvii
+## xxxviii&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Upon review of this list, we can see that the real Spanish words &amp;quot;mi&amp;quot;, &amp;quot;mil&amp;quot;, &amp;quot;vi&amp;quot;, vil&amp;quot;, and &amp;quot;civil&amp;quot; are captured by this regular expression. To examine lines of the literary text where a particular word occurs, the following &lt;code&gt;grep&lt;/code&gt; command may be used with the &lt;code&gt;-n&lt;/code&gt; parameter, which prints the line number on the left before printing the content of the line where the match was found.&lt;/p&gt;
+&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;grep -n &amp;quot; vil &amp;quot; CervantesDonQuijote.txt
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## 15665:y de tan vil traje vestido. A lo cual el mozo, asiéndole fuertemente de las
+## 16032:vuestro bajo y vil entendimiento que el cielo no os comunique el valor que
+## 18984:aniquilarlas y ponerlas debajo de las más viles que de algún vil escudero&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The real Spanish words may be excluded from this &lt;code&gt;grep&lt;/code&gt; command by using a &amp;quot;negative lookahead&amp;quot;, invoked with the &lt;code&gt;?!&lt;/code&gt; symbols. The &lt;code&gt;-P&lt;/code&gt; parameter specifies to use the Perl form of regular expressions.&lt;/p&gt;
+&lt;p&gt;Lets see if the numbers add up; i.e. is the number of unique words in the first version of the text minus the number of roman numerals equal to the number of words remaining in the text once we have removed the roman numerals?&lt;/p&gt;
+&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;# This command produces the number of unique words in the first version of the text.
+wc -l CervantesDonQuijoteSpanishWordList.txt
+
+# Include a &amp;quot;negative lookahead&amp;quot; in the regular expression that excludes real words from the Roman numeral characters
+# This command produces the number of occurrences of unique roman numerals in the text.
+grep -P &amp;#39;(?!^civil$|^mi$|^mil$|^vil$|^vi$)^[ivxlcm]*$&amp;#39; CervantesDonQuijoteSpanishWordList.txt | wc -l
+
+# This command produces the number of unique words remaining in the text once the unique roman numerals have been removed.
+grep -v -P &amp;#39;(?!^civil$|^mi$|^mil$|^vil$|^vi$)^[ivxlcm]*$&amp;#39; CervantesDonQuijoteSpanishWordList.txt | wc -l
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## 22974 CervantesDonQuijoteSpanishWordList.txt
+## 75
+## 22899&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;save-the-vocabulary-list-without-roman-numerals&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Save the Vocabulary List Without Roman Numerals&lt;/h2&gt;
+&lt;p&gt;Now we&#39;ll save the final vocabulary list without the Roman numerals as the file &lt;code&gt;CervantesDonQuijoteSpanishWordListNoRomanNumerals.txt&lt;/code&gt;. The grep command is used with the &lt;code&gt;-v&lt;/code&gt; parameter, which outputs the inverse of the result. In our case, this will output all words in the first saved iteration of the vocabulary list except the Roman numerals.&lt;/p&gt;
+&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;grep -v -P &amp;#39;(?!^civil$|^mi$|^mil$|^vil$|^vi$)^[ivxlcm]*$&amp;#39; CervantesDonQuijoteSpanishWordList.txt &amp;gt; CervantesDonQuijoteSpanishWordListNoRomanNumerals.txt&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;how-many-unique-words-are-in-don-quijote&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;How Many Unique Words Are in &lt;em&gt;Don Quijote&lt;/em&gt;?&lt;/h2&gt;
+&lt;p&gt;Finally, we may now answer the question &amp;quot;How many unique words are in &lt;em&gt;Don Quijote&lt;/em&gt;?&amp;quot; by using the &lt;code&gt;wc&lt;/code&gt; command, short for &amp;quot;word count&amp;quot;, and specifying the &lt;code&gt;-l&lt;/code&gt; parameter to count lines in the file. Since only one word appears on each line of the file, then the line count equals the word count.&lt;/p&gt;
+&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;wc -l CervantesDonQuijoteSpanishWordListNoRomanNumerals.txt
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## 22899 CervantesDonQuijoteSpanishWordListNoRomanNumerals.txt&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;There are 22899 unique words in &lt;em&gt;Don Quijote&lt;/em&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;summary&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Summary&lt;/h2&gt;
+&lt;p&gt;We have taken the text of the literary work &lt;em&gt;Don Quijote&lt;/em&gt; by Miguel de Cervantes Saavedra and used a series of UNIX shell commands to process the text into a non-redundant, alphabetized vocabulary list.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;future-work&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Future Work&lt;/h2&gt;
+&lt;p&gt;There are several possibilities for additional text mining using this literary work as a data source.&lt;/p&gt;
+&lt;p&gt;One possibility is to further reduce the vocabulary list into &amp;quot;lemmas&amp;quot;, which are the dictionary or reference form of words. For example, the words &amp;quot;catch&amp;quot;, &amp;quot;caught&amp;quot;, &amp;quot;catched&amp;quot;, and &amp;quot;catching&amp;quot; are all forms of &amp;quot;catch&amp;quot;, and hence all occurrences of these words may be reduced to the single lemma &amp;quot;catch&amp;quot; that encompasses the general meaning of the four word forms.&lt;/p&gt;
+&lt;p&gt;Another possibility is to perform frequency analysis, whereby one may produce a list of the words that recur most often througout the book, and a word cloud may be used to create a visual representation of the highest frequency words.&lt;/p&gt;
+&lt;p&gt;The frequency of occurrence of multiple words, or word n-grams, may be analyzed rather than the frequency of single words alone. N-grams are a contiguous sequence of n words, where n is a number. A 2-gram, for example, is also called a bigram (e.g. &amp;quot;full moon&amp;quot; or &amp;quot;rainy day&amp;quot;) and a 3-gram is called a trigram (e.g. &amp;quot;simple but elegant&amp;quot;), and so on. There are a whole suite of concepts to refer to the various types of multi-word expressions (MWEs) including collocations, verbal idioms, frozen adverbials, partical verbs, complex nominals, etc. N-gram analysis and other more sophisticated analyses may be employed to extract MWEs, although a larger body of literary works may be needed in order to identify less common MWEs.&lt;/p&gt;
+&lt;p&gt;Finally, if one already has a list of known vocabulary words, then one may remove the list of one&#39;s personal vocabulary from the vocabulary list derived from the literary work, therby leaving only the unknown or unfamiliar words to remain for study or memorization. Alternatively, the words in common between two literary works may be identified. As yet another example, the words found in a body of text but not present in a dictionary may identify slang or words otherwise missing from the dictionary. These tasks effectively involve set functions such the union, intersection, and complement.&lt;/p&gt;
+&lt;p&gt;These ideas may be explored in subsequent blog posts.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
     
     <item>
       <title>Oslo Botanical Garden Photo Gallery</title>

@@ -3,8 +3,109 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://chrisgaby.github.io/authors/</loc>
+    <lastmod>2021-07-14T00:14:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chrisgaby.github.io/categories/bash/</loc>
+    <lastmod>2021-07-14T00:14:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chrisgaby.github.io/tags/bash/</loc>
+    <lastmod>2021-07-14T00:14:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chrisgaby.github.io/categories/</loc>
+    <lastmod>2021-07-14T00:14:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chrisgaby.github.io/post/2021-07-04-unixpipesforforeignlanguagelearning/</loc>
+    <lastmod>2021-07-14T00:14:40-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chrisgaby.github.io/authors/john-christian-gaby/</loc>
+    <lastmod>2021-07-14T00:14:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://chrisgaby.github.io/</loc>
-    <lastmod>2021-03-20T22:03:00-04:00</lastmod>
+    <lastmod>2021-07-14T00:14:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chrisgaby.github.io/tags/spanish/</loc>
+    <lastmod>2021-07-14T00:14:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chrisgaby.github.io/tags/</loc>
+    <lastmod>2021-07-14T00:14:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chrisgaby.github.io/categories/unix/</loc>
+    <lastmod>2021-07-14T00:14:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chrisgaby.github.io/tags/unix/</loc>
+    <lastmod>2021-07-14T00:14:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chrisgaby.github.io/categories/foreign-language/</loc>
+    <lastmod>2021-07-14T00:14:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chrisgaby.github.io/tags/foreign-language/</loc>
+    <lastmod>2021-07-14T00:14:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chrisgaby.github.io/tags/language-learning/</loc>
+    <lastmod>2021-07-14T00:14:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chrisgaby.github.io/tags/literature/</loc>
+    <lastmod>2021-07-14T00:14:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chrisgaby.github.io/tags/text-mining/</loc>
+    <lastmod>2021-07-14T00:14:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chrisgaby.github.io/tags/vocabulary-list/</loc>
+    <lastmod>2021-07-14T00:14:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chrisgaby.github.io/tags/word-list/</loc>
+    <lastmod>2021-07-14T00:14:40-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -24,18 +125,6 @@
   </url>
   
   <url>
-    <loc>https://chrisgaby.github.io/authors/</loc>
-    <lastmod>2021-03-20T22:03:00-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://chrisgaby.github.io/categories/</loc>
-    <lastmod>2020-09-21T17:44:30+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://chrisgaby.github.io/tags/gc-content/</loc>
     <lastmod>2020-09-21T17:28:36+02:00</lastmod>
     <priority>0</priority>
@@ -48,20 +137,8 @@
   </url>
   
   <url>
-    <loc>https://chrisgaby.github.io/authors/john-christian-gaby/</loc>
-    <lastmod>2021-03-20T22:03:00-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://chrisgaby.github.io/post/prokaryotic-genome-gc-content/</loc>
     <lastmod>2020-09-21T17:28:36+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://chrisgaby.github.io/tags/</loc>
-    <lastmod>2021-03-20T22:03:00-04:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>

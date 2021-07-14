@@ -5,12 +5,84 @@
     <link>https://chrisgaby.github.io/tags/</link>
       <atom:link href="https://chrisgaby.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <description>Tags</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 15 Sep 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 04 Jul 2021 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://chrisgaby.github.io/img/icon-192.png</url>
       <title>Tags</title>
       <link>https://chrisgaby.github.io/tags/</link>
     </image>
+    
+    <item>
+      <title>BASH</title>
+      <link>https://chrisgaby.github.io/tags/bash/</link>
+      <pubDate>Sun, 04 Jul 2021 00:00:00 +0000</pubDate>
+      <guid>https://chrisgaby.github.io/tags/bash/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Spanish</title>
+      <link>https://chrisgaby.github.io/tags/spanish/</link>
+      <pubDate>Sun, 04 Jul 2021 00:00:00 +0000</pubDate>
+      <guid>https://chrisgaby.github.io/tags/spanish/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>UNIX</title>
+      <link>https://chrisgaby.github.io/tags/unix/</link>
+      <pubDate>Sun, 04 Jul 2021 00:00:00 +0000</pubDate>
+      <guid>https://chrisgaby.github.io/tags/unix/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>foreign language</title>
+      <link>https://chrisgaby.github.io/tags/foreign-language/</link>
+      <pubDate>Sun, 04 Jul 2021 00:00:00 +0000</pubDate>
+      <guid>https://chrisgaby.github.io/tags/foreign-language/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>language learning</title>
+      <link>https://chrisgaby.github.io/tags/language-learning/</link>
+      <pubDate>Sun, 04 Jul 2021 00:00:00 +0000</pubDate>
+      <guid>https://chrisgaby.github.io/tags/language-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>literature</title>
+      <link>https://chrisgaby.github.io/tags/literature/</link>
+      <pubDate>Sun, 04 Jul 2021 00:00:00 +0000</pubDate>
+      <guid>https://chrisgaby.github.io/tags/literature/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>text mining</title>
+      <link>https://chrisgaby.github.io/tags/text-mining/</link>
+      <pubDate>Sun, 04 Jul 2021 00:00:00 +0000</pubDate>
+      <guid>https://chrisgaby.github.io/tags/text-mining/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vocabulary list</title>
+      <link>https://chrisgaby.github.io/tags/vocabulary-list/</link>
+      <pubDate>Sun, 04 Jul 2021 00:00:00 +0000</pubDate>
+      <guid>https://chrisgaby.github.io/tags/vocabulary-list/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>word list</title>
+      <link>https://chrisgaby.github.io/tags/word-list/</link>
+      <pubDate>Sun, 04 Jul 2021 00:00:00 +0000</pubDate>
+      <guid>https://chrisgaby.github.io/tags/word-list/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>GC content</title>
